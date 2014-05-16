@@ -1,0 +1,30 @@
+{
+  "name": "flag-icon",
+  "version": "0.1.0",
+  "homepage": "https://github.com/stevenrskelton/flag-icon",
+  "description": "Polymer Web Component for icons of flags",
+  "main": "src/flag-icon.html",
+  "authors": [
+    "Steven Skelton"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "geography",
+    "countries",
+    "world",
+    "flag"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.2.4"
+  }
+}
