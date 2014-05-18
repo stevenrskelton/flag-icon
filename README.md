@@ -3,8 +3,9 @@
 
 Polymer Web Component for geographic country flag icons.
 
-Currently shows 16x11 images, but later may include larger SVG renders.
+Currently includes both 16x11 images, and larger SVG renders.
 Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library.
+SVGs come from [koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection) / public domain.
 ISO 3166-1 Country code list is available on [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1).
 
 Maintained by [Steven Skelton](https://github.com/stevenrskelton)
@@ -32,6 +33,8 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 	<flag-icon iso="ca"></flag-icon>
 	<flag-icon iso="can"></flag-icon>
 	<flag-icon iso="124"></flag-icon>
+	//or specify to use SVGs
+	<flag-icon iso="ca" svg></flag-icon>
 	```
 
 ## Options
@@ -39,13 +42,16 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
 `iso`				| *string*		| `null`		| ISO 3166-1 alpha-2, alpha-3, or numeric country code
+`svg`				| *flag*		| `false`		| Use larger filesize SVG files instead of PNGs
+`width`				| *string*		| `16px`		| Width of icon (aspect ratio is maintained)
 
 ## Todo
-- different image resolutions
+- maybe: different image resolutions
 - create iconset single image to save multiple requests
 
 ## Bugs
-- some missing flags
+- some missing flag images
+- some undocumented SVGs
 
 ## History
 

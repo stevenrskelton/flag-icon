@@ -2,12 +2,12 @@
  https://github.com/stevenrskelton/flag-icon
 -->
 
-<polymer-element name="flag-icon" attributes="iso">
+<polymer-element name="flag-icon" attributes="iso svg width height">
   <template>
 	<style>
 		:host { display: inline; }
 	</style>
-	<img alt="flag" title="{{title}}"  src="/flag-icon/png/{{alpha2}}.png">
+	<image alt="flag" title="{{title}}"  src="{{src}}" width="{{width}}">
   </template>
   <script>
 	var countries = [
@@ -265,6 +265,7 @@
 	Polymer('flag-icon', {
 		isoChanged: function(a,val){
 			var r = null;
+			var alpha2;
 			if(typeof val === 'number' || val * 1 == val){
 				r = countries.filter(function(row){ return row.numeric == val; });
 			} else if(val.length==3){
@@ -273,15 +274,20 @@
 				r = countries.filter(function(row){ return row.alpha2 == val.toUpperCase(); });
 			}
 			if(r){
-				this.alpha2 = r[0].alpha2.toLowerCase();
+				alpha2 = r[0].alpha2.toLowerCase();
 				this.title = r[0].name;
 			}else{
-				this.alpha2 = null;
-				this.title = '';
+				alpha2 = val;
+				this.title = val;
+			}
+			if(this.svg!=null){
+				this.src = '/flag-icon/svg/country-4x3/' + alpha2 + '.svg';
+			}else{
+				this.src = '/flag-icon/png/' + alpha2 + '.png';
 			}
 		},
-		alpha2: null,
-		title: ""
+		svg: null,
+		width: '16px'
 	});
   </script>    
 </polymer-element>
