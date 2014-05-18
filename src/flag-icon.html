@@ -275,11 +275,11 @@
 				val = val.toUpperCase();
 				r = countries.filter(function(row){ return row.alpha2 == val; });
 			}
-			if(r){
+			if(r.length>0){
 				alpha2 = r[0].alpha2.toLowerCase();
 				this.title = r[0].name;
 			}else{
-				alpha2 = val;
+				alpha2 = val.toLowerCase();
 				this.title = val;
 			}
 			if(this.svg!=null){

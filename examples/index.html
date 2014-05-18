@@ -21,10 +21,24 @@
   <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
 
-	<table>
-		<tr><th>Country</th><th>Alpha2</th><th>Alpha3</th><th>Numeric</th><th>SVG</th></tr>
+	<table width="700px">
+		<tr>
+			<th style="width:450px">Country</th>
+			<th>Alpha2</th>
+			<th>Alpha3</th>
+			<th>Numeric</th>
+			<th>SVG</th>
+		</tr>
+		<template id="otherTable" repeat="{{other}}">
+			<tr onmouseover="changeShow('{{key}}',true);">
+				<td>{{name}}</td>
+				<td colspan="3"><flag-icon iso="{{key}}"></flag-icon> {{key}}</td>
+				<td><flag-icon iso="{{key}}" svg></flag-icon></td>
+			</tr>
+		</template>
+		<tr><td colspan="5"><hr></td></tr>
 		<template id="countryTable" repeat="{{countries}}">
-			<tr onmouseover="changeShow('{{name}}','{{alpha2}}');">
+			<tr onmouseover="changeShow('{{alpha2}}',false);">
 				<td>{{name}}</td>
 				<td><flag-icon iso="{{alpha2}}"></flag-icon> {{alpha2}}</td>
 				<td><flag-icon iso="{{alpha3}}"></flag-icon> {{alpha3}}</td>
@@ -38,16 +52,16 @@
 		<div class="show">
 			<h2>{{name}}</h2>
 			<p/>
-			<flag-icon iso="{{alpha2}}"></flag-icon>
+			<flag-icon iso="{{iso}}"></flag-icon>
 			16x11 (default)
 			<p/>
-			<flag-icon iso="{{alpha2}}" width="100px"></flag-icon>
+			<flag-icon iso="{{iso}}" width="100px"></flag-icon>
 			100px Scaled PNG
 			<p/>
-			<flag-icon iso="{{alpha2}}" svg width="100px"></flag-icon>
+			<flag-icon iso="{{iso}}" svg width="100px"></flag-icon>
 			100px Scaled SVG
 			<p/>
-			<flag-icon iso="{{alpha2}}" svg width="350px"></flag-icon>
+			<flag-icon iso="{{iso}}" svg width="350px"></flag-icon>
 			350px Scaled SVG
 		</div>
 	</template>
@@ -304,17 +318,31 @@
 		{ name: 'Zambia', alpha2: 'ZM', alpha3: 'ZMB', numeric: 894 },
 		{ name: 'Zimbabwe', alpha2: 'ZW', alpha3: 'ZWE', numeric: 716 }
 	];
+	var other = [
+		{ name: 'European Union', key: 'europeanunion' },
+		{ name: 'United Nations', key: 'unitednations' },
+		{ name: 'England', key: 'england' },
+		{ name: 'Scotland', key: 'scotland' },
+		{ name: 'Wales', key: 'wales' }
+	]
 	document.getElementById('countryTable').model = {
 		countries: countries
 	};
+	document.getElementById('otherTable').model = {
+		other: other
+	};
 	var showModel = {
 		name: 'Canada',
-		alpha2: 'ca'
+		iso: 'ca'
 	};
 	document.getElementById('show').model = showModel;
-	function changeShow(name,iso){
-		showModel.name = name;
-		showModel.alpha2 = iso;
+	function changeShow(iso,isOther){
+		showModel.iso = iso;
+		if(isOther){
+			showModel.name = other.filter(function(row){ return row.key == iso; })[0].name;
+		}else{
+			showModel.name = countries.filter(function(row){ return row.alpha2 == iso; })[0].name;
+		}
 	}
 	</script>
   </body>
