@@ -269,9 +269,11 @@
 			if(typeof val === 'number' || val * 1 == val){
 				r = countries.filter(function(row){ return row.numeric == val; });
 			} else if(val.length==3){
-				r = countries.filter(function(row){ return row.alpha3 == val.toUpperCase(); });
+				val = val.toUpperCase();
+				r = countries.filter(function(row){ return row.alpha3 == val; });
 			}else{
-				r = countries.filter(function(row){ return row.alpha2 == val.toUpperCase(); });
+				val = val.toUpperCase();
+				r = countries.filter(function(row){ return row.alpha2 == val; });
 			}
 			if(r){
 				alpha2 = r[0].alpha2.toLowerCase();
