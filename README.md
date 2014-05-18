@@ -44,7 +44,7 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
 `iso`				| *string*		| `null`		| ISO 3166-1 alpha-2, alpha-3, or numeric country code
-`svg`				| *flag*		| `false`		| Use larger filesize SVG files instead of PNGs
+`svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *string*		| `16px`		| Width of icon (aspect ratio is maintained)
 
 ## Todo
