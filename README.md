@@ -21,6 +21,16 @@ Polymer Web Component for geographic country flag icons.
 ![Costa Rica](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/cr.png "Costa Rica")
 ![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/za.png "South Africa")
 ![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/th.png "Thailand")
+![Sri Lanka](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/lk.png "Sri Lanka")
+![Sweden](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/se.png "Sweden")
+![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/si.png "Slovenia")
+![Papua New Guinea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/pg.png "Papua New Guinea")
+![Maldives](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/mv.png "Maldives")
+![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us.png "India")
+![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/jp.png "Japan")
+![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ie.png "Ireland")
+![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/it.png "Italy")
+![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/is.png "Iceland")
 
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
