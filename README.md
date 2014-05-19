@@ -3,7 +3,24 @@
 
 Polymer Web Component for geographic country flag icons.
 
-![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca.png "Canada")![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/kr.png "Korea")![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/de.png "Germany")![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/au.png "Australia")![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/fr.png "France")![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/europeanunion.png "European Union")
+![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca.png "Canada")
+![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/kr.png "Korea")
+![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/de.png "Germany")
+![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/au.png "Australia")
+![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/fr.png "France")
+![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/europeanunion.png "European Union")
+![Angola](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ao.png "Angola")
+![Belgium](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/be.png "Belgium")
+![Austria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/at.png "Austria")
+![Mozambique](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/mz.png "Mozambique")
+![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/no.png "Norway")
+![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ph.png "Philippines")
+![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/es.png "Spain")
+![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/gb.png "United Kingdom")
+![India](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/in.png "India")
+![Costa Rica](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/cr.png "Costa Rica")
+![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/za.png "South Africa")
+![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/th.png "Thailand")
 
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
