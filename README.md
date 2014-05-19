@@ -3,6 +3,8 @@
 
 Polymer Web Component for geographic country flag icons.
 
+![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca.png "Canada")![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/kr.png "Korea")![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/de.png "Germany")![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/au.png "Australia")![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/fr.png "France")![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/europeanunion.png "European Union")
+
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection), or Wikipedia.
