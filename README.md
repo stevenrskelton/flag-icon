@@ -29,13 +29,15 @@ Polymer Web Component for geographic country flag icons.
 ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us.png "India")
 ![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/jp.png "Japan")
 ![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ie.png "Ireland")
+![Bermuda](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/bm.png "Bermuda")
 ![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/it.png "Italy")
+![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/br.png "Brazil")
 ![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/is.png "Iceland")
 
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection), or Wikipedia.
-* ISO 3166-1 Country code list is available on [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1).
+* [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
 Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
