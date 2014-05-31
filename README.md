@@ -45,20 +45,27 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 ## Usage
 
-1. Import Web Components' polyfill:
+1. Add to your _bower.json_, then run ```bower update```
 
-	```html
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.0/platform.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.0/polymer.js"></script>
+	```json
+	"dependencies": {
+		"flag-icon": "flag-icon#~0.2.0"
+	}
 	```
 
-2. Import Custom Element:
+2. Import Web Components' polyfill:
+
+	```html
+	<script src="bower_components/platform/platform.js"></script>
+	```
+
+3. Import Custom Element:
 
 	```html
 	<link rel="import" href="src/flag-icon.html">
 	```
 
-3. Start using it!
+4. Start using it!
 
 	```html
 	<flag-icon iso="ca"></flag-icon>
