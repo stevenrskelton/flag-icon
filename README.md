@@ -62,7 +62,7 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 3. Import Custom Element:
 
 	```html
-	<link rel="import" href="src/flag-icon.html">
+	<link rel="import" href="bower_components/flag-icon/flag-icon.html">
 	```
 
 4. Start using it!
