@@ -49,7 +49,7 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 	```json
 	"dependencies": {
-		"flag-icon": "flag-icon#~0.2.0"
+		"flag-icon": "flag-icon#~0.2.1"
 	}
 	```
 
