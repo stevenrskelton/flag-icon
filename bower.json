@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "homepage": "https://github.com/stevenrskelton/flag-icon",
   "description": "Polymer Web Component for icons of flags",
-  "main": "src/flag-icon.html",
+  "main": "flag-icon.html",
   "authors": [
     "Steven Skelton"
   ],
