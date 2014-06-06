@@ -89,7 +89,6 @@ Attribute			| Type			| Default		| Description
 
 ## Bugs
 - some PNG flags are missing, or out of date
-- fixed paths to images
 - some GIFs are smaller than PNGs
 
 ## History
