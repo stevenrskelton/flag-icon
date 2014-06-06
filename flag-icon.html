@@ -285,9 +285,9 @@
 				this.title = val;
 			}
 			if(this.svg!=null){
-				this.src = '/flag-icon/svg/country-4x3/' + alpha2 + '.svg';
+				this.src = this.resolvePath('svg/country-4x3/' + alpha2 + '.svg');
 			}else{
-				this.src = '/flag-icon/png/' + alpha2 + '.png';
+				this.src = this.resolvePath('png/' + alpha2 + '.png');
 			}
 		},
 		svg: null,

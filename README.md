@@ -45,13 +45,9 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 ## Usage
 
-1. Add to your _bower.json_, then run ```bower update```
+1. Add the library using the Javascript package manager [Bower](http://bower.io/):
 
-	```json
-	"dependencies": {
-		"flag-icon": "flag-icon#~0.2.1"
-	}
-	```
+	```bower install --save flag-icon``
 
 2. Import Web Components' polyfill:
 
