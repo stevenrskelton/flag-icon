@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="520" height="320" viewBox="0 0 39 24">
+<defs>
+<g id="s">
+<g id="f">
+<g id="t">
+<path d="M0,-7v1h0.5z" transform="rotate(18,0,-7)" fill="#fff" id="o"/>
+<use xlink:href="#o" transform="scale(-1,1)"/>
+</g>
+<use xlink:href="#t" transform="rotate(72,0,-6)"/>
+</g>
+<use xlink:href="#t" transform="rotate(-72,0,-6)"/>
+<use xlink:href="#f" transform="rotate(144,0,-6)"/>
+</g>
+<clipPath id="c">
+<path d="M0,24V0L39,4.5 30,12 39,19.5z"/>
+</clipPath>
+</defs>
+<g fill="#fff" stroke="#c1133d" clip-path="url(#c)">
+<path d="M39,4.5 0,0V24L39,19.5" stroke-width="6"/>
+<path d="M0,12H39" stroke-width="3"/>
+</g>
+<path d="M0,0V24L24,12z" fill="#001c5a"/>
+<!--          24/(1+sqrt(5)) v   -->
+<g transform="translate(7.416408,12)">
+<circle r="4.5" fill="#fff"/>
+<circle r="3" fill="#c1133d"/>
+<g id="g">
+<use xlink:href="#s"/>
+<use xlink:href="#s" transform="rotate(30)"/>
+<use xlink:href="#s" transform="rotate(-60)"/>
+<g id="h">
+<use xlink:href="#s" transform="rotate(-30)"/>
+<use xlink:href="#s" y="-3" transform="rotate(-40)" id="y"/>
+<use xlink:href="#y" transform="rotate(20)"/>
+</g>
+</g>
+<use xlink:href="#g" transform="rotate(240)"/>
+<use xlink:href="#h" transform="rotate(120)"/>
+<use xlink:href="#s" transform="rotate(150)"/>
+<use xlink:href="#s" y="-6" transform="rotate(90)"/>
+</g>
+</svg>

@@ -3,51 +3,53 @@
 
 Polymer Web Component for geographic country flag icons.
 
-![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca.png "Canada")
-![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/kr.png "Korea")
-![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/de.png "Germany")
-![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/au.png "Australia")
-![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/fr.png "France")
-![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/europeanunion.png "European Union")
-![Angola](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ao.png "Angola")
-![Belgium](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/be.png "Belgium")
-![Austria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/at.png "Austria")
-![Mozambique](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/mz.png "Mozambique")
-![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/no.png "Norway")
-![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ph.png "Philippines")
-![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/es.png "Spain")
-![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/gb.png "United Kingdom")
-![India](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/in.png "India")
-![Costa Rica](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/cr.png "Costa Rica")
-![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/za.png "South Africa")
-![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/th.png "Thailand")
-![Sri Lanka](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/lk.png "Sri Lanka")
-![Sweden](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/se.png "Sweden")
-![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/si.png "Slovenia")
-![Papua New Guinea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/pg.png "Papua New Guinea")
-![Maldives](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/mv.png "Maldives")
-![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us.png "India")
-![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/jp.png "Japan")
-![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ie.png "Ireland")
-![Bermuda](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/bm.png "Bermuda")
-![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/it.png "Italy")
-![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/br.png "Brazil")
-![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/is.png "Iceland")
+![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/ca.png "Canada")
+![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/kr.png "Korea")
+![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/de.png "Germany")
+![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/au.png "Australia")
+![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/fr.png "France")
+![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/europeanunion.png "European Union")
+![Angola](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/ao.png "Angola")
+![Belgium](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/be.png "Belgium")
+![Austria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/at.png "Austria")
+![Mozambique](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/mz.png "Mozambique")
+![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/no.png "Norway")
+![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/ph.png "Philippines")
+![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/es.png "Spain")
+![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/gb.png "United Kingdom")
+![India](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/in.png "India")
+![Costa Rica](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/cr.png "Costa Rica")
+![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/za.png "South Africa")
+![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/th.png "Thailand")
+![Sri Lanka](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/lk.png "Sri Lanka")
+![Sweden](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/se.png "Sweden")
+![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/si.png "Slovenia")
+![Papua New Guinea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/pg.png "Papua New Guinea")
+![Maldives](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/mv.png "Maldives")
+![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/us.png "India")
+![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/jp.png "Japan")
+![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/ie.png "Ireland")
+![Bermuda](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/bm.png "Bermuda")
+![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/it.png "Italy")
+![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/br.png "Brazil")
+![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/is.png "Iceland")
 
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
-* SVGs come from [koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection), or Wikipedia.
+* SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
 Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
-> [Live Demo](http://files.stevenskelton.ca/flag-icon/examples/index.html)
+> [Live Demo - World Country Flags](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
+
+> [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
 ## Usage
 
 1. Add the library using the Javascript package manager [Bower](http://bower.io/):
 
-	```bower install --save flag-icon``
+	```bower install --save flag-icon```
 
 2. Import Web Components' polyfill:
 
@@ -64,20 +66,21 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 4. Start using it!
 
 	```html
-	<flag-icon iso="ca"></flag-icon>
-	<flag-icon iso="can"></flag-icon>
-	<flag-icon iso="124"></flag-icon>
+	<flag-icon key="ca"></flag-icon>
+	<flag-icon key="can"></flag-icon>
+	<flag-icon key="canada"></flag-icon>
+	<flag-icon key="124"></flag-icon>
 	<!-- specify to use SVGs -->
-	<flag-icon iso="ca" svg></flag-icon>
+	<flag-icon key="ca" svg></flag-icon>
 	<!-- specify a specific size -->
-	<flag-icon iso="ca" svg width="100px"></flag-icon>
+	<flag-icon key="ca" svg width="100px"></flag-icon>
 	```
 
 ## Options
 
 Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
-`iso`				| *string*		| `null`		| ISO 3166-1 alpha-2, alpha-3, or numeric country code
+`key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or numeric country code
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *string*		| `16px`		| Width of icon (aspect ratio is maintained)
 
@@ -88,6 +91,7 @@ Attribute			| Type			| Default		| Description
 - maybe: squared flags
 
 ## Bugs
+- No images of US State flags (only SVG)
 - some PNG flags are missing, or out of date
 - some GIFs are smaller than PNGs
 

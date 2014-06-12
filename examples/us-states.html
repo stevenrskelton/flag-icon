@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+  <head>
+	<title>Country Flag Icons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="../../platform/platform.js"></script>
+	<link rel="import" href="../flag-icon.html">
+	<style>
+		.show {
+			position: fixed;
+			left: 725px;
+			top: 15px;
+		}
+		.show flag-icon {
+			display: block;
+		}
+	</style>
+  </head>
+  <body unresolved>
+	<h1>&lt;flag-icon&gt; Demos</h1>
+
+	<ul>
+		<li><a href="index.html">Parameters</a></li>
+		<li><a href="countries.html">World Country Flags</a></li>
+		<li><strong>USA State Flags</strong></li>
+	</ul>
+
+	<table width="700px">
+		<tr>
+			<th style="width:450px">State</th>
+			<th>Alpha2</th>
+			<th>ISO</th>
+			<th>Numeric</th>
+			<th>SVG</th>
+		</tr>
+		<template id="usTable" repeat="{{us}}">
+			<tr onmouseover="changeShow('{{alpha2}}');">
+				<td><flag-icon key="{{name}}" usstate></flag-icon>{{name}}</td>
+				<td><flag-icon key="{{alpha2}}" usstate></flag-icon> {{alpha2}}</td>
+				<td><flag-icon key="{{iso}}" usstate></flag-icon> {{iso}}</td>
+				<td><flag-icon key="{{numeric}}" usstate></flag-icon> {{numeric}}</td>
+				<td><flag-icon key="{{alpha2}}" usstate svg></flag-icon></td>
+			</tr>
+		</template>
+	</table>
+
+	<template id="show" bind>
+		<div class="show">
+			<h2>{{name}}</h2>
+			<p/>
+			<flag-icon key="{{key}}" usstate></flag-icon>
+			16x11 (default)
+			<p/>
+			<flag-icon key="{{key}}" usstate width="100px"></flag-icon>
+			100px Scaled PNG
+			<p/>
+			<flag-icon key="{{key}}" usstate svg width="100px"></flag-icon>
+			100px Scaled SVG
+			<p/>
+			<flag-icon key="{{key}}" usstate svg width="350px"></flag-icon>
+			350px Scaled SVG
+		</div>
+	</template>
+
+	<script>
+	var us_states = [
+		{ name: 'Alabama', iso: 'US-AL', alpha2: 'AL', numeric: 1, gpo: 'Ala.' },
+		{ name: 'Alaska', iso: 'US-AK', alpha2: 'AK', numeric: 2, gpo: 'Alaska' },
+		{ name: 'Arizona', iso: 'US-AZ', alpha2: 'AZ', numeric: 4, gpo: 'Ariz.' },
+		{ name: 'Arkansas', iso: 'US-AR', alpha2: 'AR', numeric: 5, gpo: 'Ark.' },
+		{ name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' },
+		{ name: 'Colorado', iso: 'US-CO', alpha2: 'CO', numeric: 8, gpo: 'Colo.' },
+		{ name: 'Connecticut', iso: 'US-CT', alpha2: 'CT', numeric: 9, gpo: 'Conn.' },
+		{ name: 'Delaware', iso: 'US-DE', alpha2: 'DE', numeric: 10, gpo: 'Del.' },
+		{ name: 'District of Columbia', iso: 'US-DC', alpha2: 'DC', numeric: 11, gpo: 'D.C.' },
+		{ name: 'Florida', iso: 'US-FL', alpha2: 'FL', numeric: 12, gpo: 'Fla.' },
+		{ name: 'Georgia', iso: 'US-GA', alpha2: 'GA', numeric: 13, gpo: 'Ga.' },
+		{ name: 'Hawaii', iso: 'US-HI', alpha2: 'HI', numeric: 15, gpo: 'Hawaii' },
+		{ name: 'Idaho', iso: 'US-ID', alpha2: 'ID', numeric: 16, gpo: 'Idaho' },
+		{ name: 'Illinois', iso: 'US-IL', alpha2: 'IL', numeric: 17, gpo: 'Ill.' },
+		{ name: 'Indiana', iso: 'US-IN', alpha2: 'IN', numeric: 18, gpo: 'Ind.' },
+		{ name: 'Iowa', iso: 'US-IA', alpha2: 'IA', numeric: 19, gpo: 'Iowa' },
+		{ name: 'Kansas', iso: 'US-KS', alpha2: 'KS', numeric: 20, gpo: 'Kans.' },
+		{ name: 'Kentucky', iso: 'US-KY', alpha2: 'KY', numeric: 21, gpo: 'Ky.' },
+		{ name: 'Louisiana', iso: 'US-LA', alpha2: 'LA', numeric: 22, gpo: 'La.' },
+		{ name: 'Maine', iso: 'US-ME', alpha2: 'ME', numeric: 23, gpo: 'Maine' },
+		{ name: 'Maryland', iso: 'US-MD', alpha2: 'MD', numeric: 24, gpo: 'Md.' },
+		{ name: 'Massachusetts', iso: 'US-MA', alpha2: 'MA', numeric: 25, gpo: 'Mass.' },
+		{ name: 'Michigan', iso: 'US-MI', alpha2: 'MI', numeric: 26, gpo: 'Mich.' },
+		{ name: 'Minnesota', iso: 'US-MN', alpha2: 'MN', numeric: 27, gpo: 'Minn.' },
+		{ name: 'Mississippi', iso: 'US-MS', alpha2: 'MS', numeric: 28, gpo: 'Miss.' },
+		{ name: 'Missouri', iso: 'US-MO', alpha2: 'MO', numeric: 29, gpo: 'Mo.' },
+		{ name: 'Montana', iso: 'US-MT', alpha2: 'MT', numeric: 30, gpo: 'Mont.' },
+		{ name: 'Nebraska', iso: 'US-NE', alpha2: 'NE', numeric: 31, gpo: 'Nebr.' },
+		{ name: 'Nevada', iso: 'US-NV', alpha2: 'NV', numeric: 32, gpo: 'Nev.' },
+		{ name: 'New Hampshire', iso: 'US-NH', alpha2: 'NH', numeric: 33, gpo: 'N.H.' },
+		{ name: 'New Jersey', iso: 'US-NJ', alpha2: 'NJ', numeric: 34, gpo: 'N.J.' },
+		{ name: 'New Mexico', iso: 'US-NM', alpha2: 'NM', numeric: 35, gpo: 'N. Mex.' },
+		{ name: 'New York', iso: 'US-NY', alpha2: 'NY', numeric: 36, gpo: 'N.Y.' },
+		{ name: 'North Carolina', iso: 'US-NC', alpha2: 'NC', numeric: 37, gpo: 'N.C.' },
+		{ name: 'North Dakota', iso: 'US-ND', alpha2: 'ND', numeric: 38, gpo: 'N. Dak.' },
+		{ name: 'Ohio', iso: 'US-OH', alpha2: 'OH', numeric: 39, gpo: 'Ohio' },
+		{ name: 'Oklahoma', iso: 'US-OK', alpha2: 'OK', numeric: 40, gpo: 'Okla.' },
+		{ name: 'Oregon', iso: 'US-OR', alpha2: 'OR', numeric: 41, gpo: 'Oreg.' },
+		{ name: 'Pennsylvania', iso: 'US-PA', alpha2: 'PA', numeric: 42, gpo: 'Pa.' },
+		{ name: 'Rhode Island', iso: 'US-RI', alpha2: 'RI', numeric: 44, gpo: 'R.I.' },
+		{ name: 'South Carolina', iso: 'US-SC', alpha2: 'SC', numeric: 45, gpo: 'S.C.' },
+		{ name: 'South Dakota', iso: 'US-SD', alpha2: 'SD', numeric: 46, gpo: 'S. Dak.' },
+		{ name: 'Tennessee', iso: 'US-TN', alpha2: 'TN', numeric: 47, gpo: 'Tenn.' },
+		{ name: 'Texas', iso: 'US-TX', alpha2: 'TX', numeric: 48, gpo: 'Tex.' },
+		{ name: 'Utah', iso: 'US-UT', alpha2: 'UT', numeric: 49, gpo: 'Utah' },
+		{ name: 'Vermont', iso: 'US-VT', alpha2: 'VT', numeric: 50, gpo: 'Vt.' },
+		{ name: 'Virginia', iso: 'US-VA', alpha2: 'VA', numeric: 51, gpo: 'Va.' },
+		{ name: 'Washington', iso: 'US-WA', alpha2: 'WA', numeric: 53, gpo: 'Wash.' },
+		{ name: 'West Virginia', iso: 'US-WV', alpha2: 'WV', numeric: 54, gpo: 'W. Va.' },
+		{ name: 'Wisconsin', iso: 'US-WI', alpha2: 'WI', numeric: 55, gpo: 'Wis.' },
+		{ name: 'Wyoming', iso: 'US-WY', alpha2: 'WY', numeric: 56, gpo: 'Wyo.' }
+	]
+	var showModel = {
+		name: 'District of Columbia',
+		key: 'DC'
+	};
+	function changeShow(key){
+		showModel.key = key;
+		showModel.name = us_states.filter(function(row){ return row.alpha2 == key; })[0].name;
+	}
+	window.addEventListener('polymer-ready', function(){
+		document.getElementById('usTable').model = {
+			us: us_states
+		};
+		document.getElementById('show').model = showModel;
+	});
+	</script>
+  </body>
+</html>
