@@ -4,7 +4,7 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height usstate">
+<polymer-element name="flag-icon" attributes="key data svg width height usstate" constructor="FlagIcon">
   <template>
 	<style>
 		:host { display: inline; }
@@ -20,63 +20,12 @@
 		title: null,
 		src: null,
 		keyChanged: function(a,val){
-			var self = this;
-
-			function head(arr){
-				if(typeof arr == "object") return arr[0];
-				else return arr;
-			}
-
-			function findCountry(id){
-				var data;
-				if(typeof id === 'number' || id * 1 == id){
-					var num = id * 1;
-					data = self.countries.filter(function(element, index, array){
-						return element.numeric == num;
-					});
-				}else{
-					var upper = id.toUpperCase();
-					if(upper.length > 3){
-						data = self.countries.filter(function(element, index, array){
-							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
-						});
-					}else{
-						data = self.countries.filter(function(element, index, array){
-							return element.alpha2 == upper || element.alpha3 == upper;
-						});
-					}
-				}
-				return data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; });
-			}
-
-			function findUSState(id){
-				var data;
-				if(typeof id === 'number' || id * 1 == id){
-					var num = id * 1;
-					data = self.us_states.filter(function(element, index, array){
-						return element.numeric == num;
-					});
-				}else{
-					var upper = id.toUpperCase();
-					if(upper.length>3){
-						data = self.us_states.filter(function(element, index, array){
-							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
-						});
-					}else{
-						data = self.us_states.filter(function(element, index, array){
-							return element.iso == upper || element.alpha2 == upper || element.gpo.toUpperCase() == upper;
-						});
-					}
-				}
-				return data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + element.name.toLowerCase().replace(/ /g,'_') }; });
-			}
-
 			var r = [];
 			if(val){
 				if(this.usstate){
-					r = findUSState(val);
+					r = this.findUSState(val, this.us_states);
 				}else{
-					r = findCountry(val);
+					r = this.findCountry(val, this.countries);
 				}
 			}
 			if(r.length>0){
@@ -94,7 +43,7 @@
 			}
 		},
 		created: function(){
-			this.countries = [
+			var countries = [
 				{ name: 'Afghanistan', alpha2: 'AF', alpha3: 'AFG', numeric: 4 },
 				{ name: ['\u00C5land Islands','Aland Islands'], alpha2: 'AX', alpha3: 'ALA', numeric: 248 },
 				{ name: 'Albania', alpha2: 'AL', alpha3: 'ALB', numeric: 8 },
@@ -121,14 +70,14 @@
 				{ name: 'Benin', alpha2: 'BJ', alpha3: 'BEN', numeric: 204 },
 				{ name: 'Bermuda', alpha2: 'BM', alpha3: 'BMU', numeric: 60 },
 				{ name: 'Bhutan', alpha2: 'BT', alpha3: 'BTN', numeric: 64 },
-				{ name: 'Bolivia, Plurinational State of', alpha2: 'BO', alpha3: 'BOL', numeric: 68 },
+				{ name: ['Bolivia','Plurinational State of Bolivia','Bolivia, Plurinational State of'], alpha2: 'BO', alpha3: 'BOL', numeric: 68 },
 				{ name: 'Bonaire, Sint Eustatius and Saba', alpha2: 'BQ', alpha3: 'BES', numeric: 535 },
 				{ name: 'Bosnia and Herzegovina', alpha2: 'BA', alpha3: 'BIH', numeric: 70 },
 				{ name: 'Botswana', alpha2: 'BW', alpha3: 'BWA', numeric: 72 },
 				{ name: 'Bouvet Island', alpha2: 'BV', alpha3: 'BVT', numeric: 74 },
 				{ name: 'Brazil', alpha2: 'BR', alpha3: 'BRA', numeric: 76 },
 				{ name: 'British Indian Ocean Territory', alpha2: 'IO', alpha3: 'IOT', numeric: 86 },
-				{ name: 'Brunei Darussalam', alpha2: 'BN', alpha3: 'BRN', numeric: 96 },
+				{ name: ['Nation of Brunei, the Abode of Peace','Brunei Darussalam','Brunei'], alpha2: 'BN', alpha3: 'BRN', numeric: 96 },
 				{ name: 'Bulgaria', alpha2: 'BG', alpha3: 'BGR', numeric: 100 },
 				{ name: 'Burkina Faso', alpha2: 'BF', alpha3: 'BFA', numeric: 854 },
 				{ name: 'Burundi', alpha2: 'BI', alpha3: 'BDI', numeric: 108 },
@@ -199,10 +148,10 @@
 				{ name: 'Iceland', alpha2: 'IS', alpha3: 'ISL', numeric: 352 },
 				{ name: 'India', alpha2: 'IN', alpha3: 'IND', numeric: 356 },
 				{ name: 'Indonesia', alpha2: 'ID', alpha3: 'IDN', numeric: 360 },
-				{ name: 'Iran, Islamic Republic of', alpha2: 'IR', alpha3: 'IRN', numeric: 364 },
+				{ name: ['Iran, Islamic Republic of','Iran','Islamic Republic of Iran'], alpha2: 'IR', alpha3: 'IRN', numeric: 364 },
 				{ name: 'Iraq', alpha2: 'IQ', alpha3: 'IRQ', numeric: 368 },
 				{ name: 'Ireland', alpha2: 'IE', alpha3: 'IRL', numeric: 372 },
-				{ name: 'Isle of Man', alpha2: 'IM', alpha3: 'IMN', numeric: 833 },
+				{ name: ['Isle of Man','Mann'], alpha2: 'IM', alpha3: 'IMN', numeric: 833 },
 				{ name: 'Israel', alpha2: 'IL', alpha3: 'ISR', numeric: 376 },
 				{ name: 'Italy', alpha2: 'IT', alpha3: 'ITA', numeric: 380 },
 				{ name: 'Jamaica', alpha2: 'JM', alpha3: 'JAM', numeric: 388 },
@@ -216,7 +165,7 @@
 				{ name: ['South Korea','Korea, Republic of','Korea, South','Republic of Korea'], alpha2: 'KR', alpha3: 'KOR', numeric: 410 },
 				{ name: 'Kuwait', alpha2: 'KW', alpha3: 'KWT', numeric: 414 },
 				{ name: 'Kyrgyzstan', alpha2: 'KG', alpha3: 'KGZ', numeric: 417 },
-				{ name: 'Lao People\'s Democratic Republic', alpha2: 'LA', alpha3: 'LAO', numeric: 418 },
+				{ name: ['Lao People\'s Democratic Republic','Laos'], alpha2: 'LA', alpha3: 'LAO', numeric: 418 },
 				{ name: 'Latvia', alpha2: 'LV', alpha3: 'LVA', numeric: 428 },
 				{ name: 'Lebanon', alpha2: 'LB', alpha3: 'LBN', numeric: 422 },
 				{ name: 'Lesotho', alpha2: 'LS', alpha3: 'LSO', numeric: 426 },
@@ -225,7 +174,7 @@
 				{ name: 'Liechtenstein', alpha2: 'LI', alpha3: 'LIE', numeric: 438 },
 				{ name: 'Lithuania', alpha2: 'LT', alpha3: 'LTU', numeric: 440 },
 				{ name: 'Luxembourg', alpha2: 'LU', alpha3: 'LUX', numeric: 442 },
-				{ name: 'Macao', alpha2: 'MO', alpha3: 'MAC', numeric: 446 },
+				{ name: ['Macau','Macao','Macao Special Administrative Region of the People\'s Republic of China'], alpha2: 'MO', alpha3: 'MAC', numeric: 446 },
 				{ name: ['Macedonia, the former Yugoslav Republic of','Macedonia'], alpha2: 'MK', alpha3: 'MKD', numeric: 807 },
 				{ name: 'Madagascar', alpha2: 'MG', alpha3: 'MDG', numeric: 450 },
 				{ name: 'Malawi', alpha2: 'MW', alpha3: 'MWI', numeric: 454 },
@@ -239,8 +188,8 @@
 				{ name: 'Mauritius', alpha2: 'MU', alpha3: 'MUS', numeric: 480 },
 				{ name: 'Mayotte', alpha2: 'YT', alpha3: 'MYT', numeric: 175 },
 				{ name: 'Mexico', alpha2: 'MX', alpha3: 'MEX', numeric: 484 },
-				{ name: 'Micronesia, Federated States of', alpha2: 'FM', alpha3: 'FSM', numeric: 583 },
-				{ name: 'Moldova, Republic of', alpha2: 'MD', alpha3: 'MDA', numeric: 498 },
+				{ name: ['Micronesia, Federated States of','Micronedia'], alpha2: 'FM', alpha3: 'FSM', numeric: 583 },
+				{ name: ['Republic of Moldova','Moldova, Republic of','Moldova'], alpha2: 'MD', alpha3: 'MDA', numeric: 498 },
 				{ name: 'Monaco', alpha2: 'MC', alpha3: 'MCO', numeric: 492 },
 				{ name: 'Mongolia', alpha2: 'MN', alpha3: 'MNG', numeric: 496 },
 				{ name: 'Montenegro', alpha2: 'ME', alpha3: 'MNE', numeric: 499 },
@@ -275,9 +224,9 @@
 				{ name: 'Portugal', alpha2: 'PT', alpha3: 'PRT', numeric: 620 },
 				{ name: 'Puerto Rico', alpha2: 'PR', alpha3: 'PRI', numeric: 630 },
 				{ name: 'Qatar', alpha2: 'QA', alpha3: 'QAT', numeric: 634 },
-				{ name: 'Réunion', alpha2: 'RE', alpha3: 'REU', numeric: 638 },
+				{ name: 'R\u00E9union', alpha2: 'RE', alpha3: 'REU', numeric: 638 },
 				{ name: 'Romania', alpha2: 'RO', alpha3: 'ROU', numeric: 642 },
-				{ name: 'Russian Federation', alpha2: 'RU', alpha3: 'RUS', numeric: 643 },
+				{ name: ['Russian Federation','Russia'], alpha2: 'RU', alpha3: 'RUS', numeric: 643 },
 				{ name: 'Rwanda', alpha2: 'RW', alpha3: 'RWA', numeric: 646 },
 				{ name: ['Saint Barth\u00E9lemy','Saint Barthelemy'], alpha2: 'BL', alpha3: 'BLM', numeric: 652 },
 				{ name: ['Saint Helena, Ascension and Tristan da Cunha','Saint Helena, Ascension, and Tristan da Cunha'], alpha2: 'SH', alpha3: 'SHN', numeric: 654 },
@@ -302,7 +251,7 @@
 				{ name: 'Somalia', alpha2: 'SO', alpha3: 'SOM', numeric: 706 },
 				{ name: 'South Africa', alpha2: 'ZA', alpha3: 'ZAF', numeric: 710 },
 				{ name: 'South Georgia and the South Sandwich Islands', alpha2: 'GS', alpha3: 'SGS', numeric: 239 },
-				{ name: 'South Sudan', alpha2: 'SS', alpha3: 'SSD', numeric: 728 },
+				{ name: ['South Sudan','Republic of South Sudan'], alpha2: 'SS', alpha3: 'SSD', numeric: 728 },
 				{ name: 'Spain', alpha2: 'ES', alpha3: 'ESP', numeric: 724 },
 				{ name: 'Sri Lanka', alpha2: 'LK', alpha3: 'LKA', numeric: 144 },
 				{ name: 'Sudan', alpha2: 'SD', alpha3: 'SDN', numeric: 729 },
@@ -311,7 +260,7 @@
 				{ name: 'Swaziland', alpha2: 'SZ', alpha3: 'SWZ', numeric: 748 },
 				{ name: 'Sweden', alpha2: 'SE', alpha3: 'SWE', numeric: 752 },
 				{ name: 'Switzerland', alpha2: 'CH', alpha3: 'CHE', numeric: 756 },
-				{ name: 'Syrian Arab Republic', alpha2: 'SY', alpha3: 'SYR', numeric: 760 },
+				{ name: ['Syrian Arab Republic','Syria'], alpha2: 'SY', alpha3: 'SYR', numeric: 760 },
 				{ name: ['Taiwan, Province of China','Taiwan'], alpha2: 'TW', alpha3: 'TWN', numeric: 158 },
 				{ name: 'Tajikistan', alpha2: 'TJ', alpha3: 'TJK', numeric: 762 },
 				{ name: ['Tanzania, United Republic of','Tanzania'], alpha2: 'TZ', alpha3: 'TZA', numeric: 834 },
@@ -335,7 +284,7 @@
 				{ name: 'Uruguay', alpha2: 'UY', alpha3: 'URY', numeric: 858 },
 				{ name: 'Uzbekistan', alpha2: 'UZ', alpha3: 'UZB', numeric: 860 },
 				{ name: 'Vanuatu', alpha2: 'VU', alpha3: 'VUT', numeric: 548 },
-				{ name: 'Venezuela, Bolivarian Republic of', alpha2: 'VE', alpha3: 'VEN', numeric: 862 },
+				{ name: ['Venezuela','Venezuela, Bolivarian Republic of','Bolivarian Republic of Venezuela'], alpha2: 'VE', alpha3: 'VEN', numeric: 862 },
 				{ name: ['Viet Nam','Vietnam'], alpha2: 'VN', alpha3: 'VNM', numeric: 704 },
 				{ name: ['Virgin Islands, British','British Virgin Islands'], alpha2: 'VG', alpha3: 'VGB', numeric: 92 },
 				{ name: ['Virgin Islands, U.S.','U.S. Virgin Islands'], alpha2: 'VI', alpha3: 'VIR', numeric: 850 },
@@ -344,13 +293,14 @@
 				{ name: 'Yemen', alpha2: 'YE', alpha3: 'YEM', numeric: 887 },
 				{ name: 'Zambia', alpha2: 'ZM', alpha3: 'ZMB', numeric: 894 },
 				{ name: 'Zimbabwe', alpha2: 'ZW', alpha3: 'ZWE', numeric: 716 },
+				{ name: ['Kosovo','Republic of Kosovo'], alpha2: 'XK' },
 				{ name: ['European Union','EuropeanUnion','EU'], alpha2: 'EUROPEANUNION' },
 				{ name: ['United Nations','UnitedNations','UN'], alpha2: 'UNITEDNATIONS' },
 				{ name: 'England', alpha2: 'ENGLAND' },
 				{ name: 'Scotland', alpha2: 'SCOTLAND' },
 				{ name: 'Wales', alpha2: 'WALES' }
 			];
-			this.us_states = [
+			var us_states = [
 				{ name: 'Alabama', iso: 'US-AL', alpha2: 'AL', numeric: 1, gpo: 'Ala.' },
 				{ name: 'Alaska', iso: 'US-AK', alpha2: 'AK', numeric: 2, gpo: 'Alaska' },
 				{ name: 'Arizona', iso: 'US-AZ', alpha2: 'AZ', numeric: 4, gpo: 'Ariz.' },
@@ -403,6 +353,54 @@
 				{ name: 'Wisconsin', iso: 'US-WI', alpha2: 'WI', numeric: 55, gpo: 'Wis.' },
 				{ name: 'Wyoming', iso: 'US-WY', alpha2: 'WY', numeric: 56, gpo: 'Wyo.' }
 			];
+			function head(arr){
+				if(typeof arr == "object") return arr[0];
+				else return arr;
+			}
+			this.countries = countries;
+			this.findCountry = function(id){
+				var data;
+				if(typeof id === 'number' || id * 1 == id){
+					var num = id * 1;
+					data = countries.filter(function(element, index, array){
+						return element.numeric == num;
+					});
+				}else{
+					var upper = id.toUpperCase();
+					if(upper.length > 3){
+						data = countries.filter(function(element, index, array){
+							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+						});
+					}else{
+						data = countries.filter(function(element, index, array){
+							return element.alpha2 == upper || element.alpha3 == upper;
+						});
+					}
+				}
+				return data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; });
+			}
+			this.us_states = us_states;
+			this.findUSState = function(id){
+				var data;
+				if(typeof id === 'number' || id * 1 == id){
+					var num = id * 1;
+					data = us_states.filter(function(element, index, array){
+						return element.numeric == num;
+					});
+				}else{
+					var upper = id.toUpperCase();
+					if(upper.length>3){
+						data = us_states.filter(function(element, index, array){
+							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+						});
+					}else{
+						data = us_states.filter(function(element, index, array){
+							return element.iso == upper || element.alpha2 == upper || element.gpo.toUpperCase() == upper;
+						});
+					}
+				}
+				return data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + element.name.toLowerCase().replace(/ /g,'_') }; });
+			}
 		}
 	});
   </script>
