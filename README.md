@@ -44,7 +44,6 @@ Polymer Web Component for geographic country flag icons.
 ![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/nevada.png "Nevada")
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/texas.png "Texas")
-
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/british_columbia.png "British Columbia")
 ![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/manitoba.png "Manitoba")
@@ -55,7 +54,7 @@ Polymer Web Component for geographic country flag icons.
 ![Nunavut](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/nunavut.png "Nunavut")
 ![Ontario](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/ontario.png "Ontario")
 ![Prince Edward Island](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/prince_edward_island.png "Prince Edward Island")
-![Qu\u00E9bec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/qu\u00E9bec.png "Qu\u00E9bec")
+![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/québec.png "Québec")
 ![Saskatchewan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/saskatchewan.png "Saskatchewan")
 ![Yukon](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/yukon.png "Yukon")
 
