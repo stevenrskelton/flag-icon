@@ -78,9 +78,9 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 	<flag-icon key="ca" svg width="100px"></flag-icon>
 	```
 
-Or use it in scripts:
+Or use it unrendered in scripts:
 
-	```javascript
+	```JavaScript
 	var f = new FlagIcon();
 
 	//get country info
