@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="846" height="510" viewBox="0 0 282 170" id="bc_flag">
+<desc>Flag of British Columbia</desc>
+<rect width="282" height="72" fill="#002b7f"/>
+<g transform="translate(141,36)">
+<g id="a" transform="rotate(75.677280021796446968407440346665)">
+<path fill="#fff" d="M-12,-150 h24 v300 h-24z"/>
+<path fill="#ce1126" d="M-9,-150 h9 v300 h9 v-150 h-18z"/>
+</g>
+<use xlink:href="#a" transform="rotate(-151.35456004359289393681488069333)"/>
+</g>
+<path d="M0,24 h129 v-24 h24 v24 h129 v24 h-129 v24 h-24 v-24 h-129z" fill="#fff"/>
+<path d="M0,27 h132 v-27 h18 v27 h132 v18 h-132 v27 h-18 v-27 h-132z" fill="#ce1126"/>
+<g transform="translate(141,43)" style="fill:#ffd600;stroke:#000;stroke-width:0.25px">
+<path d="M0,-22 L6.5,-9.5 L15,-21 L17,-8.5 L29,-18 L20,0 A20,2 0 0,1 -20,0 L-29,-18 L-17,-8.5 L-15,-21 L-6.5,-9.5 L0,-22 z "/>
+<path d="M20,0 a20,2 0 0,0 -40,0 M20.5,-1 a20.5,2 0 0,0 -41,0 M22.5,-5 a22.5,3 0 0,0 -45,0 M23,-6 a23,3 0 0,0 -46,0" fill="none"/>
+<rect x="-3" y="-7" height="3" width="6" rx="0.5"/>
+<path id="stl" d="M8.51,-5.245 C8.4,-3.335 13.35,-3.09 13.55,-4.875 C13.747787,-6.6402494 8.6198722,-7.1527809 8.51,-5.245z M19.11,-4.245 C18.724973,-3.2356046 21.641781,-1.323814 22.42,-2.99 C23.2,-4.66 19.48,-5.215 19.11,-4.245 z"/>
+<use xlink:href="#stl" transform="scale(-1,1)"/>
+</g>
+<rect y="72" width="282" height="98" fill="#fff"/>
+<g id="b" transform="translate(141,81)" fill="#002b7f">
+<path id="sb" d="M0,0 c10,0 18.1,5 28.2,5 c10,0 18.1,-5 28.2,-5 c10,0 18.1,5 28.2,5 c10,0 18.1,-5 28.2,-5 c10,0 18.1,5 28.2,5 v14 c-10,0 -18.1,-5 -28.2,-5 c-10,0 -18.1,5 -28.2,5 c-10,0 -18.1,-5 -28.2,-5 c-10,0 -18.1,5 -28.2,5 c-10,0 -18.1,-5 -28.2,-5z"/>
+<use xlink:href="#sb" transform="scale(-1,1)"/>
+</g>
+<use xlink:href="#b" transform="translate(0,28)"/>
+<use xlink:href="#b" transform="translate(0,56)"/>
+<g transform="translate(141,252)" style="fill:#ffd600;stroke:#000;stroke-width:0.25px">
+<path id="s" d="M0,0L-5.86,-111.84L0,-175L5.86,-111.84z"/>
+<g id="sw">
+<use xlink:href="#s" transform="rotate(12)"/>
+<use xlink:href="#s" transform="rotate(24)"/>
+<use xlink:href="#s" transform="rotate(36)"/>
+<use xlink:href="#s" transform="rotate(48)"/>
+<path id="w" d="M0,0L -5.86,-111.84 C-5.86,-111.84 -3,-116 -3,-120 C-3,-124 -5,-126 -5,-131 C-5,-136 0,-140 0,-144 C0,-150 -5,-152 -5,-158 C-5,-164 0,-166 0,-175 C0,-153 9,-153 9,-144 C9,-136.5 2,-134 2,-126 C2,-118 5.86,-111.84 5.86,-111.84z" transform="rotate(6)"/>
+<use xlink:href="#w" transform="rotate(12)"/>
+<use xlink:href="#w" transform="rotate(24)"/>
+<use xlink:href="#w" transform="rotate(36)"/>
+<use xlink:href="#w" transform="rotate(48)"/>
+</g>
+<use xlink:href="#sw" transform="scale(-1,1)"/>
+<circle r="112"/>
+</g>
+</svg>

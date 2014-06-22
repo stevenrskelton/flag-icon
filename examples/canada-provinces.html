@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+  <head>
+	<title>Country Flag Icons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="../../platform/platform.js"></script>
+	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="index-links.html">
+	<style>
+		.show {
+			position: fixed;
+			left: 725px;
+			top: 15px;
+		}
+		.show flag-icon {
+			display: block;
+		}
+	</style>
+  </head>
+  <body unresolved>
+	<h1>&lt;flag-icon&gt; Demos</h1>
+
+	<table style="width:700px;min-height:525px;">
+		<tr>
+			<th style="width:450px">Province</th>
+			<th>Alpha2</th>
+			<th>SVG</th>
+		</tr>
+		<template id="flags" repeat="{{flags}}">
+			<tr onmouseover="changeShow('{{alpha2}}');">
+				<td><flag-icon key="{{name}}" canada></flag-icon>{{name}}</td>
+				<td><flag-icon key="{{alpha2}}" canada></flag-icon> {{alpha2}}</td>
+				<td><flag-icon key="{{alpha2}}" canada svg></flag-icon></td>
+			</tr>
+		</template>
+	</table>
+
+	<template id="show" bind>
+		<div class="show">
+			<h2>{{name}}</h2>
+			<p/>
+			<flag-icon key="{{key}}" canada></flag-icon>
+			16x11 (default)
+			<p/>
+			<flag-icon key="{{key}}" canada width="100px"></flag-icon>
+			100px Scaled PNG
+			<p/>
+			<flag-icon key="{{key}}" canada svg width="100px"></flag-icon>
+			100px Scaled SVG
+			<p/>
+			<flag-icon key="{{key}}" canada svg width="350px"></flag-icon>
+			350px Scaled SVG
+		</div>
+	</template>
+
+	<script>
+	var ca_provinces = [
+		{ name: 'Alberta', alpha2: 'AB' },
+		{ name: 'British Columbia', alpha2: 'BC' },
+		{ name: 'Manitoba', alpha2: 'MB' },
+		{ name: 'New Brunswick', alpha2: 'NB' },
+		{ name: 'Newfoundland and Labrador', alpha2: 'NL' },
+		{ name: 'Northwest Territories', alpha2: 'NT' },
+		{ name: 'Nova Scotia', alpha2: 'NS' },
+		{ name: 'Nunavut', alpha2: 'NU' },
+		{ name: 'Ontario', alpha2: 'ON' },
+		{ name: 'Prince Edward Island', alpha2: 'PE' },
+		{ name: 'Qu\u00E9bec', alpha2: 'QC' },
+		{ name: 'Saskatchewan', alpha2: 'SK' },
+		{ name: 'Yukon', alpha2: 'YT' }
+	];
+	var showModel = {
+		name: 'British Columbia',
+		key: 'BC'
+	};
+	function changeShow(key){
+		showModel.key = key;
+		showModel.name = ca_provinces.filter(function(row){ return row.alpha2 == key; })[0].name;
+	}
+	window.addEventListener('polymer-ready', function(){
+		document.getElementById('flags').model = {
+			flags: ca_provinces
+		};
+		document.getElementById('show').model = showModel;
+	});
+	</script>
+	<index-links page="canada-provinces.html"></index-links>
+  </body>
+</html>

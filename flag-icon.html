@@ -4,7 +4,7 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height usstate" constructor="FlagIcon">
+<polymer-element name="flag-icon" attributes="key data svg width height usstate canada" constructor="FlagIcon">
   <template>
 	<style>
 		:host { display: inline; }
@@ -17,24 +17,28 @@
 		svg: false,
 		width: '16px',
 		usstate: false,
+		canada: false,
 		title: null,
 		src: null,
+		svgChanged: function(){ this.keyChanged(null,this.key); },
 		keyChanged: function(a,val){
-			var r = [];
+			var d;
 			if(val){
 				if(this.usstate){
-					r = this.findUSState(val, this.us_states);
+					d = this.findUSState(val, this.us_states);
+				}else if(this.canada){
+					d = this.findCanadianProvince(val, this.ca_provinces);
 				}else{
-					r = this.findCountry(val, this.countries);
+					d = this.findCountry(val, this.countries);
 				}
 			}
-			if(r.length>0){
-				this.data = r[0].data;
-				this.title = r[0].title;
+			if(d){
+				this.data = d.data;
+				this.title = d.title;
 				if(this.svg){
-					this.src = this.resolvePath('svg/' + r[0].file + '.svg');
+					this.src = this.resolvePath('svg/' + d.file + '.svg');
 				}else{
-					this.src = this.resolvePath('png/' + r[0].file + '.png');
+					this.src = this.resolvePath('png/' + d.file + '.png');
 				}
 			}else{
 				this.data = null;
@@ -115,7 +119,7 @@
 				{ name: 'Eritrea', alpha2: 'ER', alpha3: 'ERI', numeric: 232 },
 				{ name: 'Estonia', alpha2: 'EE', alpha3: 'EST', numeric: 233 },
 				{ name: 'Ethiopia', alpha2: 'ET', alpha3: 'ETH', numeric: 231 },
-				{ name: ['Falkland Islands (Malvinas)','Falkland Islands (Islas Malvinas)'], alpha2: 'FK', alpha3: 'FLK', numeric: 238 },
+				{ name: ['Falkland Islands (Malvinas)','Falkland Islands (Islas Malvinas)','Falkland Islands'], alpha2: 'FK', alpha3: 'FLK', numeric: 238 },
 				{ name: 'Faroe Islands', alpha2: 'FO', alpha3: 'FRO', numeric: 234 },
 				{ name: 'Fiji', alpha2: 'FJ', alpha3: 'FJI', numeric: 242 },
 				{ name: 'Finland', alpha2: 'FI', alpha3: 'FIN', numeric: 246 },
@@ -353,9 +357,26 @@
 				{ name: 'Wisconsin', iso: 'US-WI', alpha2: 'WI', numeric: 55, gpo: 'Wis.' },
 				{ name: 'Wyoming', iso: 'US-WY', alpha2: 'WY', numeric: 56, gpo: 'Wyo.' }
 			];
+			var ca_provinces = [
+				{ name: 'Alberta', alpha2: 'AB' },
+				{ name: 'British Columbia', alpha2: 'BC' },
+				{ name: 'Manitoba', alpha2: 'MB' },
+				{ name: 'New Brunswick', alpha2: 'NB' },
+				{ name: 'Newfoundland and Labrador', alpha2: 'NL' },
+				{ name: 'Northwest Territories', alpha2: 'NT' },
+				{ name: 'Nova Scotia', alpha2: 'NS' },
+				{ name: 'Nunavut', alpha2: 'NU' },
+				{ name: 'Ontario', alpha2: 'ON' },
+				{ name: 'Prince Edward Island', alpha2: 'PE' },
+				{ name: ['Qu\u00E9bec','Quebec'], alpha2: 'QC' },
+				{ name: 'Saskatchewan', alpha2: 'SK' },
+				{ name: 'Yukon', alpha2: 'YT' }
+			];
 			function head(arr){
-				if(typeof arr == "object") return arr[0];
-				else return arr;
+				if(typeof arr == "object"){
+					if(arr.length>0) return arr[0];
+					else return null;
+				} else return arr;
 			}
 			this.countries = countries;
 			this.findCountry = function(id){
@@ -377,7 +398,7 @@
 						});
 					}
 				}
-				return data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; });
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; }));
 			}
 			this.us_states = us_states;
 			this.findUSState = function(id){
@@ -399,7 +420,22 @@
 						});
 					}
 				}
-				return data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + element.name.toLowerCase().replace(/ /g,'_') }; });
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.ca_provinces = ca_provinces;
+			this.findCanadianProvince = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if(upper.length>2){
+					data = ca_provinces.filter(function(element, index, array){
+						return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+					});
+				}else{
+					data = ca_provinces.filter(function(element, index, array){
+						return element.alpha2 == upper;
+					});
+				}
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'ca/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
 		}
 	});

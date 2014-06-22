@@ -1,0 +1,30 @@
+<polymer-element name="index-links" attributes="page examples">
+	<template>
+		<template if="{{examples}}">
+			<ul>
+				<template repeat="{{link in example}}">
+					<li><a href="{{link.href}}" alt="{{link.name}}">{{link.name}}</a></li>
+				</template>
+			</ul>
+		</template>
+		<template if="{{!examples}}">
+			<div style="width:100%;background-color:#fff;border-top:1px solid #ddd;text-align:center;margin-top:50px;clear:both;">
+				<strong>Other Examples: </strong>
+				<template repeat="{{link in example}}">
+				| <a href="{{link.href}}" alt="{{link.name}}" style="{{page==link.href ? 'font-weight:bold':''}}">{{link.name}}</a>
+				</template>
+			</div>
+		</template>
+	</template>
+	<script>
+	Polymer('index-links', {
+		examples: false,
+		example: [
+			{ href:"index.html", name:"Parameters" },
+			{ href:"countries.html", name:"World Country Flags" },
+			{ href:"us-states.html", name: "USA State Flags" },
+			{ href:"canada-provinces.html", name: "Canada Province and Territory Flags" }
+		]
+	});
+	</script>
+</polymer-element>

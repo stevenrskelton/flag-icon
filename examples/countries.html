@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<script src="../../platform/platform.js"></script>
 	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="index-links.html">
 	<style>
 		.show {
 			position: fixed;
@@ -19,12 +20,6 @@
 </head>
 <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
-
-	<ul>
-		<li><a href="index.html">Parameters</a></li>
-		<li><strong>World Country Flags</strong></li>
-		<li><a href="us-states.html">USA State Flags</a></li>
-	</ul>
 
 	<table width="700px">
 		<tr>
@@ -343,14 +338,15 @@
 		}
 	}
 	window.addEventListener('polymer-ready', function(){
-		document.getElementById('countryTable').model = {
-			countries: countries
-		};
 		document.getElementById('otherTable').model = {
 			other: other
+		};
+		document.getElementById('countryTable').model = {
+			countries: countries
 		};
 		document.getElementById('show').model = showModel;
 	});
 	</script>
+	<index-links page="countries.html"></index-links>
 </body>
 </html>

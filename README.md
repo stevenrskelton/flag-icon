@@ -45,6 +45,8 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
+> [Live Demo - Canada Province and Territory Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
+
 ## Usage
 
 1. Add the library using the Javascript package manager [Bower](http://bower.io/):
@@ -76,6 +78,27 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 	<flag-icon key="ca" svg width="100px"></flag-icon>
 	```
 
+Or use it in scripts:
+
+	```javascript
+	var f = new FlagIcon();
+
+	//get country info
+	f.findCountry('canada')
+	//returns { name: 'Canada', alpha2: 'CA', alpha3: 'CAN', numeric: 124 }
+
+	//convert between 2 -> 3 letter character codes
+	f.findCountry('ca').alpha3
+	//returns 'CAN'
+
+	//get full names of states or provinces
+	f.findUSState('ca')
+	//returns { name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' }
+
+	f.findCanadianProvince('ON')
+	//returns { name: 'Ontario', alpha2: 'ON' }
+	```
+
 ## Options
 
 Attribute			| Type			| Default		| Description
@@ -83,6 +106,8 @@ Attribute			| Type			| Default		| Description
 `key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or numeric country code
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *string*		| `16px`		| Width of icon (aspect ratio is maintained)
+`usstate`			| *boolean*		| `false`		| US State flags
+`canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
 
 ## Todo
 - state, provinces, and other types of flags
@@ -91,7 +116,7 @@ Attribute			| Type			| Default		| Description
 - maybe: squared flags
 
 ## Bugs
-- No images of US State flags (only SVG)
+- No images of US State, Canadian Province flags (only SVG)
 - some PNG flags are missing, or out of date
 - some GIFs are smaller than PNGs
 
