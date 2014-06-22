@@ -85,18 +85,18 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 	//get country info
 	f.findCountry('canada')
-	//returns { name: 'Canada', alpha2: 'CA', alpha3: 'CAN', numeric: 124 }
+	//> { name: 'Canada', alpha2: 'CA', alpha3: 'CAN', numeric: 124 }
 
 	//convert between 2 -> 3 letter character codes
 	f.findCountry('ca').alpha3
-	//returns 'CAN'
+	//> 'CAN'
 
 	//get full names of states or provinces
 	f.findUSState('ca')
-	//returns { name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' }
+	//> { name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' }
 
 	f.findCanadianProvince('ON')
-	//returns { name: 'Ontario', alpha2: 'ON' }
+	//> { name: 'Ontario', alpha2: 'ON' }
 	```
 
 ## Options
