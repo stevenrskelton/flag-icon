@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#uses ImageMagick
+for filename in `find . -regex ".*.svg"`; do `convert -background none $filename -adaptive-resize 16x11 ${filename%svg}png`;done

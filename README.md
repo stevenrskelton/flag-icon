@@ -34,6 +34,31 @@ Polymer Web Component for geographic country flag icons.
 ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/br.png "Brazil")
 ![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/country-4x3/is.png "Iceland")
 
+![Alabama](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/alabama.png "Alabama")
+![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/california.png "California")
+![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/delaware.png "Delaware")
+![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/florida.png "Florida")
+![Illinois](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/illinois.png "Illinois")
+![Maine](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/maine.png "Maine")
+![Michigan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/michigan.png "Michigan")
+![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/nevada.png "Nevada")
+![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/north_carolina.png "North Carolina")
+![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/us/texas.png "Texas")
+
+![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/alberta.png "Alberta")
+![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/british_columbia.png "British Columbia")
+![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/manitoba.png "Manitoba")
+![New Brunswick](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/new_brunswick.png "New Brunswick")
+![Newfoundland and Labrador](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/newfoundland_and_labrador.png "Newfoundland and Labrador")
+![Northwest Territories](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/northwest_territories.png "Northwest Territories")
+![Nova Scotia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/nova_scotia.png "Nova Scotia")
+![Nunavut](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/nunavut.png "Nunavut")
+![Ontario](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/ontario.png "Ontario")
+![Prince Edward Island](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/prince_edward_island.png "Prince Edward Island")
+![Qu\u00E9bec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/qu\u00E9bec.png "Qu\u00E9bec")
+![Saskatchewan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/saskatchewan.png "Saskatchewan")
+![Yukon](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/ca/yukon.png "Yukon")
+
 Currently includes both 16x11 images, and larger SVG renders.
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
@@ -112,12 +137,11 @@ Attribute			| Type			| Default		| Description
 ## Todo
 - state, provinces, and other types of flags
 - create iconset single image to save multiple requests
+- border drop shadow on images
 - maybe: different image resolutions
 - maybe: squared flags
 
 ## Bugs
-- No images of US State, Canadian Province flags (only SVG)
-- some PNG flags are missing, or out of date
 - some GIFs are smaller than PNGs
 
 ## History

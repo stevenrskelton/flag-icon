@@ -166,7 +166,7 @@
 				{ name: 'Kenya', alpha2: 'KE', alpha3: 'KEN', numeric: 404 },
 				{ name: 'Kiribati', alpha2: 'KI', alpha3: 'KIR', numeric: 296 },
 				{ name: ['North Korea','Korea, Democratic People\'s Republic of','Korea, North'], alpha2: 'KP', alpha3: 'PRK', numeric: 408 },
-				{ name: ['South Korea','Korea, Republic of','Korea, South','Republic of Korea'], alpha2: 'KR', alpha3: 'KOR', numeric: 410 },
+				{ name: ['Korea Republic','South Korea','Korea, Republic of','Korea, South','Republic of Korea'], alpha2: 'KR', alpha3: 'KOR', numeric: 410 },
 				{ name: 'Kuwait', alpha2: 'KW', alpha3: 'KWT', numeric: 414 },
 				{ name: 'Kyrgyzstan', alpha2: 'KG', alpha3: 'KGZ', numeric: 417 },
 				{ name: ['Lao People\'s Democratic Republic','Laos'], alpha2: 'LA', alpha3: 'LAO', numeric: 418 },
@@ -410,7 +410,7 @@
 					});
 				}else{
 					var upper = id.toUpperCase();
-					if(upper.length>3){
+					if(upper.length>5){
 						data = us_states.filter(function(element, index, array){
 							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
 						});
