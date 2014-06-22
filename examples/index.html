@@ -65,9 +65,9 @@
 			<tr>
 				<td>Class:</td>
 				<td>
-					<input type="radio" name="flagtype" value="country" onchange="classbind(this)" checked>Country
-					<input type="radio" name="flagtype" value="usstate" onchange="classbind(this)">US State
-					<input type="radio" name="flagtype" value="canada" onchange="classbind(this)">Canadian Province
+					<input type="radio" name="flagtype" value="country" onchange="classbind(this,'Canada')" checked>Country
+					<input type="radio" name="flagtype" value="usstate" onchange="classbind(this,'California')">US State
+					<input type="radio" name="flagtype" value="canada" onchange="classbind(this,'Nunavut')">Canadian Province
 				</td>
 			</tr>
 			<tr>
@@ -80,14 +80,14 @@
 		</table>
 	</template>
 	<script>
-	function classbind(t){
+	function classbind(t,text){
 		model.usstate = false;
 		model.canada = false;
 		switch(t.value){
 			case 'usstate': model.usstate = true; break;
 			case 'canada': model.canada = true; break;
 		}
-		model.key = '';
+		model.key = text;
 	}
 	var model = {
 		key: 'Canada',
