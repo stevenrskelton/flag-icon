@@ -78,19 +78,23 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 	<flag-icon key="ca" svg width="100px"></flag-icon>
 	```
 
-Or use it unrendered in scripts:
+5. Or use it unrendered in scripts:
 
 	```javascript
 	var f = new FlagIcon();
+
 	//get country info
 	f.findCountry('canada')
 	//returns { name: 'Canada', alpha2: 'CA', alpha3: 'CAN', numeric: 124 }
+
 	//convert between 2 -> 3 letter character codes
 	f.findCountry('ca').alpha3
 	//returns 'CAN'
+
 	//get full names of states or provinces
 	f.findUSState('ca')
 	//returns { name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' }
+
 	f.findCanadianProvince('ON')
 	//returns { name: 'Ontario', alpha2: 'ON' }
 	```
