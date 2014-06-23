@@ -2,7 +2,7 @@
   "name": "flag-icon",
   "version": "0.3.0",
   "homepage": "https://github.com/stevenrskelton/flag-icon",
-  "description": "Polymer Web Component for icons of flags",
+  "description": "Polymer Web Component for SVG and PNG icons of country, state, and province flags",
   "main": "flag-icon.html",
   "authors": [
     "Steven Skelton"
@@ -22,6 +22,10 @@
     "geography",
     "countries",
     "world",
+    "state",
+    "provincial",
+    "territory",
+    "icon",
     "svg",
     "flag"
   ],
