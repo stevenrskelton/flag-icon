@@ -1,6 +1,6 @@
 {
   "name": "flag-icon",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/stevenrskelton/flag-icon",
   "description": "Polymer Web Component for SVG and PNG icons of country, state, and province flags",
   "main": "flag-icon.html",

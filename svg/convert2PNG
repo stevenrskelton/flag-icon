@@ -1,4 +1,9 @@
 #!/bin/bash
 
 #uses ImageMagick
-for filename in `find . -regex ".*.svg"`; do `convert -background none $filename -adaptive-resize 16x11 ${filename%svg}png`;done
+for filename in `find . -regex ".*.svg"`; do
+convert -background none $filename -filter triangle -interpolative-resize 16x11! -blur 0x.3 -raise 1 thumbnail.png;
+convert thumbnail.png -fill gray55 -colorize 100% -raise 1 -normalize -blur 0x4 overlay.png;
+convert thumbnail.png overlay.png -compose hardlight -composite ${filename%svg}png;
+done
+rm thumbnail.png overlay.png;
