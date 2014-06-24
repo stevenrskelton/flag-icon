@@ -137,6 +137,7 @@ Attribute			| Type			| Default		| Description
 - state, provinces, and other types of flags
 - create iconset single image to save multiple requests
 - border drop shadow on images
+- Non-English country aliases
 - maybe: different image resolutions
 - maybe: squared flags
 
