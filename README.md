@@ -136,8 +136,8 @@ Attribute			| Type			| Default		| Description
 ## Todo
 - state, provinces, and other types of flags
 - create iconset single image to save multiple requests
-- border drop shadow on images
-- Non-English country aliases
+- better border drop shadow on images
+- optimize image sizes
 - maybe: different image resolutions
 - maybe: squared flags
 

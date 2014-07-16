@@ -30,33 +30,18 @@
 
 	<index-links page="index.html" examples></index-links>
 
-	<h2>Many input formats are allowed</h2>
-
-	<div style="margin-left:50px;">
-		<flag-icon key="Korea Republic"></flag-icon><pre>&lt;flag-icon key="Korea Republic"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="Republic of Korea"></flag-icon><pre>&lt;flag-icon key="Republic of Korea"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="Korea, Republic of"></flag-icon><pre>&lt;flag-icon key="Korea, Republic of"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="RePUBlic of KOREA"></flag-icon><pre>&lt;flag-icon key="RePUBlic of KOREA"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="KR"></flag-icon><pre>&lt;flag-icon key="KR"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="KOR"></flag-icon><pre>&lt;flag-icon key="KOR"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="410"></flag-icon><pre>&lt;flag-icon key="410"&gt;&lt;/flag-icon&gt;</pre>
-		<br>
-		<flag-icon key="South Korea"></flag-icon><pre>&lt;flag-icon key="South Korea"&gt;&lt;/flag-icon&gt;</pre>
-	</div>
-
 	<h2>Try and Find a Flag</h2>
+
+	<polymer-element name="json-stringify" attributes="data">
+		<template><pre>{{json}}</pre></template>
+		<script>Polymer('json-stringify', { dataChanged: function(o,n){ this.json = JSON.stringify(n); } });</script>
+	</polymer-element>
 
 	<template id="test" bind>
 		<table>
 			<tr>
 				<td rowspan="99" style="padding-right:20px">
-					<flag-icon key="{{key}}" width="72px" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}"></flag-icon>
+					<flag-icon key="{{key}}" width="72px" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" data="{{data}}"></flag-icon>
 				</td>
 			</tr>
 			<tr>
@@ -78,7 +63,38 @@
 				</td>
 			</tr>
 		</table>
+		<json-stringify data="{{data}}"></json-stringify>
 	</template>
+
+	<h2>Many input formats are allowed</h2>
+
+	<div style="margin-left:10px;">
+		<flag-icon key="Korea Republic"></flag-icon><pre>&lt;flag-icon key="Korea Republic"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="Republic of Korea"></flag-icon><pre>&lt;flag-icon key="Republic of Korea"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="Korea, Republic of"></flag-icon><pre>&lt;flag-icon key="Korea, Republic of"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="RePUBlic of KOREA"></flag-icon><pre>&lt;flag-icon key="RePUBlic of KOREA"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="KR"></flag-icon><pre>&lt;flag-icon key="KR"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="KOR"></flag-icon><pre>&lt;flag-icon key="KOR"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="410"></flag-icon><pre>&lt;flag-icon key="410"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="South Korea"></flag-icon><pre>&lt;flag-icon key="South Korea"&gt;&lt;/flag-icon&gt;</pre>
+	</div>
+	<h3>Including Endonyms</h3>
+	<div style="margin-left:10px;">
+		<flag-icon key="Hanguk"></flag-icon><pre>&lt;flag-icon key="Hanguk"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="한국"></flag-icon><pre>&lt;flag-icon key="한국"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="韓國"></flag-icon><pre>&lt;flag-icon key="韓國"&gt;&lt;/flag-icon&gt;</pre>
+		<br>
+		<flag-icon key="Nam-josŏn"></flag-icon><pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
+	</div>
 	<script>
 	function classbind(t,text){
 		model.usstate = false;
