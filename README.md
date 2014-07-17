@@ -1,7 +1,7 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for flags. **SVG as well as 16x11, 32x24, and 64x48 PNG images.**
+Polymer Web Component for flags. **SVG; 16x11, 32x24, and 64x48 PNG images.**
 
 ### Countries
 
@@ -138,7 +138,7 @@ Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
 `key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or numeric country code
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
-`width`				| *string*		| `16`			| Width of icon (aspect ratio is maintained). Optimal resolution will be used.
+`width`				| *integer*		| `16`			| Width of icon (aspect ratio is maintained). Optimal resolution will be used.
 `usstate`			| *boolean*		| `false`		| US State flags
 `canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
