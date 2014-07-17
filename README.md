@@ -1,7 +1,7 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for flags.
+Polymer Web Component for flags. **SVG as well as 16x11, 32x24, and 64x48 PNG images.**
 
 ### Countries
 
@@ -63,8 +63,6 @@ Polymer Web Component for flags.
 ![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/nevada.png "Nevada")
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/texas.png "Texas")
-
-**SVG as well as 16x11, 32x24, and 64x48 PNG images.**
 
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
