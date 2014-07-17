@@ -55,32 +55,25 @@
 	</template>
 
 	<script>
-	var ca_provinces = [
-		{ name: 'Alberta', alpha2: 'AB' },
-		{ name: 'British Columbia', alpha2: 'BC' },
-		{ name: 'Manitoba', alpha2: 'MB' },
-		{ name: 'New Brunswick', alpha2: 'NB' },
-		{ name: 'Newfoundland and Labrador', alpha2: 'NL' },
-		{ name: 'Northwest Territories', alpha2: 'NT' },
-		{ name: 'Nova Scotia', alpha2: 'NS' },
-		{ name: 'Nunavut', alpha2: 'NU' },
-		{ name: 'Ontario', alpha2: 'ON' },
-		{ name: 'Prince Edward Island', alpha2: 'PE' },
-		{ name: 'Qu\u00E9bec', alpha2: 'QC' },
-		{ name: 'Saskatchewan', alpha2: 'SK' },
-		{ name: 'Yukon', alpha2: 'YT' }
-	];
+	var flagicon;
 	var showModel = {
 		name: 'British Columbia',
 		key: 'BC'
 	};
+	function head(arr){
+		if(typeof arr == "object"){
+			if(arr.length>0) return arr[0];
+			else return null;
+		} else return arr;
+	};
 	function changeShow(key){
 		showModel.key = key;
-		showModel.name = ca_provinces.filter(function(row){ return row.alpha2 == key; })[0].name;
-	}
+		showModel.name = head(flagicon.ca_provinces.filter(function(row){ return row.alpha2 == key; })[0].name);
+	};
 	window.addEventListener('polymer-ready', function(){
+		flagicon = new FlagIcon();
 		document.getElementById('flags').model = {
-			flags: ca_provinces
+			flags: flagicon.ca_provinces.map(function(t){ return { name: head(t.name), alpha2: t.alpha2 }; })
 		};
 		document.getElementById('show').model = showModel;
 	});

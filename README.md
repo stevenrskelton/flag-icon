@@ -65,11 +65,15 @@ Currently includes both 16x11 images, and larger SVG renders.
 
 Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
+> [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/examples/index.html)
+
 > [Live Demo - World Country Flags](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
 > [Live Demo - Canada Province and Territory Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
+
+> [Live Demo - Maritime and International Code of Signals (ICS) Flags](http://files.stevenskelton.ca/flag-icon/examples/maritime.html)
 
 ## Usage
 
@@ -134,12 +138,12 @@ Attribute			| Type			| Default		| Description
 `canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
 
 ## Todo
-- state, provinces, and other types of flags
-- create iconset single image to save multiple requests
 - better border drop shadow on images
 - optimize image sizes
-- maybe: different image resolutions
+- different image resolutions
+- maybe: create iconset single image to save multiple requests
 - maybe: squared flags
+- maybe: more state, provinces, and other types of flags
 
 ## Bugs
 - some GIFs are smaller than PNGs

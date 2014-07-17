@@ -28,43 +28,44 @@
 <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
 
-	<index-links page="index.html" examples></index-links>
+	<div style="border:1px solid #666;background-color:#ddd;padding:15px;display:inline-block;">
+		<h2 style="margin-top:5px;">Try and Find a Flag</h2>
 
-	<h2>Try and Find a Flag</h2>
+		<polymer-element name="json-stringify" attributes="data">
+			<template><pre>{{json}}</pre></template>
+			<script>Polymer('json-stringify', { dataChanged: function(o,n){ this.json = JSON.stringify(n); } });</script>
+		</polymer-element>
 
-	<polymer-element name="json-stringify" attributes="data">
-		<template><pre>{{json}}</pre></template>
-		<script>Polymer('json-stringify', { dataChanged: function(o,n){ this.json = JSON.stringify(n); } });</script>
-	</polymer-element>
-
-	<template id="test" bind>
-		<table>
-			<tr>
-				<td rowspan="99" style="padding-right:20px">
-					<flag-icon key="{{key}}" width="72px" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" data="{{data}}"></flag-icon>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="text" value="{{key}}" style="font-size:larger"></td>
-			</tr>
-			<tr>
-				<td>Class:</td>
-				<td>
-					<input type="radio" name="flagtype" value="country" onchange="classbind(this,'Canada')" checked>Country
-					<input type="radio" name="flagtype" value="usstate" onchange="classbind(this,'California')">US State
-					<input type="radio" name="flagtype" value="canada" onchange="classbind(this,'Nunavut')">Canadian Province
-				</td>
-			</tr>
-			<tr>
-				<td>Render:</td>
-				<td>
-					<input type="radio" name="render" value="png" onchange="model.svg = false">PNG
-					<input type="radio" name="render" value="svg" onchange="model.svg = true" checked>SVG
-				</td>
-			</tr>
-		</table>
-		<json-stringify data="{{data}}"></json-stringify>
-	</template>
+		<template id="test" bind>
+			<table>
+				<tr>
+					<td rowspan="99" style="padding-right:20px;width:72px">
+						<flag-icon key="{{key}}" width="72px" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" maritime="{{maritime}}" data="{{data}}"></flag-icon>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="text" value="{{key}}" style="font-size:larger"></td>
+				</tr>
+				<tr>
+					<td>Flag Set:</td>
+					<td>
+						<input type="radio" name="flagtype" value="country" onchange="classbind(this,'Canada')" checked id="country"><label for="country">Country</label>
+						<input type="radio" name="flagtype" value="usstate" onchange="classbind(this,'California')" id="usstate"><label for="usstate">US State</label>
+						<input type="radio" name="flagtype" value="canada" onchange="classbind(this,'Nunavut')" id="canada"><label for="canada">Canadian Province</label>
+						<input type="radio" name="flagtype" value="maritime" onchange="classbind(this,'alpha')" id="maritime"><label for="maritime">Maritime / ICS</label>
+					</td>
+				</tr>
+				<tr>
+					<td>Render:</td>
+					<td>
+						<input type="radio" name="render" value="png" onchange="model.svg = false" id="png"><label for="png">PNG</label>
+						<input type="radio" name="render" value="svg" onchange="model.svg = true" checked id="svg"><label for="svg">SVG</label>
+					</td>
+				</tr>
+			</table>
+			<json-stringify data="{{data}}"></json-stringify>
+		</template>
+	</div>
 
 	<h2>Many input formats are allowed</h2>
 
@@ -95,13 +96,16 @@
 		<br>
 		<flag-icon key="Nam-josŏn"></flag-icon><pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
 	</div>
+	<index-links page="index.html"></index-links>
 	<script>
 	function classbind(t,text){
 		model.usstate = false;
 		model.canada = false;
+		model.maritime = false;
 		switch(t.value){
 			case 'usstate': model.usstate = true; break;
 			case 'canada': model.canada = true; break;
+			case 'maritime': model.maritime = true; break;
 		}
 		model.key = text;
 	}

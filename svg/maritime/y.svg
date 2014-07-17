@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+<rect fill="#F00" width="600" height="600"/>
+<path stroke="#FF0" stroke-width="850" stroke-dasharray="84,86" d="M0,0 600,600"/>
+<path fill="none" stroke="#000" stroke-width="2.5" d="M0,0H600V600H0z"/>
+</svg>

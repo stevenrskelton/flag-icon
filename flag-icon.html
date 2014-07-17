@@ -4,30 +4,34 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height usstate canada" constructor="FlagIcon">
+<polymer-element name="flag-icon" attributes="key data svg width height usstate canada maritime" constructor="FlagIcon">
   <template>
 	<style>
 		:host { display: inline; }
 	</style>
-	<image alt="flag" title="{{title}}" src="{{src}}" width="{{width}}" />
+	<image alt="{{src ? 'flag' : ''}}" title="{{title}}" src="{{src}}" width="{{width}}" />
   </template>
   <script>
 	Polymer('flag-icon', {
+		key: null,
 		data: null,
 		svg: false,
 		width: '16px',
 		usstate: false,
 		canada: false,
+		maritime: false,
 		title: null,
 		src: null,
 		svgChanged: function(){ this.keyChanged(null,this.key); },
 		keyChanged: function(a,val){
 			var d;
-			if(val){
+			if(val!=null){
 				if(this.usstate){
 					d = this.findUSState(val, this.us_states);
 				}else if(this.canada){
 					d = this.findCanadianProvince(val, this.ca_provinces);
+				}else if(this.maritime){
+					d = this.findMaritime(val, this.maritimes);
 				}else{
 					d = this.findCountry(val, this.countries);
 				}
@@ -48,7 +52,6 @@
 		},
 		created: function(){
 			var countries = [
-				{ name: ['Abkhazia','Republic of Abkhazia','Apsny'], alpha2: 'AB', endonym: ['Apsny','\u0410\u04A7\u0441\u043D\u044B','Abkhaziya','\u0410\u0431\u0445\u0430\u0437\u0438\u044F'] },
 				{ name: 'Afghanistan', alpha2: 'AF', alpha3: 'AFG', numeric: 4, endonym: ['Afghanestan','\u0627\u0641\u063A\u0627\u0646\u0633\u062A\u0627\u0646'] },
 				{ name: ['\u00C5land Islands','Aland Islands'], alpha2: 'AX', alpha3: 'ALA', numeric: 248 },
 				{ name: 'Albania', alpha2: 'AL', alpha3: 'ALB', numeric: 8, endonym: ['Shqip\u00EBria'] },
@@ -298,6 +301,7 @@
 				{ name: 'Yemen', alpha2: 'YE', alpha3: 'YEM', numeric: 887, endonym: ['Al-Yaman','\u0627\u0644\u064A\u0645\u0646'] },
 				{ name: 'Zambia', alpha2: 'ZM', alpha3: 'ZMB', numeric: 894 },
 				{ name: 'Zimbabwe', alpha2: 'ZW', alpha3: 'ZWE', numeric: 716 },
+				{ name: ['Abkhazia','Republic of Abkhazia','Apsny'], alpha2: 'AB', endonym: ['Apsny','\u0410\u04A7\u0441\u043D\u044B','Abkhaziya','\u0410\u0431\u0445\u0430\u0437\u0438\u044F'] },
 				{ name: ['Republic of South Ossetia','South Ossetia','Tskhinvali Region','SouthOssetia'], alpha2: 'SOUTHOSSETIA', endonym: ['Khussar Iryston','\u0425\u0443\u0441\u0441\u0430\u0440 \u0418\u0440\u044B\u0441\u0442\u043E\u043D','Samkhret Oseti','\u10E1\u10D0\u10DB\u10EE\u10E0\u10D4\u10D7\u10D8 \u10DD\u10E1\u10D4\u10D7\u10D8','\u042E\u0436\u043D\u0430\u044F \u041E\u0441\u0435\u0442\u0438\u044F','Yuzhnaya Osetiya'] },
 				{ name: ['Turkish Republic of Northern Cyprus','Northern Cyprus','NorthernCyprus'], alpha2: 'NORTHERNCYPRUS', endonym: ['Kuzey K\u0131br\u0131s'] },
 				{ name: ['Kosovo','Republic of Kosovo'], alpha2: 'XK', endonym: ['Kosova','\u041A\u043E\u0441\u043E\u0432\u043E'] },
@@ -376,6 +380,44 @@
 				{ name: 'Saskatchewan', alpha2: 'SK' },
 				{ name: 'Yukon', alpha2: 'YT' }
 			];
+			var maritimes = [
+				{ name: 'zero', key: 0 },
+				{ name: 'one', key: 1 },
+				{ name: 'two', key: 2 },
+				{ name: 'three', key: 3 },
+				{ name: 'four', key: 4 },
+				{ name: 'five', key: 5 },
+				{ name: 'six', key: 6 },
+				{ name: 'seven', key: 7 },
+				{ name: 'eight', key: 8 },
+				{ name: 'nine', key: 9 },
+				{ name: 'alpha', key: 'a' },
+				{ name: 'bravo', key: 'b' },
+				{ name: 'charlie', key: 'c' },
+				{ name: 'delta', key: 'd' },
+				{ name: 'echo', key: 'e' },
+				{ name: 'foxtrot', key: 'f' },
+				{ name: 'golf', key: 'g' },
+				{ name: 'hotel', key: 'h' },
+				{ name: 'india', key: 'i' },
+				{ name: 'juliet', key: 'j' },
+				{ name: 'kilo', key: 'k' },
+				{ name: 'lima', key: 'l' },
+				{ name: 'mike', key: 'm' },
+				{ name: 'november', key: 'n' },
+				{ name: 'oscar', key: 'o' },
+				{ name: 'papa', key: 'p' },
+				{ name: 'quebec', key: 'q' },
+				{ name: 'romeo', key: 'r' },
+				{ name: 'sierra', key: 's' },
+				{ name: 'tango', key: 't' },
+				{ name: 'uniform', key: 'u' },
+				{ name: 'victor', key: 'v' },
+				{ name: 'whiskey', key: 'w' },
+				{ name: 'xray', key: 'x' },
+				{ name: 'yankee', key: 'y' },
+				{ name: 'zulu', key: 'z' }
+			];
 			function head(arr){
 				if(typeof arr == "object"){
 					if(arr.length>0) return arr[0];
@@ -415,7 +457,7 @@
 					});
 				}else{
 					var upper = id.toUpperCase();
-					if(upper.length>5){
+					if(upper.length>=5){
 						data = us_states.filter(function(element, index, array){
 							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
 						});
@@ -441,6 +483,14 @@
 					});
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'ca/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.maritimes = maritimes;
+			this.findMaritime = function(id){
+				var lower = id.toLowerCase ? id.toLowerCase() : id;
+				var data = maritimes.filter(function(element, index, array){
+					return element.name == lower || element.key == lower;
+				});
+				return head(data.map(function(element){ return { title: element.name, data: element, file: 'maritime/' + element.key }; }));
 			}
 		}
 	});

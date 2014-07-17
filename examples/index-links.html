@@ -1,4 +1,4 @@
-<polymer-element name="index-links" attributes="page examples">
+<polymer-element name="index-links" attributes="page examples" style="clear:both">
 	<template>
 		<template if="{{examples}}">
 			<ul>
@@ -20,10 +20,11 @@
 	Polymer('index-links', {
 		examples: false,
 		example: [
-			{ href:"index.html", name:"Parameters" },
+			{ href:"index.html", name:"General Use" },
 			{ href:"countries.html", name:"World Country Flags" },
 			{ href:"us-states.html", name: "USA State Flags" },
-			{ href:"canada-provinces.html", name: "Canada Province and Territory Flags" }
+			{ href:"canada-provinces.html", name: "Canada Province and Territory Flags" },
+			{ href:"maritime.html", name: "Maritime and ICS Flags" }
 		]
 	});
 	</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <head>
+	<title>Country Flag Icons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="../../platform/platform.js"></script>
+	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="index-links.html">
+	<style>
+		.icon {
+			float:left;
+			text-align:center;
+			font-variant: small-caps;
+			width:75px;
+			padding-bottom: 20px;
+		}
+	</style>
+  </head>
+  <body unresolved>
+	<h1>&lt;flag-icon&gt; Demos</h1>
+
+	<template id="flags" repeat="{{flags}}">
+		<div class="icon">
+			<flag-icon key="{{key}}" maritime svg width="32px"></flag-icon><br>
+			{{name}}<br>
+			{{key}}
+		</div>
+	</template>
+
+	<p>
+
+	<script>
+	var flagicon;
+	window.addEventListener('polymer-ready', function(){
+		flagicon = new FlagIcon();
+		document.getElementById('flags').model = {
+			flags: flagicon.maritimes
+		};
+	});
+	</script>
+	<index-links page="maritime.html"></index-links>
+  </body>
+</html>
