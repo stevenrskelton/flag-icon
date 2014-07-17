@@ -1,7 +1,9 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for geographic country flag icons.
+Polymer Web Component for flags.
+
+### Countries
 
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/kr.png "Korea")
@@ -30,20 +32,15 @@ Polymer Web Component for geographic country flag icons.
 ![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/jp.png "Japan")
 ![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/ie.png "Ireland")
 ![Bermuda](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/bm.png "Bermuda")
+![Isle of Man](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/im.png "Isle of Man")
+![Montenegro](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/me.png "Montenegro")
+![Norfolk Island](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/nf.png "Norfolk Island")
 ![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/it.png "Italy")
 ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/br.png "Brazil")
 ![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/is.png "Iceland")
 
-![Alabama](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/alabama.png "Alabama")
-![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/california.png "California")
-![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/delaware.png "Delaware")
-![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/florida.png "Florida")
-![Illinois](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/illinois.png "Illinois")
-![Maine](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/maine.png "Maine")
-![Michigan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/michigan.png "Michigan")
-![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/nevada.png "Nevada")
-![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/north_carolina.png "North Carolina")
-![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/texas.png "Texas")
+### States and Provinces
+
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/british_columbia.png "British Columbia")
 ![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/manitoba.png "Manitoba")
@@ -57,8 +54,18 @@ Polymer Web Component for geographic country flag icons.
 ![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/québec.png "Québec")
 ![Saskatchewan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/saskatchewan.png "Saskatchewan")
 ![Yukon](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/ca/yukon.png "Yukon")
+![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/california.png "California")
+![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/delaware.png "Delaware")
+![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/florida.png "Florida")
+![Illinois](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/illinois.png "Illinois")
+![Maine](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/maine.png "Maine")
+![Michigan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/michigan.png "Michigan")
+![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/nevada.png "Nevada")
+![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/north_carolina.png "North Carolina")
+![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/us/texas.png "Texas")
 
-Currently includes: 16x11, 32x24, and 64x48 PNG images, and larger SVG renders.
+**SVG as well as 16x11, 32x24, and 64x48 PNG images.**
+
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
