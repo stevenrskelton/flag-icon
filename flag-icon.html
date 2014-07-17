@@ -16,7 +16,7 @@
 		key: null,
 		data: null,
 		svg: false,
-		width: '16px',
+		width: 16,
 		usstate: false,
 		canada: false,
 		maritime: false,
@@ -42,7 +42,9 @@
 				if(this.svg){
 					this.src = this.resolvePath('svg/' + d.file + '.svg');
 				}else{
-					this.src = this.resolvePath('png/' + d.file + '.png');
+					if(+this.width >= 64) this.src = this.resolvePath('png/64/' + d.file + '.png');
+					else if(+this.width >= 32) this.src = this.resolvePath('png/32/' + d.file + '.png');
+					else this.src = this.resolvePath('png/' + d.file + '.png');
 				}
 			}else{
 				this.data = null;
@@ -427,8 +429,8 @@
 			this.countries = countries;
 			this.findCountry = function(id){
 				var data;
-				if(typeof id === 'number' || id * 1 == id){
-					var num = id * 1;
+				if(typeof id === 'number' || +id == id){
+					var num = +id;
 					data = countries.filter(function(element, index, array){
 						return element.numeric == num;
 					});
@@ -450,20 +452,23 @@
 			this.us_states = us_states;
 			this.findUSState = function(id){
 				var data;
-				if(typeof id === 'number' || id * 1 == id){
-					var num = id * 1;
+				if(typeof id === 'number' || +id == id){
+					var num = +id;
 					data = us_states.filter(function(element, index, array){
 						return element.numeric == num;
 					});
 				}else{
 					var upper = id.toUpperCase();
-					if(upper.length>=5){
+					if(upper.length==2){
 						data = us_states.filter(function(element, index, array){
-							return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+							return element.alpha2 == upper;
 						});
 					}else{
 						data = us_states.filter(function(element, index, array){
-							return element.iso == upper || element.alpha2 == upper || element.gpo.toUpperCase() == upper;
+							var t1 = element.iso == upper;
+							var t2 = element.gpo.toUpperCase() == upper;
+							var t3 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+							return t1 || t2 || t3;
 						});
 					}
 				}

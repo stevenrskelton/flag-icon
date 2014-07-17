@@ -1,0 +1,46 @@
+<link rel="import" href="../flag-icon.html">
+<polymer-element name="flag-show" attributes="name key endonym canada usstate" noscript>
+	<template>
+		<style>
+			.show {
+				position: fixed;
+				left: 725px;
+				top: 15px;
+				text-align: center;
+				border:1px solid #666;
+				background-color:#ddd;
+				min-height: 425px;
+				padding:15px;
+			}
+			.show flag-icon {
+				display: block;
+			}
+		</style>
+		<div class="show">
+			<h2 style="margin-bottom:0px">{{name}}</h2>
+			<template if="{{endonym}}">{{endonym}}</template><br><br>
+			<table>
+				<tr>
+					<td style="width:33%">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="64"></flag-icon>
+						64 x 48
+					</td>
+					<td style="width:33%">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="32"></flag-icon>
+						32 x 24
+					</td>
+					<td style="width:33%">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}"></flag-icon>
+						16 x 11
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" svg width="350"></flag-icon>
+						350px SVG
+					</td>
+				</tr>
+			</table>
+		</div>
+	</template>
+</polymer-element>

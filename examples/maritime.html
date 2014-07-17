@@ -20,9 +20,21 @@
   <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
 
+	<h2>SVG</h2>
+
 	<template id="flags" repeat="{{flags}}">
 		<div class="icon">
 			<flag-icon key="{{key}}" maritime svg width="32px"></flag-icon><br>
+			{{name}}<br>
+			{{key}}
+		</div>
+	</template>
+
+	<h2 style="clear:left">PNG</h2>
+
+	<template id="flags2" repeat="{{flags}}">
+		<div class="icon">
+			<flag-icon key="{{key}}" maritime></flag-icon><br>
 			{{name}}<br>
 			{{key}}
 		</div>
@@ -35,6 +47,9 @@
 	window.addEventListener('polymer-ready', function(){
 		flagicon = new FlagIcon();
 		document.getElementById('flags').model = {
+			flags: flagicon.maritimes
+		};
+		document.getElementById('flags2').model = {
 			flags: flagicon.maritimes
 		};
 	});

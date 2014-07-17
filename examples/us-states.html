@@ -7,16 +7,7 @@
 	<script src="../../platform/platform.js"></script>
 	<link rel="import" href="../flag-icon.html">
 	<link rel="import" href="index-links.html">
-	<style>
-		.show {
-			position: fixed;
-			left: 725px;
-			top: 15px;
-		}
-		.show flag-icon {
-			display: block;
-		}
-	</style>
+	<link rel="import" href="flag-show.html">
   </head>
   <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
@@ -40,40 +31,21 @@
 		</template>
 	</table>
 
-	<template id="show" bind>
-		<div class="show">
-			<h2>{{name}}</h2>
-			<p/>
-			<flag-icon key="{{key}}" usstate></flag-icon>
-			16x11 (default)
-			<p/>
-			<flag-icon key="{{key}}" usstate width="100px"></flag-icon>
-			100px Scaled PNG
-			<p/>
-			<flag-icon key="{{key}}" usstate svg width="100px"></flag-icon>
-			100px Scaled SVG
-			<p/>
-			<flag-icon key="{{key}}" usstate svg width="350px"></flag-icon>
-			350px Scaled SVG
-		</div>
-	</template>
+	<flag-show id="show" name="{{name}}" key="{{key}}" usstate="true"></flag-show>
 
 	<script>
 	var flagicon;
-	var showModel = {
-		name: 'District of Columbia',
-		key: 'DC'
-	};
 	function changeShow(key){
-		showModel.key = key;
-		showModel.name = flagicon.us_states.filter(function(row){ return row.alpha2 == key; })[0].name;
+		document.getElementById('show').key = key;
+		document.getElementById('show').name = flagicon.us_states.filter(function(row){ return row.alpha2 == key; })[0].name;
 	}
 	window.addEventListener('polymer-ready', function(){
 		flagicon = new FlagIcon();
 		document.getElementById('usTable').model = {
 			us: flagicon.us_states
 		};
-		document.getElementById('show').model = showModel;
+		document.getElementById('show').key = 'DC';
+		document.getElementById('show').name = 'District of Columbia';
 	});
 	</script>
 	<index-links page="us-states.html"></index-links>
