@@ -146,6 +146,7 @@ Attribute			| Type			| Default		| Description
 
 ## Todo
 - better border drop shadow on images
+- different image themes and/or ability to restyle with CSS
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags
 - _maybe:_ more state, provinces, and other types of flags
