@@ -66,6 +66,7 @@ Polymer Web Component for flags. **SVG; 16x11, 32x24, and 64x48 PNG images.**
 
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
+* PNGs are compacted using [pngcrush](http://en.wikipedia.org/wiki/Pngcrush).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
 Maintained by [Steven Skelton](https://github.com/stevenrskelton)
