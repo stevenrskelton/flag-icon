@@ -1,0 +1,11 @@
+<link rel="import" href="../polymer/polymer.html">
+<polymer-element name="json-stringify" attributes="data">
+	<template><pre>{{json}}</pre></template>
+	<script>
+	Polymer('json-stringify', { 
+		dataChanged: function() {
+			this.job('refreshJSON', function() { this.json = JSON.stringify(this.data); }, 500);
+		}
+	});
+	</script>
+</polymer-element>

@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<script src="../../platform/platform.js"></script>
 	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="json-stringify.html">
 	<link rel="import" href="index-links.html">
 	<style>
 		.show {
@@ -30,11 +31,6 @@
 
 	<div style="border:1px solid #666;background-color:#ddd;padding:15px;display:inline-block;">
 		<h2 style="margin-top:5px;">Try and Find a Flag</h2>
-
-		<polymer-element name="json-stringify" attributes="data">
-			<template><pre>{{json}}</pre></template>
-			<script>Polymer('json-stringify', { dataChanged: function(o,n){ this.json = JSON.stringify(n); } });</script>
-		</polymer-element>
 
 		<template id="test" bind>
 			<table>
@@ -86,7 +82,9 @@
 		<br>
 		<flag-icon key="South Korea"></flag-icon><pre>&lt;flag-icon key="South Korea"&gt;&lt;/flag-icon&gt;</pre>
 	</div>
+
 	<h3>Including Endonyms</h3>
+
 	<div style="margin-left:10px;">
 		<flag-icon key="Hanguk"></flag-icon><pre>&lt;flag-icon key="Hanguk"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
@@ -96,6 +94,7 @@
 		<br>
 		<flag-icon key="Nam-josŏn"></flag-icon><pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
 	</div>
+
 	<index-links page="index.html"></index-links>
 	<script>
 	function classbind(t,text){

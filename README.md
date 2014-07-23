@@ -5,6 +5,44 @@ Polymer Web Component for flags. **SVG; 16x11, 32x24, and 64x48 PNG images.**
 
 ### Countries
 
+16 x 11 PNG
+
+![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada")
+![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/kr.png "Korea")
+![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany")
+![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia")
+![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/fr.png "France")
+![European Union](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/europeanunion.png "European Union")
+![Angola](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ao.png "Angola")
+![Belgium](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/be.png "Belgium")
+![Austria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/at.png "Austria")
+![Mozambique](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/mz.png "Mozambique")
+![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/no.png "Norway")
+![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ph.png "Philippines")
+![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spain")
+![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/gb.png "United Kingdom")
+![India](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/in.png "India")
+![Costa Rica](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/cr.png "Costa Rica")
+![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/za.png "South Africa")
+![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/th.png "Thailand")
+![Sri Lanka](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/lk.png "Sri Lanka")
+![Sweden](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/se.png "Sweden")
+![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/si.png "Slovenia")
+![Papua New Guinea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/pg.png "Papua New Guinea")
+![Maldives](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/mv.png "Maldives")
+![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "India")
+![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/jp.png "Japan")
+![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ie.png "Ireland")
+![Bermuda](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/bm.png "Bermuda")
+![Isle of Man](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/im.png "Isle of Man")
+![Montenegro](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/me.png "Montenegro")
+![Norfolk Island](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/nf.png "Norfolk Island")
+![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/it.png "Italy")
+![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil")
+![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/is.png "Iceland")
+
+64 x 48 PNG
+
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/kr.png "Korea")
 ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/64/country-4x3/de.png "Germany")
@@ -73,6 +111,8 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 > [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/examples/index.html)
 
+> [Live Demo - Themes and Popover](http://files.stevenskelton.ca/flag-icon/examples/themes.html)
+
 > [Live Demo - World Country Flags](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
@@ -103,13 +143,16 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 	```html
 	<flag-icon key="ca"></flag-icon>
-	<flag-icon key="can"></flag-icon>
 	<flag-icon key="canada"></flag-icon>
 	<flag-icon key="124"></flag-icon>
 	<!-- specify to use SVGs -->
 	<flag-icon key="ca" svg></flag-icon>
 	<!-- specify a specific size -->
 	<flag-icon key="ca" svg width="100"></flag-icon>
+
+	<!-- Specify alt & title text,
+	     otherwise it defaults to the official country name -->
+	<flag-icon key="can">Flag of Canada</flag-icon>
 	```
 
 5. Or use it unrendered in scripts:
@@ -139,7 +182,9 @@ Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
 `key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or numeric country code
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
-`width`				| *integer*		| `16`			| Width of icon (aspect ratio is maintained). Optimal resolution will be used.
+`width`				| *integer*		| `16`			| Width of icon (aspect ratio maintained if `height` omitted).
+`height`			| *integer*		| _auto_		| Height of icon (aspect ratio maintained if `width` omitted).
+`background`		| *boolean*		| `false`		| Render flag as a CSS background rather than as an `img`
 `usstate`			| *boolean*		| `false`		| US State flags
 `canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags

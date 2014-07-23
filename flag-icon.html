@@ -4,19 +4,33 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height usstate canada maritime" constructor="FlagIcon">
+<polymer-element name="flag-icon" attributes="key data svg width height background usstate canada maritime" constructor="FlagIcon"
+	style="
+		display: inline-block;
+		line-height: 0;
+	">
   <template>
-	<style>
-		:host { display: inline; }
-	</style>
-	<image alt="{{src ? 'flag' : ''}}" title="{{title}}" src="{{src}}" width="{{width}}" />
+	<template if="{{background}}">
+		<div title="{{title}}" style="
+			background: url({{src}});
+			background-size: cover;
+			background-position: center center;
+			width: {{width}}px;
+			height: {{height}}px;
+		"></div>
+	</template>
+	<template if="{{!background && height==null}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" width="{{width}}"></template>
+	<template if="{{!background && width==null}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" height="{{height}}"></template>
+	<template if="{{!background && width && height}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" width="{{width}}" height="{{height}}"></template>
   </template>
   <script>
 	Polymer('flag-icon', {
 		key: null,
 		data: null,
 		svg: false,
-		width: 16,
+		background: false,
+		width: null,
+		height: null,
 		usstate: false,
 		canada: false,
 		maritime: false,
@@ -25,6 +39,7 @@
 		svgChanged: function(){ this.keyChanged(null,this.key); },
 		keyChanged: function(a,val){
 			var d;
+			var dataTitle;
 			if(val!=null){
 				if(this.usstate){
 					d = this.findUSState(val, this.us_states);
@@ -36,21 +51,29 @@
 					d = this.findCountry(val, this.countries);
 				}
 			}
+			if(!this.width && !this.height) this.width = 16;
+			if(this.background){
+				if(!this.height) this.height = this.width * 3 / 4;
+				if(!this.width) this.width = this.height * 4 / 3;
+			}
 			if(d){
 				this.data = d.data;
-				this.title = d.title;
+				dataTitle = d.title;
 				if(this.svg){
 					this.src = this.resolvePath('svg/' + d.file + '.svg');
 				}else{
-					if(+this.width >= 64) this.src = this.resolvePath('png/64/' + d.file + '.png');
-					else if(+this.width >= 32) this.src = this.resolvePath('png/32/' + d.file + '.png');
-					else this.src = this.resolvePath('png/' + d.file + '.png');
+					var w = +this.width;
+					if(w==null) w = +this.height * 4 / 3;
+					var size = (w >= 64) ? '64' : (w >= 32) ? '32' : '16';
+					this.src = this.resolvePath('png/' + size + '/' + d.file + '.png');
 				}
 			}else{
 				this.data = null;
-				this.title = null;
+				dataTitle = null;
 				this.src = null;
 			}
+			var userTitle = this.textContent.trim();
+			this.title = (userTitle.length>0) ? userTitle : dataTitle;
 		},
 		created: function(){
 			var countries = [
@@ -85,7 +108,7 @@
 				{ name: 'Bosnia and Herzegovina', alpha2: 'BA', alpha3: 'BIH', numeric: 70, endonym: ['Bosna i Hercegovina','\u0411\u043E\u0441\u043D\u0430 \u0438 \u0425\u0435\u0440\u0446\u0435\u0433\u043E\u0432\u0438\u043D\u0430'] },
 				{ name: 'Botswana', alpha2: 'BW', alpha3: 'BWA', numeric: 72 },
 				{ name: 'Bouvet Island', alpha2: 'BV', alpha3: 'BVT', numeric: 74 },
-				{ name: 'Brazil', alpha2: 'BR', alpha3: 'BRA', numeric: 76, endonym: ['Brasil'] },
+				{ name: ['Brazil','Federative Republic of Brazil'], alpha2: 'BR', alpha3: 'BRA', numeric: 76, endonym: ['Brasil','Rep\u00FAblica Federativa do Brasil'] },
 				{ name: 'British Indian Ocean Territory', alpha2: 'IO', alpha3: 'IOT', numeric: 86 },
 				{ name: ['Nation of Brunei, the Abode of Peace','Brunei Darussalam','Brunei'], alpha2: 'BN', alpha3: 'BRN', numeric: 96, endonym: ['\u0628\u0631\u0648\u0646\u064A'] },
 				{ name: 'Bulgaria', alpha2: 'BG', alpha3: 'BGR', numeric: 100, endonym: ['Bulgariya','B\u0103lgarija','\u0411\u044A\u043B\u0433\u0430\u0440\u0438\u044F'] },
@@ -171,7 +194,7 @@
 				{ name: 'Kazakhstan', alpha2: 'KZ', alpha3: 'KAZ', numeric: 398, endonym: ['Qazaqstan','\u049A\u0430\u0437\u0430\u049B\u0441\u0442\u0430\u043D','\u0642\u0627\u0632\u0627\u0642\u0633\u062A\u0627\u0646','Kazakhst\u00E1n','\u041A\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043D'] },
 				{ name: 'Kenya', alpha2: 'KE', alpha3: 'KEN', numeric: 404 },
 				{ name: 'Kiribati', alpha2: 'KI', alpha3: 'KIR', numeric: 296 },
-				{ name: ['North Korea','Korea, Democratic People\'s Republic of','Korea, North'], alpha2: 'KP', alpha3: 'PRK', numeric: 408, endonym: ['Chos\u014Fn','\uC870\uC120','\u671D\u9BAE','Buk-han'] },
+				{ name: ['North Korea','Korea, Democratic People\'s Republic of','Democratic People\'s Republic of Korea','Korea, North'], alpha2: 'KP', alpha3: 'PRK', numeric: 408, endonym: ['Chos\u014Fn','\uC870\uC120','\u671D\u9BAE','Buk-han'] },
 				{ name: ['Korea Republic','South Korea','Korea, Republic of','Korea, South','Republic of Korea'], alpha2: 'KR', alpha3: 'KOR', numeric: 410, endonym: ['Hanguk','\ud55c\uad6d','\u97d3\u570b','Nam-jos\u014fn'] },
 				{ name: 'Kuwait', alpha2: 'KW', alpha3: 'KWT', numeric: 414, endonym: ['Al-Kuwayt','\u0627\u0644\u0643\u0648\u064A\u062A'] },
 				{ name: 'Kyrgyzstan', alpha2: 'KG', alpha3: 'KGZ', numeric: 417, endonym: ['\u041A\u044B\u0440\u0433\u044B\u0437\u0441\u0442\u0430\u043D','Kirgizija','\u041A\u0438\u0440\u0433\u0438\u0437\u0438\u044F'] },
@@ -198,7 +221,7 @@
 				{ name: 'Mauritius', alpha2: 'MU', alpha3: 'MUS', numeric: 480, endonym: ['Maurice'] },
 				{ name: 'Mayotte', alpha2: 'YT', alpha3: 'MYT', numeric: 175 },
 				{ name: 'Mexico', alpha2: 'MX', alpha3: 'MEX', numeric: 484, endonym: ['M\u00E9xico','M\u0113xihco'] },
-				{ name: ['Micronesia, Federated States of','Micronedia'], alpha2: 'FM', alpha3: 'FSM', numeric: 583 },
+				{ name: ['Federated States of Micronesia','Micronesia, Federated States of','Micronesia'], alpha2: 'FM', alpha3: 'FSM', numeric: 583 },
 				{ name: ['Republic of Moldova','Moldova, Republic of','Moldova'], alpha2: 'MD', alpha3: 'MDA', numeric: 498 },
 				{ name: 'Monaco', alpha2: 'MC', alpha3: 'MCO', numeric: 492 },
 				{ name: 'Mongolia', alpha2: 'MN', alpha3: 'MNG', numeric: 496, endonym: ['Mongol Uls','\u041C\u043E\u043D\u0433\u043E\u043B \u0423\u043B\u0441'] },
@@ -234,7 +257,7 @@
 				{ name: 'Portugal', alpha2: 'PT', alpha3: 'PRT', numeric: 620 },
 				{ name: 'Puerto Rico', alpha2: 'PR', alpha3: 'PRI', numeric: 630 },
 				{ name: 'Qatar', alpha2: 'QA', alpha3: 'QAT', numeric: 634, endonym: ['Qa\u1E6Dar','\u0642\u0637\u0631'] },
-				{ name: 'R\u00E9union', alpha2: 'RE', alpha3: 'REU', numeric: 638 },
+				{ name: ['R\u00E9union','Reunion'], alpha2: 'RE', alpha3: 'REU', numeric: 638 },
 				{ name: 'Romania', alpha2: 'RO', alpha3: 'ROU', numeric: 642, endonym: ['Rom\u00E2nia'] },
 				{ name: ['Russian Federation','Russia'], alpha2: 'RU', alpha3: 'RUS', numeric: 643, endonym: ['Rossiya','Rossi\u00E2','\u0420\u043E\u0441\u0441\u0438\u044F1'] },
 				{ name: 'Rwanda', alpha2: 'RW', alpha3: 'RWA', numeric: 646 },
@@ -273,7 +296,7 @@
 				{ name: ['Syrian Arab Republic','Syria'], alpha2: 'SY', alpha3: 'SYR', numeric: 760, endonym: ['Suriyah','\u0633\u0648\u0631\u064A\u0629'] },
 				{ name: ['Taiwan, Province of China','Taiwan'], alpha2: 'TW', alpha3: 'TWN', numeric: 158, endonym: ['Zh\u014Dnghu\u00E1 M\u00EDngu\u00F3','T\u00E1iwan','\u4E2D\u83EF\u6C11\u570B','\u81FA\u7063/\u53F0\u7063'] },
 				{ name: 'Tajikistan', alpha2: 'TJ', alpha3: 'TJK', numeric: 762, endonym: ['Tojikistan','\u0422\u043E\u04B7\u0438\u043A\u0438\u0441\u0442\u043E\u043D'] },
-				{ name: ['Tanzania, United Republic of','Tanzania'], alpha2: 'TZ', alpha3: 'TZA', numeric: 834 },
+				{ name: ['United Republic of Tanzania','Tanzania, United Republic of','Tanzania'], alpha2: 'TZ', alpha3: 'TZA', numeric: 834 },
 				{ name: 'Thailand', alpha2: 'TH', alpha3: 'THA', numeric: 764, endonym: ['Mueang Thai','Prathet Thai','Ratcha-anachak Thai','\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E44\u0E17\u0E22','\u0E1B\u0E23\u0E30\u0E40\u0E17\u0E28\u0E44\u0E17\u0E22','\u0E23\u0E32\u0E0A\u0E2D\u0E32\u0E13\u0E32\u0E08\u0E31\u0E01\u0E23\u0E44\u0E17\u0E22'] },
 				{ name: ['Democratic Republic of Timor-Leste','Timor-Leste','East Timor'], alpha2: 'TL', alpha3: 'TLS', numeric: 626, endonym: ['Timor Lorosa\'e','Timor-Leste'] },
 				{ name: 'Togo', alpha2: 'TG', alpha3: 'TGO', numeric: 768 },
@@ -296,8 +319,8 @@
 				{ name: 'Vanuatu', alpha2: 'VU', alpha3: 'VUT', numeric: 548 },
 				{ name: ['Venezuela','Venezuela, Bolivarian Republic of','Bolivarian Republic of Venezuela'], alpha2: 'VE', alpha3: 'VEN', numeric: 862 },
 				{ name: ['Viet Nam','Vietnam'], alpha2: 'VN', alpha3: 'VNM', numeric: 704, endonym: ['Vi\u1EC7t Nam'] },
-				{ name: ['Virgin Islands, British','British Virgin Islands'], alpha2: 'VG', alpha3: 'VGB', numeric: 92 },
-				{ name: ['Virgin Islands, U.S.','U.S. Virgin Islands'], alpha2: 'VI', alpha3: 'VIR', numeric: 850 },
+				{ name: ['British Virgin Islands','Virgin Islands, British'], alpha2: 'VG', alpha3: 'VGB', numeric: 92 },
+				{ name: ['U.S. Virgin Islands','Virgin Islands, U.S.'], alpha2: 'VI', alpha3: 'VIR', numeric: 850 },
 				{ name: 'Wallis and Futuna', alpha2: 'WF', alpha3: 'WLF', numeric: 876, endonym: ['Wallis-et-Futuna'] },
 				{ name: 'Western Sahara', alpha2: 'EH', alpha3: 'ESH', numeric: 732 },
 				{ name: 'Yemen', alpha2: 'YE', alpha3: 'YEM', numeric: 887, endonym: ['Al-Yaman','\u0627\u0644\u064A\u0645\u0646'] },

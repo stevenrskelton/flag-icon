@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<head>
+	<title>Country Flag Icons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="../../platform/platform.js"></script>
+	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="json-stringify.html">
+	<link rel="import" href="index-links.html">
+	<style>
+		.show {
+			position: fixed;
+			left: 725px;
+			top: 15px;
+		}
+		.show flag-icon {
+			display: block;
+		}
+		flag-icon {
+			display: inline;
+			border: 1px solid #ddd;
+		}
+		pre {
+			display: inline;
+			margin: 0;
+		}
+	</style>
+</head>
+<body unresolved>
+	<h1>&lt;flag-icon&gt; Demos</h1>
+
+	<h2>Custom <code>title</code> and <code>alt</code></h2>
+
+	<flag-icon key="BR" width="100" svg>Set width = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" width="100" svg&gt;Set width = 100px&lt;/flag-icon&gt;</pre>
+
+	<br>
+
+	<flag-icon key="BR" height="75" svg>Set height = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" height="75" svg&gt;Set height = 75px&lt;/flag-icon&gt;</pre>
+
+	<br>
+
+	<flag-icon key="BR" width="150" height="75" svg>Set height = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" width="150" height="75" svg&gt;Set width=150px, height = 75px&lt;/flag-icon&gt;</pre>
+
+	<h2>Background</h2>
+
+	<flag-icon key="BR" width="100" svg background>Set width = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" width="100" svg background&gt;Set width = 100px&lt;/flag-icon&gt;</pre>
+
+	<br>
+
+	<flag-icon key="BR" height="75" svg background>Set height = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" height="75" svg background&gt;Set height = 75px&lt;/flag-icon&gt;</pre>
+
+	<br>
+
+	<flag-icon key="BR" width="150" height="75" svg background>Set height = 100px</flag-icon>
+	<pre style="vertical-align:top;line-height:75px;margin-left:10px;">&lt;flag-icon key="BR" width="150" height="75" svg background&gt;Set width=150px, height = 75px&lt;/flag-icon&gt;</pre>
+
+	<h2>CSS Themes</h2>
+
+	<style shim-shadowdom>
+		.mystyle {
+			margin-left: 200px;
+		}
+		.mystyle::shadow img:hover {
+			-moz-box-shadow: 5px 10px 5px #888, -3px 5px 1px rgba(255,255,0,0.1);
+			-webkit-box-shadow: 5px 10px 5px #888, -3px 15px 1px rgba(255,255,0,0.1);
+			box-shadow: 5px 10px 5px #888, -3px 5px 1px rgba(255,255,0,0.1);
+		}
+		.mystyle::shadow img {
+			/*overflow: hidden;
+			width: 100px;
+			height: 100px;*/
+		}
+		.mystyle::shadow div {
+			border-radius: 50px;
+			border: 1px solid black;
+			-moz-box-shadow: inset 5px 10px 5px #888, inset -3px 5px 1px rgba(255,255,0,0.7);
+			-webkit-box-shadow: inset 5px 10px 5px #888, inset -3px 15px 1px rgba(255,255,0,0.7);
+			box-shadow: inset 5px 10px 5px #888, inset -3px 5px 1px rgba(255,255,0,0.7);
+		}
+	</style>
+
+	<flag-icon key="BR" width="100" svg class="mystyle">Custom text about Brazil!</flag-icon>
+
+	<hr>
+
+	<flag-icon key="BR" width="100" height="100" svg background class="mystyle"><strong style="color:yellow;line-height:100px;text-align:center;font-family:impact;width:100px;display:block;font-size:x-large">Brazil!</strong></flag-icon>
+
+	<index-links page="themes.html"></index-links>
+</body>
+</html>
