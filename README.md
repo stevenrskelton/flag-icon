@@ -1,13 +1,11 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for flags. **SVG; 16x11, 32x24, 64x48 and 200x150 PNG images.**
+Polymer Web Component for flags.
 
-File Sizes
+> **SVG** files: **2kb** to **75kb**
 
-> SVG files: **2kb** to **75kb**
-
-> PNG files: **16x11** < 1kb, **32x24** < 2kb, **64x48** < 5kb, **200x150** < 20kb
+> **PNG** files: 16x11 < **1kb**, 32x24 < **2kb**, 64x48 < **5kb**, 200x150 < **20kb**
 
 ### Countries
 
