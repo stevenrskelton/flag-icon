@@ -20,18 +20,18 @@
 			<th>Numeric</th>
 			<th>SVG</th>
 		</tr>
-		<template id="usTable" repeat="{{us}}">
-			<tr onmouseover="changeShow('{{alpha2}}');">
-				<td><flag-icon key="{{name}}" usstate></flag-icon>{{name}}</td>
-				<td><flag-icon key="{{alpha2}}" usstate></flag-icon> {{alpha2}}</td>
-				<td><flag-icon key="{{iso}}" usstate></flag-icon> {{iso}}</td>
-				<td><flag-icon key="{{numeric}}" usstate></flag-icon> {{numeric}}</td>
-				<td><flag-icon key="{{alpha2}}" usstate svg></flag-icon></td>
+		<template id="usTable" repeat="[[us]]">
+			<tr onmouseover="changeShow('[[alpha2]]');">
+				<td><flag-icon key="[[name]]" usstate></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[alpha2]]" usstate></flag-icon> [[alpha2]]</td>
+				<td><flag-icon key="[[iso]]" usstate></flag-icon> [[iso]]</td>
+				<td><flag-icon key="[[numeric]]" usstate></flag-icon> [[numeric]]</td>
+				<td><flag-icon key="[[alpha2]]" usstate svg></flag-icon></td>
 			</tr>
 		</template>
 	</table>
 
-	<flag-show id="show" name="{{name}}" key="{{key}}" usstate="true"></flag-show>
+	<flag-show id="show" name="[[name]]" key="[[key]]" usstate="true"></flag-show>
 
 	<script>
 	var flagicon;

@@ -1,7 +1,10 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for flags. **SVG; 16x11, 32x24, and 64x48 PNG images.**
+Polymer Web Component for flags. **SVG; 16x11, 32x24, 64x48 and 200x150 PNG images.**
+
+SVG files range in size: 2kb _to_ 75kb
+PNG files are: 16x11 < 1kb, 32x24 < 2kb, 64x48 < 5kb, 200x150 < 20kb
 
 ### Countries
 
@@ -184,14 +187,11 @@ Attribute			| Type			| Default		| Description
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *integer*		| `16`			| Width of icon (aspect ratio maintained if `height` omitted).
 `height`			| *integer*		| _auto_		| Height of icon (aspect ratio maintained if `width` omitted).
-`background`		| *boolean*		| `false`		| Render flag as a CSS background rather than as an `img`
 `usstate`			| *boolean*		| `false`		| US State flags
 `canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
 
 ## Todo
-- better border drop shadow on images
-- different image themes and/or ability to restyle with CSS
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags
 - _maybe:_ more state, provinces, and other types of flags

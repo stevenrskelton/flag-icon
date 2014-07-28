@@ -18,16 +18,16 @@
 			<th>Alpha2</th>
 			<th>SVG</th>
 		</tr>
-		<template id="flags" repeat="{{flags}}">
-			<tr onmouseover="changeShow('{{alpha2}}');">
-				<td><flag-icon key="{{name}}" canada></flag-icon>{{name}}</td>
-				<td><flag-icon key="{{alpha2}}" canada></flag-icon> {{alpha2}}</td>
-				<td><flag-icon key="{{alpha2}}" canada svg></flag-icon></td>
+		<template id="flags" repeat="[[flags]]">
+			<tr onmouseover="changeShow('[[alpha2]]');">
+				<td><flag-icon key="[[name]]" canada></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[alpha2]]" canada></flag-icon> [[alpha2]]</td>
+				<td><flag-icon key="[[alpha2]]" canada svg></flag-icon></td>
 			</tr>
 		</template>
 	</table>
 
-	<flag-show id="show" name="{{name}}" key="{{key}}" canada="true"></flag-show>
+	<flag-show id="show" name="[[name]]" key="[[key]]" canada="true"></flag-show>
 
 	<script>
 	var flagicon;

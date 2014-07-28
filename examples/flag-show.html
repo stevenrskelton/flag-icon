@@ -11,6 +11,8 @@
 				background-color:#ddd;
 				min-height: 425px;
 				padding:15px;
+				overflow-x: hidden;
+				width: 356px;
 			}
 			.show flag-icon {
 				display: block;
@@ -21,23 +23,31 @@
 			<template if="{{endonym}}">{{endonym}}</template><br><br>
 			<table>
 				<tr>
-					<td style="width:33%">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="64"></flag-icon>
-						64 x 48
-					</td>
-					<td style="width:33%">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="32"></flag-icon>
-						32 x 24
-					</td>
-					<td style="width:33%">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}"></flag-icon>
+					<td>
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}"></flag-icon><br>
 						16 x 11
+					</td>
+					<td rowspan="3">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="200"></flag-icon><br>
+						200 x 150
 					</td>
 				</tr>
 				<tr>
-					<td colspan="3">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" svg width="350"></flag-icon>
-						350px SVG
+					<td>
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="32"></flag-icon><br>
+						32 x 24
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="64"></flag-icon><br>
+						64 x 48
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" svg width="350"></flag-icon><br>
+						350 x 265 SVG
 					</td>
 				</tr>
 			</table>

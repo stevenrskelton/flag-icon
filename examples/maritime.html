@@ -22,21 +22,21 @@
 
 	<h2>SVG</h2>
 
-	<template id="flags" repeat="{{flags}}">
+	<template id="flags" repeat="[[flags]]">
 		<div class="icon">
-			<flag-icon key="{{key}}" maritime svg width="32px"></flag-icon><br>
-			{{name}}<br>
-			{{key}}
+			<flag-icon key="[[key]]" maritime svg width="32"></flag-icon><br>
+			[[name]]<br>
+			[[key]]
 		</div>
 	</template>
 
 	<h2 style="clear:left">PNG</h2>
 
-	<template id="flags2" repeat="{{flags}}">
+	<template id="flags2" repeat="[[flags]]">
 		<div class="icon">
-			<flag-icon key="{{key}}" maritime></flag-icon><br>
-			{{name}}<br>
-			{{key}}
+			<flag-icon key="[[key]]" maritime></flag-icon><br>
+			[[name]]<br>
+			[[key]]
 		</div>
 	</template>
 

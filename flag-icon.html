@@ -4,31 +4,25 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height background usstate canada maritime" constructor="FlagIcon"
+<polymer-element name="flag-icon" attributes="key data svg width height usstate canada maritime" constructor="FlagIcon"
 	style="
 		display: inline-block;
 		line-height: 0;
 	">
   <template>
-	<template if="{{background}}">
-		<div title="{{title}}" style="
-			background: url({{src}});
-			background-size: cover;
-			background-position: center center;
-			width: {{width}}px;
-			height: {{height}}px;
-		"></div>
-	</template>
-	<template if="{{!background && height==null}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" width="{{width}}"></template>
-	<template if="{{!background && width==null}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" height="{{height}}"></template>
-	<template if="{{!background && width && height}}"><img alt="{{title}}" title="{{title}}" src="{{src}}" width="{{width}}" height="{{height}}"></template>
+	<div title="{{title}}" style="
+		background: url({{src}});
+		background-size: 100% 100%;
+		background-position: center center;
+		width: {{width}}px;
+		height: {{height}}px;
+	"></div>
   </template>
   <script>
 	Polymer('flag-icon', {
 		key: null,
 		data: null,
 		svg: false,
-		background: false,
 		width: null,
 		height: null,
 		usstate: false,
@@ -40,22 +34,22 @@
 		keyChanged: function(a,val){
 			var d;
 			var dataTitle;
+			var aspect = 0.75;
 			if(val!=null){
 				if(this.usstate){
 					d = this.findUSState(val, this.us_states);
 				}else if(this.canada){
 					d = this.findCanadianProvince(val, this.ca_provinces);
 				}else if(this.maritime){
+					aspect = 1;
 					d = this.findMaritime(val, this.maritimes);
 				}else{
 					d = this.findCountry(val, this.countries);
 				}
 			}
 			if(!this.width && !this.height) this.width = 16;
-			if(this.background){
-				if(!this.height) this.height = this.width * 3 / 4;
-				if(!this.width) this.width = this.height * 4 / 3;
-			}
+			if(!this.height) this.height = this.width * aspect;
+			if(!this.width) this.width = this.height / aspect;
 			if(d){
 				this.data = d.data;
 				dataTitle = d.title;
@@ -63,8 +57,8 @@
 					this.src = this.resolvePath('svg/' + d.file + '.svg');
 				}else{
 					var w = +this.width;
-					if(w==null) w = +this.height * 4 / 3;
-					var size = (w >= 64) ? '64' : (w >= 32) ? '32' : '16';
+					if(w==null || w==0) w = +this.height * 4 / 3;
+					var size = (w > 64) ? 200 : (w > 32) ? '64' : (w > 20) ? '32' : '16';
 					this.src = this.resolvePath('png/' + size + '/' + d.file + '.png');
 				}
 			}else{
