@@ -195,6 +195,8 @@ Attribute			| Type			| Default		| Description
 ## Todo
 
 - Loading notification, or default image.
+- find, use tool to compact/minify SVG files
+- Safari support
 
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags
