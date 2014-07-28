@@ -184,7 +184,7 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 Attribute			| Type			| Default		| Description
 ---					| ---			| ---			| ---
-`key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or numeric country code
+`key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or country code
 `svg`				| *attribute*	| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *integer*		| `16`			| Width of icon (aspect ratio maintained if `height` omitted).
 `height`			| *integer*		| _auto_		| Height of icon (aspect ratio maintained if `width` omitted).
@@ -193,7 +193,9 @@ Attribute			| Type			| Default		| Description
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
 
 ## Todo
+
 - Loading notification, or default image.
+
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags
 - _maybe:_ more state, provinces, and other types of flags
