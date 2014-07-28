@@ -193,6 +193,7 @@ Attribute			| Type			| Default		| Description
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
 
 ## Todo
+- Loading notification, or default image.
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags
 - _maybe:_ more state, provinces, and other types of flags
