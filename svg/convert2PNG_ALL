@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$1" != "a" ] && [ "$1" != "s" ]; then
+	echo "argument 1 must be 'a' or 's'"
+else
+	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+	$DIR/convert2PNG 36 $1
+	$DIR/convert2PNG 75 $1
+	$DIR/convert2PNG 225 $1
+	echo "Finished, now run 16 manually using:"
+	echo "../convert2PNG 16 $1"
+fi

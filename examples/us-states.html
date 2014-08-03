@@ -31,21 +31,22 @@
 		</template>
 	</table>
 
-	<flag-show id="show" name="[[name]]" key="[[key]]" usstate="true"></flag-show>
+	<flag-show id="show" usstate="true"></flag-show>
 
 	<script>
 	var flagicon;
 	function changeShow(key){
 		document.getElementById('show').key = key;
-		document.getElementById('show').name = flagicon.us_states.filter(function(row){ return row.alpha2 == key; })[0].name;
+		var data = flagicon.us_states.filter(function(row){ return row.alpha2 == key; })[0];
+		document.getElementById('show').name = data.name;
+		document.getElementById('show').data = data;
 	}
 	window.addEventListener('polymer-ready', function(){
 		flagicon = new FlagIcon();
 		document.getElementById('usTable').model = {
 			us: flagicon.us_states
 		};
-		document.getElementById('show').key = 'DC';
-		document.getElementById('show').name = 'District of Columbia';
+		changeShow('DC');
 	});
 	</script>
 	<index-links page="us-states.html"></index-links>

@@ -1,5 +1,0 @@
-#!/bin/bash
-mkdir crush
-for filename in `find . -regex ".*.png"`; do
-pngcrush -rem alla -rem text $filename crush/${filename:2}
-done

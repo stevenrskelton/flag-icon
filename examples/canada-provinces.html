@@ -12,7 +12,7 @@
   <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
 
-	<table style="width:700px;min-height:525px;display:block;">
+	<table style="width:700px;min-height:650px;display:block;">
 		<tr>
 			<th style="width:450px">Province</th>
 			<th>Alpha2</th>
@@ -27,7 +27,7 @@
 		</template>
 	</table>
 
-	<flag-show id="show" name="[[name]]" key="[[key]]" canada="true"></flag-show>
+	<flag-show id="show" canada="true"></flag-show>
 
 	<script>
 	var flagicon;
@@ -39,17 +39,19 @@
 	};
 	function changeShow(key){
 		document.getElementById('show').key = key;
-		document.getElementById('show').name = head(flagicon.ca_provinces.filter(function(row){ return row.alpha2 == key; })[0].name);
+		var data = flagicon.ca_provinces.filter(function(row){ return row.alpha2 == key; })[0];
+		document.getElementById('show').name = head(data.name);
+		document.getElementById('show').data = data;
 	};
 	window.addEventListener('polymer-ready', function(){
 		flagicon = new FlagIcon();
 		document.getElementById('flags').model = {
 			flags: flagicon.ca_provinces.map(function(t){ return { name: head(t.name), alpha2: t.alpha2 }; })
 		};
-		document.getElementById('show').key = 'BC';
-		document.getElementById('show').name = 'British Columbia';
+		changeShow('BC');
 	});
 	</script>
+
 	<index-links page="canada-provinces.html"></index-links>
   </body>
 </html>

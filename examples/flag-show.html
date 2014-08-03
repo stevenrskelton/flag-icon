@@ -1,5 +1,6 @@
 <link rel="import" href="../flag-icon.html">
-<polymer-element name="flag-show" attributes="name key endonym canada usstate" noscript>
+<link rel="import" href="json-stringify.html">
+<polymer-element name="flag-show" attributes="name key endonym canada usstate data" noscript>
 	<template>
 		<style>
 			.show {
@@ -12,7 +13,7 @@
 				min-height: 425px;
 				padding:15px;
 				overflow-x: hidden;
-				width: 356px;
+				width: 380px;
 			}
 			.show flag-icon {
 				display: block;
@@ -25,32 +26,33 @@
 				<tr>
 					<td>
 						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}"></flag-icon><br>
-						16 x 11
+						16px
 					</td>
 					<td rowspan="3">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="200"></flag-icon><br>
-						200 x 150
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="225"></flag-icon><br>
+						225px
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="32"></flag-icon><br>
-						32 x 24
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="36"></flag-icon><br>
+						36px
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="64"></flag-icon><br>
-						64 x 48
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" width="75"></flag-icon><br>
+						75px
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" svg width="350"></flag-icon><br>
-						350 x 265 SVG
+						<flag-icon key="{{key}}" canada="{{canada}}" usstate="{{usstate}}" svg width="375"></flag-icon><br>
+						375px SVG
 					</td>
 				</tr>
 			</table>
+			<json-stringify data="{{data}}"></json-stringify>
 		</div>
 	</template>
 </polymer-element>

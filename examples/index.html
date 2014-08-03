@@ -35,8 +35,8 @@
 		<template id="test" bind>
 			<table>
 				<tr>
-					<td rowspan="99" style="padding-right:20px;width:72px">
-						<flag-icon key="{{key}}" width="72" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" maritime="{{maritime}}" data="{{data}}" img></flag-icon>
+					<td rowspan="99" style="padding-right:20px;width:75px">
+						<flag-icon key="{{key}}" width="75" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" maritime="{{maritime}}" data="{{data}}" aspect="{{aspect}}"></flag-icon>
 					</td>
 				</tr>
 				<tr>
@@ -57,7 +57,14 @@
 						<input type="radio" name="render" value="png" onchange="model.svg = false" id="png"><label for="png">PNG</label>
 						<input type="radio" name="render" value="svg" onchange="model.svg = true" checked id="svg"><label for="svg">SVG</label>
 					</td>
-				</tr>
+				</tr><!--
+				<tr>
+					<td>Correct Aspect:</td>
+					<td>
+						<input type="radio" name="aspect" value="png" onchange="model.aspect = false" id="aspectfalse"><label for="aspectfalse">False</label>
+						<input type="radio" name="aspect" value="svg" onchange="model.aspect = true" checked id="aspecttrue"><label for="aspecttrue">True</label>
+					</td>
+				</tr>-->
 			</table>
 			<json-stringify data="{{data}}"></json-stringify>
 		</template>
@@ -66,33 +73,33 @@
 	<h2>Many input formats are allowed</h2>
 
 	<div style="margin-left:10px;">
-		<flag-icon key="Korea Republic"></flag-icon><pre>&lt;flag-icon key="Korea Republic"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="Korea Republic"></flag-icon> <pre>&lt;flag-icon key="Korea Republic"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="Republic of Korea"></flag-icon><pre>&lt;flag-icon key="Republic of Korea"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="Republic of Korea"></flag-icon> <pre>&lt;flag-icon key="Republic of Korea"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="Korea, Republic of"></flag-icon><pre>&lt;flag-icon key="Korea, Republic of"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="Korea, Republic of"></flag-icon> <pre>&lt;flag-icon key="Korea, Republic of"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="RePUBlic of KOREA"></flag-icon><pre>&lt;flag-icon key="RePUBlic of KOREA"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="RePUBlic of KOREA"></flag-icon> <pre>&lt;flag-icon key="RePUBlic of KOREA"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="KR"></flag-icon><pre>&lt;flag-icon key="KR"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="KR"></flag-icon> <pre>&lt;flag-icon key="KR"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="KOR"></flag-icon><pre>&lt;flag-icon key="KOR"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="KOR"></flag-icon> <pre>&lt;flag-icon key="KOR"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="410"></flag-icon><pre>&lt;flag-icon key="410"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="410"></flag-icon> <pre>&lt;flag-icon key="410"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="South Korea"></flag-icon><pre>&lt;flag-icon key="South Korea"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="South Korea"></flag-icon> <pre>&lt;flag-icon key="South Korea"&gt;&lt;/flag-icon&gt;</pre>
 	</div>
 
 	<h3>Including Endonyms</h3>
 
 	<div style="margin-left:10px;">
-		<flag-icon key="Hanguk"></flag-icon><pre>&lt;flag-icon key="Hanguk"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="Hanguk"></flag-icon> <pre>&lt;flag-icon key="Hanguk"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="한국"></flag-icon><pre>&lt;flag-icon key="한국"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="한국"></flag-icon> <pre>&lt;flag-icon key="한국"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="韓國"></flag-icon><pre>&lt;flag-icon key="韓國"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="韓國"></flag-icon> <pre>&lt;flag-icon key="韓國"&gt;&lt;/flag-icon&gt;</pre>
 		<br>
-		<flag-icon key="Nam-josŏn"></flag-icon><pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
+		<flag-icon key="Nam-josŏn"></flag-icon> <pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
 	</div>
 
 	<index-links page="index.html"></index-links>
@@ -110,7 +117,8 @@
 	}
 	var model = {
 		key: 'Canada',
-		svg: true
+		svg: true,
+		aspect: false
 	};
 	window.addEventListener('polymer-ready', function(){
 		document.getElementById('test').model = model;

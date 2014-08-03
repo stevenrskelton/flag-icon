@@ -1,0 +1,67 @@
+#!/bin/bash
+
+resize="resize"
+if [ "$1" = "16" ]; then
+	width="$1"
+	if [ "$2" = "a" ]; then
+		height="11"
+	elif [ "$2" = "s" ]; then
+		height="$width"
+	fi
+elif [ "$1" = "36" ]; then
+	width="$1"
+	if [ "$2" = "a" ]; then
+		height="22"
+	elif [ "$2" = "s" ]; then
+		height="$width"
+	fi
+elif [ "$1" = "75" ]; then
+	width="$1"
+	if [ "$2" = "a" ]; then
+		height="45"
+	elif [ "$2" = "s" ]; then
+		height="$width"
+	fi
+elif [ "$1" = "225" ]; then
+	width="$1"
+	if [ "$2" = "a" ]; then
+		height="135"
+	elif [ "$2" = "s" ]; then
+		height="$width"
+	fi
+else
+	echo "argument 1 must be 16, 36, 75, or 225"
+fi
+	
+if [ -z "$height" ]; then
+	echo "argument 2 must be 'a' or 's'"
+elif [ -n "$width" ]; then
+	
+	echo "running for $width x $height"
+
+	rm -f *.png;
+
+	#uses ImageMagick
+	for filename in `find . -regex ".*.svg"`; do
+	convert -background none $filename -filter triangle -${resize} ${width}x${height}! ${filename%svg}png;
+	#convert -background none $filename -filter triangle -interpolative-resize ${width}x${height}! -blur 0x.3 -raise 1 thumbnail.png;
+	#convert thumbnail.png -fill gray50 -colorize 100% -raise 1 -normalize -blur 0x4 overlay.png;
+	#convert thumbnail.png overlay.png -compose hardlight -composite ${filename%svg}png;
+	done
+	#rm thumbnail.png overlay.png;
+
+	echo "PNGcrush-ing"
+
+	mkdir crush${width}
+	for filename in `find . -regex ".*.png"`; do
+	pngcrush -q -rem alla -rem text $filename crush${width}/${filename:2}
+	done
+
+	mv -v crush${width}/* ../../png/${width}/${PWD##*/};
+
+	rm -Rf crush${width};
+	rm *.png;
+
+	echo "Generated $width x $height in ${PWD##*/}"
+fi
+
