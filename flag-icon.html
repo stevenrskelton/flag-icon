@@ -4,7 +4,7 @@
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="flag-icon" attributes="key data svg width height usstate canada maritime" constructor="FlagIcon"
+<polymer-element name="flag-icon" attributes="key data svg width height usstate canada maritime racing" constructor="FlagIcon"
 	style="
 		display: inline-block;
 		line-height: 0;
@@ -28,23 +28,27 @@
 		usstate: false,
 		canada: false,
 		maritime: false,
+		racing: false,
 		title: null,
 		src: null,
-		svgChanged: function(){ this.keyChanged(null,this.key); },
+		svgChanged: function(){ this.keyChanged(null, this.key); },
 		keyChanged: function(a,val){
 			var d;
 			var dataTitle;
 			var aspect = 0.75;
-			if(val!=null){
+			if(val != null){
 				if(this.usstate){
-					d = this.findUSState(val, this.us_states);
+					d = this.findUSState(val);
 				}else if(this.canada){
-					d = this.findCanadianProvince(val, this.ca_provinces);
+					d = this.findCanadianProvince(val);
 				}else if(this.maritime){
 					aspect = 1;
-					d = this.findMaritime(val, this.maritimes);
+					d = this.findMaritime(val);
+				}else if(this.racing){
+					d = this.findRacing(val);
+				}
 				}else{
-					d = this.findCountry(val, this.countries);
+					d = this.findCountry(val);
 				}
 			}
 			if(!this.width && !this.height) this.width = 16;
@@ -437,6 +441,22 @@
 				{ name: 'yankee', key: 'y' },
 				{ name: 'zulu', key: 'z' }
 			];
+			var racingflags = [
+				{ key: 'redcross', description: 'Ambulance on course' },
+				{ key: 'whitesaltire', description: 'Disqualification' },
+				{ key: 'checkered', description: 'Session finished / Winner' },
+				{ key: 'yellowsaltire', description: 'Pit lane closed' },
+				{ key: 'red', description: 'Session stopped' },
+				{ key: 'yellow', description: 'Caution' },
+				{ key: 'yellowslash', description: 'Faster car approaching' },
+				{ key: 'verticalstripes.', description: 'Debris, Fluid, or Oil on track' },
+				{ key: 'orangecircle', description: 'Return to the pits to service a mechanical problem' },
+				{ key: 'blackwhiteperbend', description: 'Unsportsmanlike conduct' },
+				{ key: 'blue', description: 'Course partially blocked or stopped cars on course (road course only)' },
+				{ key: 'white', description: 'Final lap' },
+				{ key: 'black', description: 'Return to the pits for a penalty or to service a mechanical problem' },
+				{ key: 'green', description: 'Start of race / Restart / End of hazard / Safe racing conditions / Pit lane open' }
+			];
 			function head(arr){
 				if(typeof arr == "object"){
 					if(arr.length>0) return arr[0];
@@ -513,6 +533,14 @@
 					return element.name == lower || element.key == lower;
 				});
 				return head(data.map(function(element){ return { title: element.name, data: element, file: 'maritime/' + element.key }; }));
+			}
+			this.racingflags = racingflags;
+			this.findRacing = function(id){
+				var lower = id.toLowerCase();
+				var data = racingflags.filter(function(element, index, array){
+					return element.key == lower;
+				});
+				return head(data.map(function(element){ return { title: element.description, data: element, file: 'racing/' + element.key }; }));
 			}
 		}
 	});
