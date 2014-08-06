@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="800px" height="600px" viewbox="0 0 800 600"
+preserveAspectRatio="none">
+<defs>
+<rect width="100px" height="600px" fill="#ffff00" id="1" />
+</defs>
+<rect width="800px" height="600px" fill="#ff0000" />
+<use xlink:href="#1" />
+<use xlink:href="#1" x="200" />
+<use xlink:href="#1" x="400" />
+<use xlink:href="#1" x="600" />
+<use xlink:href="#1" x="800" />
+</svg>

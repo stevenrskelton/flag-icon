@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN"
+"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.0"
+   x="0"
+   y="0"
+   width="800"
+   height="600"
+   id="svg602"
+   xml:space="preserve"><defs
+   id="defs604" /><rect
+   width="800"
+   height="600"
+   x="0"
+   y="0"
+   style="font-size:12;fill:#0000ff;fill-rule:evenodd;stroke-width:0;"
+   id="rectblue" /><path
+   d="M 0 600 L 100 600 L 800 100 L 800 0 L 700 0 L 0 500 L 0 600 z "
+   style="font-size:12;fill:#ffff00;fill-rule:evenodd;stroke-width:1;"
+   id="crossbarpos" /><rect
+   width="800"
+   height="600"
+   x="0"
+   y="0"
+   style="font-size:12;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.25;"
+   id="rectblackoutline" /></svg>
