@@ -105,7 +105,6 @@ Polymer Web Component for flags.
 ![Nevada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/nevada.png "Nevada")
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
-
 ![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
 ![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
 ![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
@@ -123,9 +122,15 @@ Polymer Web Component for flags.
 ![Vertical Stripes](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/verticalstripes.png "Vertical Stripes")
 ![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/orangecircle.png "Orange Circle")
 ![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
-![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/alpha.png "Alpha")
-![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/charlie.png "Charlie")
-![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/romeo.png "Romeo")
+![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/a.png "Alpha")
+![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/c.png "Charlie")
+![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/r.png "Romeo")
+![November](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/n.png "November")
+![Oscar](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/o.png "Oscar")
+![Victor](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/v.png "Victor")
+![Lima](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/l.png "Lima")
+![1](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/1.png "1")
+![3](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/3.png "3")
 
 
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
