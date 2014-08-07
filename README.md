@@ -106,6 +106,22 @@ Polymer Web Component for flags.
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
+### NASCAR, IndyCar, and Maritime
+
+![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/green.png "Green")
+![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/yellow.png "Yellow")
+![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/black.png "Black")
+![Yellow Saltire](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/yellowsaltire.png "Yellow Saltire")
+![Yellow Slash](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/yellowslash.png "Yellow Slash")
+![Black White Per Bend](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/blackwhiteperbend.png "Black White Per Bend")
+![Vertical Stripes](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/verticalstripes.png "Vertical Stripes")
+![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/orangecircle.png "Orange Circle")
+![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/checkered.png "Checkered")
+![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/alpha.png "Alpha")
+![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/charlie.png "Charlie")
+![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/romeo.png "Romeo")
+
+
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
 * PNGs are compacted using [pngcrush](http://en.wikipedia.org/wiki/Pngcrush).
@@ -123,7 +139,11 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 > [Live Demo - Canada Province and Territory Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
 
+> [Live Demo - German State Flags](http://files.stevenskelton.ca/flag-icon/examples/de-states.html)
+
 > [Live Demo - Maritime and International Code of Signals (ICS) Flags](http://files.stevenskelton.ca/flag-icon/examples/maritime.html)
+
+> [Live Demo - NASCAR and IndyCar Racing Flags](http://files.stevenskelton.ca/flag-icon/examples/racing.html)
 
 ## Usage
 
@@ -188,16 +208,17 @@ Attribute			| Type			| Default		| Description
 `svg`				| *attribute*		| `false`		| Use larger filesize SVG files instead of PNGs
 `width`				| *integer*		| `16`			| Width of icon (aspect ratio maintained if `height` omitted).
 `height`			| *integer*		| _auto_		| Height of icon (aspect ratio maintained if `width` omitted).
-`usstate`			| *boolean*		| `false`		| US State flags
-`canada`			| *boolean*		| `false`		| Canadian Province and Territory flags
+`us`				| *boolean*		| `false`		| US State flags
+`ca`				| *boolean*		| `false`		| Canadian Province and Territory flags
+`de`				| *boolean*		| `false`		| German State flags
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
+`racing`			| *boolean*		| `false`		| NASCAR and IndyCar racing flags
 `aspect`			| *float*		| 				| Override aspect ratio used to render the flag
 
 ## Todo
 
 - Loading notification, or default image.
 - Compact/minify SVG files
-- Safari support
 - Themes
 - _maybe:_ create iconset single image to save multiple requests
 - _maybe:_ squared flags

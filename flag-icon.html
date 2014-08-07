@@ -7,7 +7,7 @@
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data svg width height usstate canada maritime aspect racing"
+	attributes="key data svg width height aspect us ca de maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
@@ -30,8 +30,9 @@
 		height: null,
 		computedWidth: 0,
 		computedHeight: 0,
-		usstate: false,
-		canada: false,
+		us: false,
+		ca: false,
+		de: false,
 		maritime: false,
 		racing: false,
 		title: null,
@@ -42,16 +43,20 @@
 			var dataTitle;
 			var aspect = 5/3;
 			if(this.key!=null){
-				if(this.usstate){
+				if(this.us){
 					d = this.findUSState(this.key);
-				}else if(this.canada){
+				}else if(this.ca){
 					d = this.findCanadianProvince(this.key);
+				}else if(this.de){
+					d = this.findGermanState(this.key);
 				}else if(this.maritime){
 					aspect = 1;
-					d = this.findMaritime(this.key);
+					d = this.findMaritimeFlag(this.key);
 				}else if(this.racing){
+					aspect = 4/3;
 					d = this.findRacing(this.key);
 				}else{
+					aspect = 4/3;
 					d = this.findCountry(this.key);
 				}
 			}
@@ -428,7 +433,25 @@
 				{ name: 'Saskatchewan', alpha2: 'SK' },
 				{ name: 'Yukon', alpha2: 'YT' }
 			];
-			var maritimes = [
+			var de_states = [
+				{ name: ['Baden-W\u00FCrttemberg','Baden-Wurttemberg'], nuts: 'DE1' },
+				{ name: ['Bavaria','Free State of Bavaria'], endonym: ['Freistaat Bayern'], nuts: 'DE2' },
+				{ name: 'Berlin', nuts: 'DE3' },
+				{ name: 'Brandenburg', endonym: ['Brannenborg'], nuts: 'DE4' },
+				{ name: ['Bremen','Free Hanseatic City of Bremen'], endonym: ['Freie Hansestadt Bremen'], nuts: 'DE5' },
+				{ name: ['Hamburg','Free and Hanseatic City of Hamburg'], endonym: ['Freie und Hansestadt Hamburg'], nuts: 'DE6' },
+				{ name: 'Hessen', endonym: ['Hessia'], nuts: 'DE7' },
+				{ name: ['Mecklenburg-Western Pomerania','MeckPomm'], endonym: ['Mecklenburg-Vorpommern'], nuts: 'DE8' },
+				{ name: 'Lower Saxony', endonym: ['Land Niedersachsen'], nuts: 'DE9' },
+				{ name: 'North Rhine-Westphalia', endonym: ['Nordrhein-Westfalen'], nuts: 'DEA' },
+				{ name: 'Rhineland-Palatinate', endonym: ['Rheinland-Pfalz'], nuts: 'DEB' },
+				{ name: 'Saarland', endonym: ['das Saarland'], nuts: 'DEC' },
+				{ name: ['Saxony','Free State of Saxony'], endonym: ['Freistaat Sachsen'], nuts: 'DED' },
+				{ name: 'Saxony-Anhalt', endonym: ['Sachsen-Anhalt'], nuts: 'DEE' },
+				{ name: 'Schleswig-Holstein', nuts: 'DEF' },
+				{ name: ['Thuringia','Free State of Thuringia'], endonym: ['Freistaat Thu\u00FCringen','Freistaat Thüringen'], nuts: 'DEG' }
+			];
+			var maritimeFlags = [
 				{ name: 'zero', key: 0 },
 				{ name: 'one', key: 1 },
 				{ name: 'two', key: 2 },
@@ -466,7 +489,7 @@
 				{ name: 'yankee', key: 'y' },
 				{ name: 'zulu', key: 'z' }
 			];
-			var racingflags = [
+			var racingFlags = [
 				{ key: 'redcross', description: 'Ambulance on course' },
 				{ key: 'whitesaltire', description: 'Disqualification' },
 				{ key: 'checkered', description: 'Session finished / Winner' },
@@ -474,7 +497,7 @@
 				{ key: 'red', description: 'Session stopped' },
 				{ key: 'yellow', description: 'Caution' },
 				{ key: 'yellowslash', description: 'Faster car approaching' },
-				{ key: 'verticalstripes.', description: 'Debris, Fluid, or Oil on track' },
+				{ key: 'verticalstripes', description: 'Debris, Fluid, or Oil on track' },
 				{ key: 'orangecircle', description: 'Return to the pits to service a mechanical problem' },
 				{ key: 'blackwhiteperbend', description: 'Unsportsmanlike conduct' },
 				{ key: 'blue', description: 'Course partially blocked or stopped cars on course (road course only)' },
@@ -551,18 +574,35 @@
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'ca/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
-			this.maritimes = maritimes;
-			this.findMaritime = function(id){
+			this.de_states = de_states;
+			this.findGermanState = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if(id.length==3){
+					data = de_states.filter(function(element, index, array){
+						return element.nuts == upper;
+					});
+				}else{
+					data = de_states.filter(function(element, index, array){
+						var t1 = element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() == upper; }) : false;
+						var t2 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+						return t1 || t2;
+					});
+				}
+				return head(data.map(function(element){ return { title: head(element.endonym) | head(element.name), data: element, file: 'de/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.maritimeFlags = maritimeFlags;
+			this.findMaritimeFlag = function(id){
 				var lower = id.toLowerCase ? id.toLowerCase() : id;
-				var data = maritimes.filter(function(element, index, array){
+				var data = maritimeFlags.filter(function(element, index, array){
 					return element.name == lower || element.key == lower;
 				});
 				return head(data.map(function(element){ return { title: element.name, data: element, file: 'maritime/' + element.key }; }));
 			}
-			this.racingflags = racingflags;
+			this.racingFlags = racingFlags;
 			this.findRacing = function(id){
 				var lower = id.toLowerCase();
-				var data = racingflags.filter(function(element, index, array){
+				var data = racingFlags.filter(function(element, index, array){
 					return element.key == lower;
 				});
 				return head(data.map(function(element){ return { title: element.description, data: element, file: 'racing/' + element.key }; }));

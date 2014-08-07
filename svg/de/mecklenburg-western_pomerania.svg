@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg
+        width="1000"
+        height="600"
+        xmlns="http://www.w3.org/2000/svg"
+        id="Civil flag of Mecklenburg-Western Pomerania">
+        
+<!--
+        This file is in the public domain
+-->
+
+        <rect id="blue stripe"   height="160" width="1000" fill="#2b58a3" x="0" y="0" />
+        <rect id="white stripe"  height="280" width="1000" fill="#ffffff" x="0" y="160" />
+        <rect id="yellow stripe" height="40"  width="1000" fill="#f9f400" x="0" y="280" />
+        <rect id="red stripe"    height="160" width="1000" fill="#de0029" x="0" y="440" />
+        
+</svg>
+

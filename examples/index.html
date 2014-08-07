@@ -9,17 +9,6 @@
 	<link rel="import" href="json-stringify.html">
 	<link rel="import" href="index-links.html">
 	<style>
-		.show {
-			position: fixed;
-			left: 725px;
-			top: 15px;
-		}
-		.show flag-icon {
-			display: block;
-		}
-		flag-icon {
-			display: inline;
-		}
 		pre {
 			display: inline;
 			margin: 0;
@@ -29,35 +18,47 @@
 <body unresolved>
 	<h1>&lt;flag-icon&gt; Demos</h1>
 
-	<div style="border:1px solid #666;background-color:#ddd;padding:15px;display:inline-block;">
-		<h2 style="margin-top:5px;">Try and Find a Flag</h2>
-
-		<template id="test" bind>
-			<table>
-				<tr>
-					<td rowspan="99" style="padding-right:20px;width:75px">
-						<flag-icon key="{{key}}" width="75" svg="{{svg}}" usstate="{{usstate}}" canada="{{canada}}" maritime="{{maritime}}" data="{{data}}" aspect="{{aspect}}"></flag-icon>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="text" value="{{key}}" style="font-size:larger"></td>
-				</tr>
-				<tr>
-					<td>Flag Set:</td>
-					<td>
-						<input type="radio" name="flagtype" value="country" onchange="classbind(this,'Canada')" checked id="country"><label for="country">Country</label>
-						<input type="radio" name="flagtype" value="usstate" onchange="classbind(this,'California')" id="usstate"><label for="usstate">US State</label>
-						<input type="radio" name="flagtype" value="canada" onchange="classbind(this,'Nunavut')" id="canada"><label for="canada">Canadian Province</label>
-						<input type="radio" name="flagtype" value="maritime" onchange="classbind(this,'alpha')" id="maritime"><label for="maritime">Maritime / ICS</label>
-					</td>
-				</tr>
-				<tr>
-					<td>Render:</td>
-					<td>
-						<input type="radio" name="render" value="png" onchange="model.svg = false" id="png"><label for="png">PNG</label>
-						<input type="radio" name="render" value="svg" onchange="model.svg = true" checked id="svg"><label for="svg">SVG</label>
-					</td>
-				</tr><!--
+	<template id="test" bind>
+		<div style="border:1px solid #DFE8F6;background-color:#EEEEF0;display:inline-block;padding:10px;">
+			<div style="border:1px solid #99BBE8;background-color:#DFE8F6;padding:15px;display:inline-block;vertical-align:top">
+				<table style="display:inline">
+					<tr>
+						<th colspan="2">
+							Try and Find a Flag
+						</th>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="text" value="{{key}}" style="font-size:larger">
+						</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top;"><h4>Flag Set:</h4></td>
+						<td>
+							<input type="radio" name="flagtype" value="country" onchange="classbind(this,'Canada')" checked id="country"><label for="country">Country</label><br>
+							<input type="radio" name="flagtype" value="us" onchange="classbind(this,'California')" id="us"><label for="us">US State</label><br>
+							<input type="radio" name="flagtype" value="ca" onchange="classbind(this,'Nunavut')" id="ca"><label for="ca">Canadian Province</label><br>
+							<input type="radio" name="flagtype" value="de" onchange="classbind(this,'Berlin')" id="de"><label for="de">German State</label><br>
+							<input type="radio" name="flagtype" value="maritime" onchange="classbind(this,'alpha')" id="maritime"><label for="maritime">Maritime / ICS</label><br>
+							<input type="radio" name="flagtype" value="racing" onchange="classbind(this,'yellow')" id="racing"><label for="racing">NASCAR and IndyCar</label><br>
+						</td>
+					</tr>
+					<tr>
+						<td><h4>Render:</h4></td>
+						<td>
+							<input type="radio" name="render" value="png" onchange="model.svg = false" id="png"><label for="png">PNG</label>
+							<input type="radio" name="render" value="svg" onchange="model.svg = true" checked id="svg"><label for="svg">SVG</label>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="padding: 0 15px 0 25px;display:inline-block;">
+				<flag-icon key="{{key}}" width="150" svg="{{svg}}" data="{{data}}" aspect="{{aspect}}"
+					us="{{us}}" ca="{{ca}}" de="{{de}}" maritime="{{maritime}}" racing="{{racing}}"
+					style="margin-left:30px;"></flag-icon>
+				<br>
+				<json-stringify data="{{data}}"></json-stringify>
+			<!--
 				<tr>
 					<td>Correct Aspect:</td>
 					<td>
@@ -65,10 +66,9 @@
 						<input type="radio" name="aspect" value="svg" onchange="model.aspect = true" checked id="aspecttrue"><label for="aspecttrue">True</label>
 					</td>
 				</tr>-->
-			</table>
-			<json-stringify data="{{data}}"></json-stringify>
-		</template>
-	</div>
+			</div>
+		</div>
+	</template>
 
 	<h2>Many input formats are allowed</h2>
 
@@ -105,13 +105,17 @@
 	<index-links page="index.html"></index-links>
 	<script>
 	function classbind(t,text){
-		model.usstate = false;
-		model.canada = false;
+		model.us = false;
+		model.ca = false;
+		model.de = false;
 		model.maritime = false;
+		model.racing = false;
 		switch(t.value){
-			case 'usstate': model.usstate = true; break;
-			case 'canada': model.canada = true; break;
+			case 'us': model.us = true; break;
+			case 'ca': model.ca = true; break;
+			case 'de': model.de = true; break;
 			case 'maritime': model.maritime = true; break;
+			case 'racing': model.racing = true; break;
 		}
 		model.key = text;
 	}
