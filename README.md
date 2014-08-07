@@ -106,20 +106,26 @@ Polymer Web Component for flags.
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
+![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
+![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
+![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
+![Saarland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/saarland.png "Saarland")
+![Hamburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/hamburg.png "Hamburg")
+
 ### NASCAR, IndyCar, and Maritime
 
-![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/green.png "Green")
-![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/yellow.png "Yellow")
-![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/black.png "Black")
-![Yellow Saltire](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/yellowsaltire.png "Yellow Saltire")
-![Yellow Slash](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/yellowslash.png "Yellow Slash")
-![Black White Per Bend](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/blackwhiteperbend.png "Black White Per Bend")
-![Vertical Stripes](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/verticalstripes.png "Vertical Stripes")
-![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/orangecircle.png "Orange Circle")
-![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/checkered.png "Checkered")
-![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/alpha.png "Alpha")
-![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/charlie.png "Charlie")
-![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/romeo.png "Romeo")
+![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
+![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
+![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/black.png "Black")
+![Yellow Saltire](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellowsaltire.png "Yellow Saltire")
+![Yellow Slash](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellowslash.png "Yellow Slash")
+![Black White Per Bend](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/blackwhiteperbend.png "Black White Per Bend")
+![Vertical Stripes](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/verticalstripes.png "Vertical Stripes")
+![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/orangecircle.png "Orange Circle")
+![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
+![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/alpha.png "Alpha")
+![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/charlie.png "Charlie")
+![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/romeo.png "Romeo")
 
 
 * Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
