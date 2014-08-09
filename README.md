@@ -198,19 +198,19 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 ## Options
 
-Attribute			| Type			| Default		| Description
----				| ---			| ---			| ---
-`key`				| *string*		| `null`		| Proper, common, ISO 3166-1 alpha-2, alpha-3, or country code
-`svg`				| *attribute*		| `false`		| Use larger filesize SVG files instead of PNGs
-`width`				| *integer*		| `16`			| Width of icon (aspect ratio maintained if `height` omitted).
-`height`			| *integer*		| _auto_		| Height of icon (aspect ratio maintained if `width` omitted).
-`us`				| *boolean*		| `false`		| US State flags
-`ca`				| *boolean*		| `false`		| Canadian Province and Territory flags
-`de`				| *boolean*		| `false`		| German State flags
-`au`				| *boolean*		| `false`		| Australian State flags
-`maritime`			| *boolean*		| `false`		| Maritime and ICS flags
-`racing`			| *boolean*		| `false`		| NASCAR and IndyCar racing flags
-`aspect`			| *float*		| 				| Override aspect ratio used to render the flag
+Attribute	| Type			| Default	| Description
+---			| ---			| ---		| ---
+`key`		| *string*		| `null`	| Proper, common, ISO 3166-1 alpha-2, alpha-3, or country code
+`img`		| *attribute*	| `false`	| Use PNGs instead of larger filesize SVG
+`width`		| *integer*		| `16`		| Width of icon (aspect ratio maintained if `height` omitted).
+`height`	| *integer*		| _auto_	| Height of icon (aspect ratio maintained if `width` omitted).
+`us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
+`ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
+`de`		| *boolean*		| `false`	| ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany") German State flags
+`au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
+`maritime`	| *boolean*		| `false`	| Maritime and ICS flags
+`racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
+`aspect`	| *float*		| 			| Override aspect ratio used to render the flag
 
 ## Aspect Ratios for Flags
 
