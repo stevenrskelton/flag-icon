@@ -7,26 +7,25 @@
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data svg width height aspect us ca de maritime racing"
+	attributes="key data img width height aspect us ca de au maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
 	">
-  <template>
-	<div title="{{title}}" role="image" aria-label="{{title}}" style="
-		background: url({{src}});
-		background-size: 100% 100%;
-		background-position: center center;
-		width: {{computedWidth}}px;
-		height: {{computedHeight}}px;
-		display: inline-block;
-	"></div>
-  </template>
-  <script>
+	<template>
+		<div title="{{title}}" role="image" aria-label="{{title}}" style="
+			background: url({{src}});
+			background-size: 100% 100%;
+			background-position: center center;
+			width: {{computedWidth}}px;
+			height: {{computedHeight}}px;
+		"></div>
+	</template>
+	<script>
 	Polymer('flag-icon', {
 		key: null,
 		data: null,
-		svg: false,
+		img: false,
 		width: null,
 		height: null,
 		computedWidth: 0,
@@ -34,6 +33,7 @@
 		us: false,
 		ca: false,
 		de: false,
+		au: false,
 		maritime: false,
 		racing: false,
 		title: null,
@@ -42,14 +42,20 @@
 		refresh: function(){
 			var d;
 			var dataTitle;
-			var aspect = 5/3;
-			if(this.key!=null){
+			var aspect;
+			if(this.key != null){
 				if(this.us){
+					aspect = 3/2;
 					d = this.findUSState(this.key);
 				}else if(this.ca){
+					aspect = 2;
 					d = this.findCanadianProvince(this.key);
 				}else if(this.de){
+					aspect = 5/3;
 					d = this.findGermanState(this.key);
+				}else if(this.au){
+					aspect = 2;
+					d = this.findAustralianState(this.key);
 				}else if(this.maritime){
 					aspect = 1;
 					d = this.findMaritimeFlag(this.key);
@@ -61,11 +67,11 @@
 					d = this.findCountry(this.key);
 				}
 			}
-			if(this.aspect!=null){
-				if(typeof this.aspect == "number") aspect = this.aspect;
-				else if(typeof this.aspect == "boolean"){ if(this.aspect && d && d.data.aspect) aspect = d.data.aspect; }
+			if(this.aspect != null){
+				if(typeof this.aspect === "number") aspect = this.aspect;
+				else if(typeof this.aspect === "boolean"){ if(this.aspect && d && d.data.aspect) aspect = d.data.aspect; }
 				else {
-					if(this.aspect == ""){ if(d && d.data.aspect) aspect = d.data.aspect; }
+					if(this.aspect === ""){ if(d && d.data.aspect) aspect = d.data.aspect; }
 					else if(this.aspect == +this.aspect) aspect = +this.aspect;
 				}
 			}
@@ -83,13 +89,13 @@
 			if(d){
 				this.data = d.data;
 				dataTitle = d.title;
-				if(this.svg){
-					this.src = this.resolvePath('svg/' + d.file + '.svg');
-				}else{
+				if(this.img){
 					var w = +this.computedWidth;
-					if(w==null || w==0) w = +this.computedHeight * aspect;
+					if(w == null || w == 0) w = +this.computedHeight * aspect;
 					var size = (w > 75) ? 225 : (w > 36) ? '75' : (w > 20) ? '36' : '16';
 					this.src = this.resolvePath('png/' + size + '/' + d.file + '.png');
+				}else{
+					this.src = this.resolvePath('svg/' + d.file + '.svg');
 				}
 			}else{
 				this.data = null;
@@ -102,7 +108,7 @@
 		aspectChanged: function(){ this.refresh() },
 		widthChanged: function(){ this.refresh() },
 		heightChanged: function(){ this.refresh() },
-		svgChanged: function(){ this.refresh() },
+		imgChanged: function(){ this.refresh() },
 		keyChanged: function(){ this.refresh() },
 		created: function(){
 			var countries = [
@@ -452,6 +458,16 @@
 				{ name: 'Schleswig-Holstein', nuts: 'DEF' },
 				{ name: ['Thuringia','Free State of Thuringia'], endonym: ['Freistaat Thu\u00FCringen','Freistaat Thüringen'], nuts: 'DEG' }
 			];
+			var au_states = [
+				{ name: 'Australian Capital Territory', postal: 'ACT', iso: 'AU-ACT' },
+				{ name: 'New South Wales', postal: 'NSW', iso: 'AU-NSW' },
+				{ name: 'Northern Territory', postal: 'NT', iso: 'AU-NT' },
+				{ name: 'Queensland', postal: 'QLD', iso: 'AU-QLD' },
+				{ name: 'South Australia', postal: 'SA', iso: 'AU-SA' },
+				{ name: 'Tasmania', postal: 'TAS', iso: 'AU-TAS' },
+				{ name: 'Victoria', postal: 'VIC', iso: 'AU-VIC' },
+				{ name: 'Western Australia', postal: 'WA', iso: 'AU-WA' }
+			];
 			var maritimeFlags = [
 				{ name: 'zero', key: 0 },
 				{ name: 'one', key: 1 },
@@ -507,7 +523,7 @@
 				{ key: 'green', description: 'Start of race / Restart / End of hazard / Safe racing conditions / Pit lane open' }
 			];
 			function head(arr){
-				if(typeof arr == "object"){
+				if(typeof arr === "object"){
 					if(arr.length>0) return arr[0];
 					else return null;
 				} else return arr;
@@ -524,12 +540,12 @@
 					var upper = id.toUpperCase();
 					if(upper.length > 3){
 						data = countries.filter(function(element, index, array){
-							var name = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
-							return name || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() == upper; }) : false);
+							var name = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
+							return name || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() === upper; }) : false);
 						});
 					}else{
 						data = countries.filter(function(element, index, array){
-							return element.alpha2 == upper || element.alpha3 == upper || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() == upper; }) : false);
+							return element.alpha2 === upper || element.alpha3 === upper || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() === upper; }) : false);
 						});
 					}
 				}
@@ -545,15 +561,15 @@
 					});
 				}else{
 					var upper = id.toUpperCase();
-					if(upper.length==2){
+					if(upper.length === 2){
 						data = us_states.filter(function(element, index, array){
-							return element.alpha2 == upper;
+							return element.alpha2 === upper;
 						});
 					}else{
 						data = us_states.filter(function(element, index, array){
-							var t1 = element.iso == upper;
-							var t2 = element.gpo.toUpperCase() == upper;
-							var t3 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+							var t1 = element.iso === upper;
+							var t2 = element.gpo.toUpperCase() === upper;
+							var t3 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
 							return t1 || t2 || t3;
 						});
 					}
@@ -566,11 +582,11 @@
 				var upper = id.toUpperCase();
 				if(upper.length>2){
 					data = ca_provinces.filter(function(element, index, array){
-						return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+						return (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
 					});
 				}else{
 					data = ca_provinces.filter(function(element, index, array){
-						return element.alpha2 == upper;
+						return element.alpha2 === upper;
 					});
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'ca/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
@@ -579,24 +595,43 @@
 			this.findGermanState = function(id){
 				var data;
 				var upper = id.toUpperCase();
-				if(id.length==3){
+				if(id.length === 3){
 					data = de_states.filter(function(element, index, array){
-						return element.nuts == upper;
+						return element.nuts === upper;
 					});
 				}else{
 					data = de_states.filter(function(element, index, array){
-						var t1 = element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() == upper; }) : false;
-						var t2 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() == upper; }) : element.name.toUpperCase() == upper;
+						var t1 = element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() === upper; }) : false;
+						var t2 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
 						return t1 || t2;
 					});
 				}
 				return head(data.map(function(element){ return { title: head(element.endonym) | head(element.name), data: element, file: 'de/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
+			this.au_states = au_states;
+			this.findAustralianState = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if(id.length<=3){
+					data = au_states.filter(function(element, index, array){
+						return element.postal === upper;
+					});
+				}else if(id.length<=6){
+					data = au_states.filter(function(element, index, array){
+						return element.iso === upper;
+					});
+				}else{
+					data = au_states.filter(function(element, index, array){
+						return element.name.toUpperCase() === upper;
+					});
+				}
+				return head(data.map(function(element){ return { title: element.name, data: element, file: 'au/' + element.name.toLowerCase().replace(/ /g,'_') }; }));
+			}
 			this.maritimeFlags = maritimeFlags;
 			this.findMaritimeFlag = function(id){
 				var lower = id.toLowerCase ? id.toLowerCase() : id;
 				var data = maritimeFlags.filter(function(element, index, array){
-					return element.name == lower || element.key == lower;
+					return element.name === lower || element.key == lower;
 				});
 				return head(data.map(function(element){ return { title: element.name, data: element, file: 'maritime/' + element.key }; }));
 			}
@@ -604,11 +639,11 @@
 			this.findRacing = function(id){
 				var lower = id.toLowerCase();
 				var data = racingFlags.filter(function(element, index, array){
-					return element.key == lower;
+					return element.key === lower;
 				});
 				return head(data.map(function(element){ return { title: element.description, data: element, file: 'racing/' + element.key }; }));
 			}
 		}
 	});
-  </script>
+	</script>
 </polymer-element>

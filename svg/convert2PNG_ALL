@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ "$1" != "a" ] && [ "$1" != "s" ]; then
-	echo "argument 1 must be 'a' or 's'"
-else
+if [ "$1" == "43" ] || [ "$1" == "32" ] || [ "$1" == "53" ] || [ "$1" == "2" ] || [ "$1" == "1" ]; then
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-	$DIR/convert2PNG 36 $1
-	$DIR/convert2PNG 75 $1
-	$DIR/convert2PNG 225 $1
+	$DIR/convert2PNG $1 36
+	$DIR/convert2PNG $1 75
+	$DIR/convert2PNG $1 225
 	echo "Finished, now run 16 manually using:"
-	echo "../convert2PNG 16 $1"
+	echo "../convert2PNG $1 16"
+else
+	echo "argument 1 must be '43', '32', '53', '2', or '1'"
 fi

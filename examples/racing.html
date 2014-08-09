@@ -24,7 +24,7 @@
 
 	<template id="flags" repeat="[[flags]]">
 		<div class="icon">
-			<flag-icon key="[[key]]" racing svg width="75"></flag-icon>
+			<flag-icon key="[[key]]" racing width="75"></flag-icon>
 			<div style="display:inline-block;text-align:left;vertical-align:top;width:400px;">
 				[[key]]<br>
 				[[description]]
@@ -44,7 +44,7 @@
 				}
 			</style>
 			<div class="icon">
-				<flag-icon key="{{flag.key}}" racing width="{{width}}"></flag-icon>
+				<flag-icon key="{{flag.key}}" racing img width="{{width}}"></flag-icon>
 				[[flag.name]]<br>
 				[[flag.key]]
 			</div>

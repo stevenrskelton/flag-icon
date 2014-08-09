@@ -5,7 +5,7 @@ Polymer Web Component for flags.
 
 > **SVG** files: **2kb** to **75kb**
 
-> **PNG** files: 16x11 < **1kb**, 36x24 < **2kb**, 75x50 < **5kb**, 225x150 < **20kb**
+> **PNG** files: 16x11 < **1kb**, 36x27 < **2kb**, 75x56 < **5kb**, 225x168 < **20kb**
 
 ### Countries
 
@@ -45,7 +45,7 @@ Polymer Web Component for flags.
 ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil")
 ![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/is.png "Iceland")
 
-75 x 50 PNG
+75 x 56 PNG
 
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/kr.png "Korea")
@@ -148,7 +148,7 @@ Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
-> [Live Demo - Canada Province and Territory Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
+> [Live Demo - Canadian Province and Australian State Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
 
 > [Live Demo - German State Flags](http://files.stevenskelton.ca/flag-icon/examples/de-states.html)
 
@@ -225,6 +225,20 @@ Attribute			| Type			| Default		| Description
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
 `racing`			| *boolean*		| `false`		| NASCAR and IndyCar racing flags
 `aspect`			| *float*		| 				| Override aspect ratio used to render the flag
+
+## Aspect Ratios for Flags
+
+Flags come in all different shapes and sizes, attempts were made to standardize to the following aspect ratios (width:height)
+
+Attribute		| Aspect
+---				| ---
+Country			| 4:3
+US				| 3:2
+German			| 5:3
+Canadian		| 2:1
+Austrialia		| 2:1
+NASCAR, IndyCar	| 4:3
+Maritime		| 1:1
 
 ## Todo
 

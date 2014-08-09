@@ -1,40 +1,61 @@
 #!/bin/bash
 
-resize="resize"
-if [ "$1" = "16" ]; then
-	width="$1"
-	if [ "$2" = "a" ]; then
+if [ "$2" = "16" ]; then
+	resize="-filter box -resize"
+	width="$2"
+	if [ "$1" == "43" ] || [ "$1" == "32" ] || [ "$1" == "53" ] || [ "$1" == "2" ]; then
 		height="11"
-	elif [ "$2" = "s" ]; then
+	elif [ "$1" = "1" ]; then
 		height="$width"
 	fi
-elif [ "$1" = "36" ]; then
-	width="$1"
-	if [ "$2" = "a" ]; then
+elif [ "$2" = "36" ]; then
+	resize="-resize"
+	width="$2"
+	if [ "$1" = "43" ]; then
+		height="27"
+	elif [ "$1" = "32" ]; then
+		height="24"
+	elif [ "$1" = "53" ]; then
 		height="22"
-	elif [ "$2" = "s" ]; then
+	elif [ "$1" = "2" ]; then
+		height="18"
+	elif [ "$1" = "1" ]; then
 		height="$width"
 	fi
-elif [ "$1" = "75" ]; then
-	width="$1"
-	if [ "$2" = "a" ]; then
+elif [ "$2" = "75" ]; then
+	resize="-filter triangle -resize"
+	width="$2"
+	if [ "$1" = "43" ]; then
+		height="56"
+	elif [ "$1" = "32" ]; then
+		height="50"
+	elif [ "$1" = "53" ]; then
 		height="45"
-	elif [ "$2" = "s" ]; then
+	elif [ "$1" = "2" ]; then
+		height="38"
+	elif [ "$1" = "1" ]; then
 		height="$width"
 	fi
-elif [ "$1" = "225" ]; then
-	width="$1"
-	if [ "$2" = "a" ]; then
+elif [ "$2" = "225" ]; then
+	resize="-filter triangle -resize"
+	width="$2"
+	if [ "$1" = "43" ]; then
+		height="168"
+	elif [ "$1" = "32" ]; then
+		height="150"
+	elif [ "$1" = "53" ]; then
 		height="135"
-	elif [ "$2" = "s" ]; then
+	elif [ "$1" = "2" ]; then
+		height="112"
+	elif [ "$1" = "1" ]; then
 		height="$width"
 	fi
 else
-	echo "argument 1 must be 16, 36, 75, or 225"
+	echo "argument 2 must be 16, 36, 75, or 225"
 fi
 	
 if [ -z "$height" ]; then
-	echo "argument 2 must be 'a' or 's'"
+	echo "argument 1 must be '43', '32', '53', '2', or '1'"
 elif [ -n "$width" ]; then
 	
 	echo "running for $width x $height"
@@ -43,7 +64,8 @@ elif [ -n "$width" ]; then
 
 	#uses ImageMagick
 	for filename in `find . -regex ".*.svg"`; do
-	convert -background none $filename -filter triangle -${resize} ${width}x${height}! ${filename%svg}png;
+	convert -background none $filename ${resize} ${width}x${height}! ${filename%svg}png;
+	#filter box
 	#convert -background none $filename -filter triangle -interpolative-resize ${width}x${height}! -blur 0x.3 -raise 1 thumbnail.png;
 	#convert thumbnail.png -fill gray50 -colorize 100% -raise 1 -normalize -blur 0x4 overlay.png;
 	#convert thumbnail.png overlay.png -compose hardlight -composite ${filename%svg}png;

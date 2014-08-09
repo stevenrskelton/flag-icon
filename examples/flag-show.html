@@ -1,6 +1,6 @@
 <link rel="import" href="../flag-icon.html">
 <link rel="import" href="json-stringify.html">
-<polymer-element name="flag-show" attributes="name key endonym ca us de data" noscript>
+<polymer-element name="flag-show" attributes="name key endonym ca us de au data" noscript>
 	<template>
 		<style>
 			.show {
@@ -25,29 +25,29 @@
 			<table>
 				<tr>
 					<td>
-						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}"></flag-icon><br>
+						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" au="{{au}}" img></flag-icon><br>
 						16px
 					</td>
 					<td rowspan="3">
-						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" width="225"></flag-icon><br>
+						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" au="{{au}}" img width="225"></flag-icon><br>
 						225px
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" width="36"></flag-icon><br>
+						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" au="{{au}}" img width="36"></flag-icon><br>
 						36px
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" width="75"></flag-icon><br>
+						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" au="{{au}}" img width="75"></flag-icon><br>
 						75px
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
-						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" svg width="375"></flag-icon><br>
+						<flag-icon key="{{key}}" ca="{{ca}}" us="{{us}}" de="{{de}}" au="{{au}}" width="375"></flag-icon><br>
 						375px SVG
 					</td>
 				</tr>
