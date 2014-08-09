@@ -10,6 +10,7 @@ Polymer Web Component for flags.
 ### Countries
 
 _16 x 11 PNG_
+
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/kr.png "Korea")
 ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany")
@@ -54,6 +55,7 @@ _16 x 11 PNG_
 ![Mexico](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/mx.png "Mexico")
 
 _75 x 56 PNG_
+
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/kr.png "Korea")
 ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/de.png "Germany")
