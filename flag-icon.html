@@ -7,7 +7,7 @@
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data img width height aspect us ca de au maritime racing"
+	attributes="key data img width height aspect us ca de au es maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
@@ -19,6 +19,7 @@
 			background-position: center center;
 			width: {{computedWidth}}px;
 			height: {{computedHeight}}px;
+			background-repeat: no-repeat;
 		"></div>
 	</template>
 	<script>
@@ -34,6 +35,7 @@
 		ca: false,
 		de: false,
 		au: false,
+		es: false,
 		maritime: false,
 		racing: false,
 		title: null,
@@ -56,6 +58,9 @@
 				}else if(this.au){
 					aspect = 2;
 					d = this.findAustralianState(this.key);
+				}else if(this.es){
+					aspect = 3/2;
+					d = this.findSpanishAutonomy(this.key);
 				}else if(this.maritime){
 					aspect = 1;
 					d = this.findMaritimeFlag(this.key);
@@ -76,16 +81,6 @@
 				}
 			}
 
-			if(this.width) this.computedWidth = this.width;
-			else this.computedWidth = 0;
-
-			if(!this.width && !this.height) this.computedWidth = 16;
-
-			if(this.height) this.computedHeight = this.height;
-			else this.computedHeight = this.computedWidth / aspect;
-
-			if(!this.computedWidth) this.computedWidth = this.computedHeight * aspect;
-
 			if(d){
 				this.data = d.data;
 				dataTitle = d.title;
@@ -104,6 +99,16 @@
 			}
 			var userTitle = this.textContent.trim();
 			this.title = (userTitle.length>0) ? userTitle : dataTitle;
+
+			if(this.width) this.computedWidth = this.width;
+			else this.computedWidth = 0;
+
+			if(!this.width && !this.height) this.computedWidth = 16;
+
+			if(this.height) this.computedHeight = this.height;
+			else this.computedHeight = this.computedWidth / aspect;
+
+			if(!this.computedWidth) this.computedWidth = this.computedHeight * aspect;
 		},
 		aspectChanged: function(){ this.refresh() },
 		widthChanged: function(){ this.refresh() },
@@ -367,7 +372,6 @@
 				{ name: ['Kosovo','Republic of Kosovo'], aspect: 7/5, alpha2: 'XK', endonym: ['Kosova','\u041A\u043E\u0441\u043E\u0432\u043E'] },
 				{ name: ['European Union','EuropeanUnion','EU'], alpha2: 'EUROPEANUNION' },
 				{ name: ['United Nations','UnitedNations','UN'], alpha2: 'UNITEDNATIONS' },
-				{ name: 'Catalonia', alpha2: 'CATALONIA', endonym: ['Catalu\u00F1a'] },
 				{ name: 'England', alpha2: 'ENGLAND' },
 				{ name: 'Scotland', alpha2: 'SCOTLAND' },
 				{ name: 'Wales', alpha2: 'WALES' }
@@ -467,6 +471,27 @@
 				{ name: 'Tasmania', postal: 'TAS', iso: 'AU-TAS' },
 				{ name: 'Victoria', postal: 'VIC', iso: 'AU-VIC' },
 				{ name: 'Western Australia', postal: 'WA', iso: 'AU-WA' }
+			];
+			var es_autonomy = [
+				{ name: ['Andaluc\u00EDa','Andalucia'], iso: 'ES-AN' },
+				{ name: ['Arag\u00F3n','Aragon'], iso: 'ES-AR' },
+				{ name: 'Asturias', iso: 'ES-AS', endonym: ['Principado de Asturias'] },
+				{ name: 'Canary Islands', iso: 'ES-CN', endonym: ['Canarias'] },
+				{ name: 'Cantabria', iso: 'ES-CB' },
+				{ name: 'Castilla-La Mancha', iso: 'ES-CM' },
+				{ name: ['Castile and Le\u00F3n','Castile and Leon'], iso: 'ES-CL', endonym: ['Castilla y Le\u00F3n'] },
+				{ name: 'Catalonia', iso: 'ES-CT', endonym: ['Catalu\u00F1a','Catalunya'] },
+				{ name: 'Extremadura', iso: 'ES-EX' },
+				{ name: 'Galicia', iso: 'ES-GA' },
+				{ name: 'Balearic Islands', iso: 'ES-IB', endonym: ['Islas Baleares','Illes Balears'] },
+				{ name: 'La Rioja', iso: 'ES-RI' },
+				{ name: ['Community of Madrid','Madrid'], iso: 'ES-MD', endonym: ['Comunidad de Madrid'] },
+				{ name: 'Region of Murcia', iso: 'ES-MC', endonym: ['Regi\u00F3n de Murcia'] },
+				{ name: 'Navarra', iso: 'ES-NC', endonym: ['Comunidad Foral de Navarra','Nafarroako Foru Komunitatea'] },
+				{ name: 'Basque Country', iso: 'ES-PV', endonym: ['Pa\u00EDs Vasco','Euskadi'] },
+				{ name: ['Valencia Community','Valencia'], iso: 'ES-VC', endonym: ['Comunitat Valenciana','Comunidad Valenciana'] },
+				{ name: 'Ceuta', iso: 'ES-CE' },
+				{ name: 'Melilla', iso: 'ES-ML' }
 			];
 			var maritimeFlags = [
 				{ name: 'zero', key: 0 },
@@ -626,6 +651,22 @@
 					});
 				}
 				return head(data.map(function(element){ return { title: element.name, data: element, file: 'au/' + element.name.toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.es_autonomy = es_autonomy;
+			this.findSpanishAutonomy = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if(id.length === 5 && id[2] === '-'){
+					data = es_autonomy.filter(function(element, index, array){
+						return element.iso === upper;
+					});
+				}else{
+					data = es_autonomy.filter(function(element, index, array){
+						var name = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
+						return name || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() === upper; }) : false);
+					});
+				}
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'es/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
 			this.maritimeFlags = maritimeFlags;
 			this.findMaritimeFlag = function(id){

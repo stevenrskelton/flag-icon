@@ -141,7 +141,7 @@ _75 x 56 PNG_
 
 > [Live Demo - Canadian Province and Australian State Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-australia.html)
 
-> [Live Demo - German State Flags](http://files.stevenskelton.ca/flag-icon/examples/de-states.html)
+> [Live Demo - German State and Spanish Autonomy Flags](http://files.stevenskelton.ca/flag-icon/examples/germany-spain.html)
 
 > [Live Demo - Maritime and International Code of Signals (ICS) Flags](http://files.stevenskelton.ca/flag-icon/examples/maritime.html)
 
@@ -210,10 +210,11 @@ Attribute	| Type			| Default	| Description
 `img`		| *attribute*	| `false`	| Use PNGs instead of larger filesize SVG
 `width`		| *integer*		| `16`		| Width of icon (aspect ratio maintained if `height` omitted).
 `height`	| *integer*		| _auto_	| Height of icon (aspect ratio maintained if `width` omitted).
-`us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
+`au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
 `ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
 `de`		| *boolean*		| `false`	| ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany") German State flags
-`au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
+`es`		| *boolean*		| `false`	| ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spain") Spain Autonomous Community flags
+`us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
 `maritime`	| *boolean*		| `false`	| Maritime and ICS flags
 `racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
 `aspect`	| *float*		| 			| Override aspect ratio used to render the flag
@@ -225,10 +226,11 @@ Flags come in all different shapes and sizes, attempts were made to standardize 
 Attribute		| Aspect
 ---				| ---
 Country			| 4:3
-US				| 3:2
-German			| 5:3
-Canadian		| 2:1
 Austrialia		| 2:1
+Canadian		| 2:1
+German			| 5:3
+Spain			| 3:2
+US				| 3:2
 NASCAR, IndyCar	| 4:3
 Maritime		| 1:1
 
