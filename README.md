@@ -129,6 +129,7 @@ _75 x 56 PNG_
 * PNGs are compacted using [pngcrush](http://en.wikipedia.org/wiki/Pngcrush).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
+## Demos
 
 > [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/examples/index.html)
 
@@ -138,7 +139,7 @@ _75 x 56 PNG_
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
-> [Live Demo - Canadian Province and Australian State Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-provinces.html)
+> [Live Demo - Canadian Province and Australian State Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-australia.html)
 
 > [Live Demo - German State Flags](http://files.stevenskelton.ca/flag-icon/examples/de-states.html)
 
