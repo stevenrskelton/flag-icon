@@ -170,10 +170,10 @@ _75 x 56 PNG_
 	<flag-icon key="ca"></flag-icon>
 	<flag-icon key="canada"></flag-icon>
 	<flag-icon key="124"></flag-icon>
-	<!-- specify to use SVGs -->
-	<flag-icon key="ca" svg></flag-icon>
+	<!-- specify to use PNGs -->
+	<flag-icon key="ca" img></flag-icon>
 	<!-- specify a specific size -->
-	<flag-icon key="ca" svg width="100"></flag-icon>
+	<flag-icon key="ca" width="100"></flag-icon>
 
 	<!-- Specify alt & title text,
 	     otherwise it defaults to the official country name -->
