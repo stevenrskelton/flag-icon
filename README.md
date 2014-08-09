@@ -10,7 +10,6 @@ Polymer Web Component for flags.
 ### Countries
 
 _16 x 11 PNG_
-
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/kr.png "Korea")
 ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany")
@@ -52,9 +51,9 @@ _16 x 11 PNG_
 ![Netherlands](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/nl.png "Netherlands")
 ![China](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/cn.png "China")
 ![Vietnam](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/vn.png "Vietnam")
+![Mexico](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/mx.png "Mexico")
 
 _75 x 56 PNG_
-
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/kr.png "Korea")
 ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/de.png "Germany")
@@ -68,7 +67,6 @@ _75 x 56 PNG_
 ### States and Provinces
 
 #### Canada
-
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/british_columbia.png "British Columbia")
 ![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/manitoba.png "Manitoba")
@@ -80,20 +78,17 @@ _75 x 56 PNG_
 ![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/québec.png "Québec")
 
 #### Germany, Australia
-
 ![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
 ![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
 ![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
 ![Saarland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/saarland.png "Saarland")
 ![Hamburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/hamburg.png "Hamburg")
-
 ![Australian Capital Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/australian_capital_territory.png "Australian Capital Territory")
 ![New South Wales](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/new_south_wales.png "New South Wales")
 ![Victoria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/victoria.png "Victoria")
 ![Northern Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/northern_territory.png "Northern Territory")
 
 #### United States
-
 ![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/california.png "California")
 ![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/delaware.png "Delaware")
 ![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/florida.png "Florida")
@@ -105,7 +100,6 @@ _75 x 56 PNG_
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
 ### NASCAR, IndyCar
-
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
 ![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
 ![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/black.png "Black")
@@ -117,7 +111,6 @@ _75 x 56 PNG_
 ![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
 
 ### Maritime
-
 ![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/c.png "Charlie")
 ![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/a.png "Alpha")
 ![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/r.png "Romeo")
@@ -134,7 +127,6 @@ _75 x 56 PNG_
 * PNGs are compacted using [pngcrush](http://en.wikipedia.org/wiki/Pngcrush).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
-Maintained by [Steven Skelton](https://github.com/stevenrskelton)
 
 > [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/examples/index.html)
 
