@@ -44,12 +44,12 @@ Polymer Web Component for flags.
 ![Italy](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/it.png "Italy")
 ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil")
 ![Iceland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/is.png "Iceland")
-![Puerto Rico](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/pr.png "Puerto Rico")
-![Venezuela](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ve.png "Venezuela")
-![Saint Lucia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/lc.png "Saint Lucia")
-![Russian Federation](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ru.png "Russian Federation")
-![Poland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/pl.png "Poland")
-![Netherlands](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/nl.png "Netherlands")
+![Puerto Rico](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/pr.png "Puerto Rico")
+![Venezuela](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ve.png "Venezuela")
+![Saint Lucia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/lc.png "Saint Lucia")
+![Russian Federation](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ru.png "Russian Federation")
+![Poland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/pl.png "Poland")
+![Netherlands](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/nl.png "Netherlands")
 
 75 x 56 PNG
 
@@ -62,15 +62,6 @@ Polymer Web Component for flags.
 ![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/no.png "Norway")
 ![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ph.png "Philippines")
 ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/es.png "Spain")
-![United Kingdom](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/gb.png "United Kingdom")
-![India](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/in.png "India")
-![South Africa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/za.png "South Africa")
-![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/th.png "Thailand")
-![Sweden](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/se.png "Sweden")
-![Slovenia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/si.png "Slovenia")
-![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/us.png "India")
-![Japan](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/jp.png "Japan")
-![Ireland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ie.png "Ireland")
 
 ### States and Provinces
 
@@ -102,7 +93,7 @@ Polymer Web Component for flags.
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
-### NASCAR, IndyCar, and Maritime
+### NASCAR, IndyCar
 
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
 ![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
@@ -113,6 +104,9 @@ Polymer Web Component for flags.
 ![Vertical Stripes](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/verticalstripes.png "Vertical Stripes")
 ![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/orangecircle.png "Orange Circle")
 ![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
+
+### Maritime
+
 ![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/c.png "Charlie")
 ![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/a.png "Alpha")
 ![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/r.png "Romeo")
@@ -213,6 +207,7 @@ Attribute			| Type			| Default		| Description
 `us`				| *boolean*		| `false`		| US State flags
 `ca`				| *boolean*		| `false`		| Canadian Province and Territory flags
 `de`				| *boolean*		| `false`		| German State flags
+`au`				| *boolean*		| `false`		| Australian State flags
 `maritime`			| *boolean*		| `false`		| Maritime and ICS flags
 `racing`			| *boolean*		| `false`		| NASCAR and IndyCar racing flags
 `aspect`			| *float*		| 				| Override aspect ratio used to render the flag
