@@ -110,7 +110,7 @@ _75 x 56 PNG_
 ![Canary Islands](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/canary_islands.png "Canary Islands")
 ![Cantabria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/cantabria.png "Cantabria")
 ![Castile and León](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/castile_and_león.png "Castile and León")
-![Castilla - La Mancha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/castilla-la_mancha.png "Castilla - La Mancha")
+![La Rioja](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/la_rioja.png "La Rioja")
 
 ### NASCAR, IndyCar
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
