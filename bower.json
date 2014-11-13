@@ -27,7 +27,15 @@
     "icon",
     "svg",
     "flag",
-    "maritime"
+    "maritime",
+    "nascar",
+    "indycar",
+    "racing",
+    "canada",
+    "united states",
+    "germany",
+    "australia",
+    "spain"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#>=0.5.1"
