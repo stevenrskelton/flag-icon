@@ -76,7 +76,7 @@ _16 x 11 PNG_
 ![Peru](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/pe.png "Peru")
 ![Qatar](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/qa.png "Qatar")
 ![Samoa](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ws.png "Samoa")
-![Switzerland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ch.png "Switzerland")
+![Cabo Verde](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/cv.png "Cabo Verde")
 ![Syria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/sy.png "Syria")
 ![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/th.png "Thailand")
 ![Ukraine](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ua.png "Ukraine")
