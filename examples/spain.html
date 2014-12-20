@@ -43,7 +43,7 @@
 	};
 	function changeShow(key){
 		document.getElementById('show').key = key;
-		var data = flagicon.de_states.filter(function(row){ return row.nuts == key; })[0];
+		var data = flagicon.es_autonomy.filter(function(row){ return row.iso == key; })[0];
 		document.getElementById('show').es = true;
 		document.getElementById('show').name = head(data.name);
 		document.getElementById('show').endonym = head(data.endonym);
