@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1950" height="1300">
+	<desc>Bandeira do Piauí</desc>
+	<defs>
+		<g id="star" transform="scale(200)">
+			<g id="cone">
+				<polygon id="triangle" fill="#ffffff" points="0,0 0,1 .5,1" transform="translate(0,-1) rotate(18)"/>
+				<use xlink:href="#triangle" transform="scale(-1,1)"/>
+			</g>
+			<use xlink:href="#cone" transform="rotate(72)"/>
+			<use xlink:href="#cone" transform="rotate(-72)"/>
+			<use xlink:href="#cone" transform="rotate(144)"/>
+			<use xlink:href="#cone" transform="rotate(-144)"/>
+		</g>
+		<rect id="stripe" fill="#56A134" width="100%" height="100"/>
+	</defs>
+	<rect fill="#FFD500" width="100%" height="1300"/>
+	<use xlink:href="#stripe"/>
+	<use xlink:href="#stripe" y="200"/>
+	<use xlink:href="#stripe" y="400"/>
+	<use xlink:href="#stripe" y="600"/>
+	<use xlink:href="#stripe" y="800"/>
+	<use xlink:href="#stripe" y="1000"/>
+	<use xlink:href="#stripe" y="1200"/>
+	<rect width="750" height="500" fill="#0B1097"/>
+	<text  x="375" y="470"  font-family="Arial" font-size="60" text-anchor="middle" style="fill:#FFFFFF;">13 DE MARÇO DE 1823</text>
+	<use xlink:href="#star" x="375" y="225"/>
+</svg>

@@ -8,7 +8,7 @@
 			</ul>
 		</template>
 		<template if="{{!examples}}">
-			<div style="width:100%;background-color:#fff;border-top:1px solid #ddd;text-align:center;margin-top:50px;clear:both;">
+			<div style="width:100%;background-color:#E8F2F8;border-bottom:1px solid #A7D7F9;text-align:center;position:fixed;top:0;left:0;">
 				<strong>Other Examples: </strong>
 				<template repeat="{{link in example}}">
 				| <a href="{{link.href}}" alt="{{link.name}}" style="{{page==link.href ? 'font-weight:bold':''}}">{{link.name}}</a>
@@ -23,12 +23,26 @@
 			{ href:"index.html", name:"General Use" },
 			{ href:"themes.html", name:"Themes" },
 			{ href:"countries.html", name:"World Country Flags" },
-			{ href:"us-states.html", name: "USA State Flags" },
-			{ href:"canada-australia.html", name: "Canada Province and Australia State Flags" },
-			{ href:"germany-spain.html", name: "German State and Spanish Autonomy Flags" },
+			{ href:"us-states.html", name: "USA Flags" },
+			{ href:"canada-australia.html", name: "Canada and Australia Flags" },
+			{ href:"germany-spain.html", name: "German and Spanish Flags" },
+			{ href:"brazil.html", name: "Brazil Flags" },
 			{ href:"maritime.html", name: "Maritime and ICS Flags" },
 			{ href:"racing.html", name: "NASCAR and IndyCar Racing Flags" }
 		]
 	});
+	function insertCss( code ) {
+		var style = document.createElement('style');
+		style.type = 'text/css';
+		if (style.styleSheet) {
+			// IE
+			style.styleSheet.cssText = code;
+		} else {
+			// Other browsers
+			style.innerHTML = code;
+		}
+		document.getElementsByTagName("head")[0].appendChild( style );
+	}
+	insertCss("h1 { margin-top: 40px; }");
 	</script>
 </polymer-element>

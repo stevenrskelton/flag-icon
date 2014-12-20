@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg2"
+   height="600.00000"
+   width="900.00000"
+   y="0.00000000"
+   x="0.00000000"
+   version="1.0">
+  <defs
+     id="defs3" />
+  <g
+     id="layer1">
+    <rect
+       id="rect1543"
+       style="fill:#ffffff;fill-opacity:1.0000000;stroke:none;stroke-width:5.0000000;stroke-miterlimit:4.0000000;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+       y="0.00000000"
+       x="0.00000000"
+       height="600.00000"
+       width="900.00000" />
+    <path
+       id="path1291"
+       style="fill:#00a5ff;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000"
+       d="M 0.00000000,450.00000 L 675.00000,0.00000000 L 0.00000000,0.00000000 L 0.00000000,450.00000 z " />
+    <path
+       id="path1293"
+       style="fill:#008200;fill-opacity:1.0000000;fill-rule:evenodd;stroke:none;stroke-width:1.0000000px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1.0000000"
+       d="M 225.00000,600.00000 L 900.00000,150.00000 L 900.00000,600.00000 L 225.00000,600.00000 L 225.00000,600.00000 z " />
+    <rect
+       id="rect4344"
+       style="fill:#dc0000;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000;stroke-miterlimit:4.0000000;stroke-dasharray:1.0000000 4.0000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+       y="481.90814"
+       x="0.00000000"
+       height="30.000000"
+       width="900.00000" />
+    <path
+       id="path3571"
+       style="fill:#f8c300;fill-opacity:1.0000000;stroke:none;stroke-width:1.0000000;stroke-miterlimit:4.0000000;stroke-dasharray:1.0000000 4.0000000 ;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"
+       d="M 582.16399,481.90813 L 450.00000,385.88537 L 317.83601,481.90813 L 368.31816,326.54004 L 236.15417,230.51728 L 399.51785,230.51728 L 450.00000,75.149185 L 500.48215,230.51728 L 663.84583,230.51728 L 531.68184,326.54004 L 582.16399,481.90813 z " />
+  </g>
+</svg>

@@ -31,11 +31,12 @@
     "nascar",
     "indycar",
     "racing",
-    "canada",
-    "united states",
-    "germany",
     "australia",
-    "spain"
+    "brazil",
+    "canada",
+    "germany",
+    "spain",
+    "united states"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#>=0.5.1"

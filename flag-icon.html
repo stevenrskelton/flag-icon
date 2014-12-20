@@ -9,14 +9,14 @@ https://github.com/stevenrskelton/flag-icon
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data img width height aspect us ca de au es maritime racing"
+	attributes="key data img width height aspect au br ca de es us maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
 	">
 	<template>
 		<div title="{{title}}" role="image" aria-label="{{title}}" style="
-			background: url({{src}});
+			{{src ? 'background: url(' + src + ');' : ''}}
 			background-size: 100% 100%;
 			background-position: center center;
 			width: {{computedWidth}}px;
@@ -34,11 +34,12 @@ https://github.com/stevenrskelton/flag-icon
 		height: null,
 		computedWidth: 0,
 		computedHeight: 0,
-		us: false,
+		au: false,
+		br: false,
 		ca: false,
 		de: false,
-		au: false,
 		es: false,
+		us: false,
 		maritime: false,
 		racing: false,
 		title: null,
@@ -49,21 +50,24 @@ https://github.com/stevenrskelton/flag-icon
 			var dataTitle;
 			var aspect;
 			if(this.key != null){
-				if(this.us){
+				if(this.au){
+					aspect = 2;
+					d = this.findAustralianState(this.key);
+				}else if(this.br){
 					aspect = 3/2;
-					d = this.findUSState(this.key);
+					d = this.findBrazilianState(this.key);
 				}else if(this.ca){
 					aspect = 2;
 					d = this.findCanadianProvince(this.key);
 				}else if(this.de){
 					aspect = 5/3;
 					d = this.findGermanState(this.key);
-				}else if(this.au){
-					aspect = 2;
-					d = this.findAustralianState(this.key);
 				}else if(this.es){
 					aspect = 3/2;
 					d = this.findSpanishAutonomy(this.key);
+				}else if(this.us){
+					aspect = 3/2;
+					d = this.findUSState(this.key);
 				}else if(this.maritime){
 					aspect = 1;
 					d = this.findMaritimeFlag(this.key);
@@ -379,6 +383,99 @@ https://github.com/stevenrskelton/flag-icon
 				{ name: 'Scotland', alpha2: 'SCOTLAND' },
 				{ name: 'Wales', alpha2: 'WALES' }
 			];
+			var au_states = [
+				{ name: 'Australian Capital Territory', postal: 'ACT', iso: 'AU-ACT' },
+				{ name: 'New South Wales', postal: 'NSW', iso: 'AU-NSW' },
+				{ name: 'Northern Territory', postal: 'NT', iso: 'AU-NT' },
+				{ name: 'Queensland', postal: 'QLD', iso: 'AU-QLD' },
+				{ name: 'South Australia', postal: 'SA', iso: 'AU-SA' },
+				{ name: 'Tasmania', postal: 'TAS', iso: 'AU-TAS' },
+				{ name: 'Victoria', postal: 'VIC', iso: 'AU-VIC' },
+				{ name: 'Western Australia', postal: 'WA', iso: 'AU-WA' }
+			];
+			var br_states = [
+				{ name: 'Acre', iso: 'BR-AC', alpha2: 'AC' },
+				{ name: 'Alagoas', iso: 'BR-AL', alpha2: 'AL' },
+				{ name: ['Amapá','Amapa'], iso: 'BR-AP', alpha2: 'AP' },
+				{ name: 'Amazonas', iso: 'BR-AM', alpha2: 'AM' },
+				{ name: 'Bahia', iso: 'BR-BA', alpha2: 'BA' },
+				{ name: ['Ceará','Ceara'], iso: 'BR-CE', alpha2: 'CE' },
+				{ name: 'Distrito Federal', iso: 'BR-DF', alpha2: 'DF' },
+				{ name: ['Espírito Santo','Espirito Santo'], iso: 'BR-ES', alpha2: 'ES' },
+				{ name: ['Goiás','Goias'], iso: 'BR-GO', alpha2: 'GO' },
+				{ name: ['Maranhão','Maranhao'], iso: 'BR-MA', alpha2: 'MA' },
+				{ name: 'Mato Grosso', iso: 'BR-MT', alpha2: 'MT' },
+				{ name: 'Mato Grosso do Sul', iso: 'BR-MS', alpha2: 'MS' },
+				{ name: 'Minas Gerais', iso: 'BR-MG', alpha2: 'MG' },
+				{ name: ['Pará','Para'], iso: 'BR-PA', alpha2: 'PA' },
+				{ name: ['Paraíba','Paraiba'], iso: 'BR-PB', alpha2: 'PB' },
+				{ name: ['Paraná','Parana'], iso: 'BR-PR', alpha2: 'PR' },
+				{ name: 'Pernambuco', iso: 'BR-PE', alpha2: 'PE' },
+				{ name: ['Piauí','Piaui'], iso: 'BR-PI', alpha2: 'PI' },
+				{ name: 'Rio de Janeiro', iso: 'BR-RJ', alpha2: 'RJ' },
+				{ name: 'Rio Grande do Norte', iso: 'BR-RN', alpha2: 'RN' },
+				{ name: 'Rio Grande do Sul', iso: 'BR-RS', alpha2: 'RS' },
+				{ name: ['Rondônia','Rondonia'], iso: 'BR-RO', alpha2: 'RO' },
+				{ name: 'Roraima', iso: 'BR-RR', alpha2: 'RR' },
+				{ name: 'Santa Catarina', iso: 'BR-SC', alpha2: 'SC' },
+				{ name: ['São Paulo','Sao Paulo'], iso: 'BR-SP', alpha2: 'SP' },
+				{ name: 'Sergipe', iso: 'BR-SE', alpha2: 'SE' },
+				{ name: 'Tocantins', iso: 'BR-TO', alpha2: 'TO' }
+			];
+			var ca_provinces = [
+				{ name: 'Alberta', alpha2: 'AB' },
+				{ name: 'British Columbia', alpha2: 'BC' },
+				{ name: 'Manitoba', alpha2: 'MB' },
+				{ name: 'New Brunswick', alpha2: 'NB' },
+				{ name: 'Newfoundland and Labrador', alpha2: 'NL' },
+				{ name: 'Northwest Territories', alpha2: 'NT' },
+				{ name: 'Nova Scotia', alpha2: 'NS' },
+				{ name: 'Nunavut', alpha2: 'NU' },
+				{ name: 'Ontario', alpha2: 'ON' },
+				{ name: 'Prince Edward Island', alpha2: 'PE' },
+				{ name: ['Qu\u00E9bec','Quebec'], alpha2: 'QC' },
+				{ name: 'Saskatchewan', alpha2: 'SK' },
+				{ name: 'Yukon', alpha2: 'YT' }
+			];
+			var de_states = [
+				{ name: ['Baden-W\u00FCrttemberg','Baden-Wurttemberg'], nuts: 'DE1' },
+				{ name: ['Bavaria','Free State of Bavaria'], endonym: ['Freistaat Bayern'], nuts: 'DE2' },
+				{ name: 'Berlin', nuts: 'DE3' },
+				{ name: 'Brandenburg', endonym: ['Brannenborg'], nuts: 'DE4' },
+				{ name: ['Bremen','Free Hanseatic City of Bremen'], endonym: ['Freie Hansestadt Bremen'], nuts: 'DE5' },
+				{ name: ['Hamburg','Free and Hanseatic City of Hamburg'], endonym: ['Freie und Hansestadt Hamburg'], nuts: 'DE6' },
+				{ name: 'Hessen', endonym: ['Hessia'], nuts: 'DE7' },
+				{ name: ['Mecklenburg-Western Pomerania','MeckPomm'], endonym: ['Mecklenburg-Vorpommern'], nuts: 'DE8' },
+				{ name: 'Lower Saxony', endonym: ['Land Niedersachsen'], nuts: 'DE9' },
+				{ name: 'North Rhine-Westphalia', endonym: ['Nordrhein-Westfalen'], nuts: 'DEA' },
+				{ name: 'Rhineland-Palatinate', endonym: ['Rheinland-Pfalz'], nuts: 'DEB' },
+				{ name: 'Saarland', endonym: ['das Saarland'], nuts: 'DEC' },
+				{ name: ['Saxony','Free State of Saxony'], endonym: ['Freistaat Sachsen'], nuts: 'DED' },
+				{ name: 'Saxony-Anhalt', endonym: ['Sachsen-Anhalt'], nuts: 'DEE' },
+				{ name: 'Schleswig-Holstein', nuts: 'DEF' },
+				{ name: ['Thuringia','Free State of Thuringia'], endonym: ['Freistaat Th\u00FCringen'], nuts: 'DEG' }
+			];
+			var es_autonomy = [
+				{ name: ['Andaluc\u00EDa','Andalucia'], iso: 'ES-AN' },
+				{ name: ['Arag\u00F3n','Aragon'], iso: 'ES-AR' },
+				{ name: 'Asturias', iso: 'ES-AS', endonym: ['Principado de Asturias'] },
+				{ name: 'Canary Islands', iso: 'ES-CN', endonym: ['Canarias'] },
+				{ name: 'Cantabria', iso: 'ES-CB' },
+				{ name: 'Castilla-La Mancha', iso: 'ES-CM' },
+				{ name: ['Castile and Le\u00F3n','Castile and Leon'], iso: 'ES-CL', endonym: ['Castilla y Le\u00F3n'] },
+				{ name: 'Catalonia', iso: 'ES-CT', endonym: ['Catalu\u00F1a','Catalunya'] },
+				{ name: 'Extremadura', iso: 'ES-EX' },
+				{ name: 'Galicia', iso: 'ES-GA' },
+				{ name: 'Balearic Islands', iso: 'ES-IB', endonym: ['Islas Baleares','Illes Balears'] },
+				{ name: 'La Rioja', iso: 'ES-RI' },
+				{ name: ['Community of Madrid','Madrid'], iso: 'ES-MD', endonym: ['Comunidad de Madrid'] },
+				{ name: 'Region of Murcia', iso: 'ES-MC', endonym: ['Regi\u00F3n de Murcia'] },
+				{ name: 'Navarra', iso: 'ES-NC', endonym: ['Comunidad Foral de Navarra','Nafarroako Foru Komunitatea'] },
+				{ name: 'Basque Country', iso: 'ES-PV', endonym: ['Pa\u00EDs Vasco','Euskadi'] },
+				{ name: ['Valencia Community','Valencia'], iso: 'ES-VC', endonym: ['Comunitat Valenciana','Comunidad Valenciana'] },
+				{ name: 'Ceuta', iso: 'ES-CE' },
+				{ name: 'Melilla', iso: 'ES-ML' }
+			];
 			var us_states = [
 				{ name: 'Alabama', iso: 'US-AL', alpha2: 'AL', numeric: 1, gpo: 'Ala.' },
 				{ name: 'Alaska', iso: 'US-AK', alpha2: 'AK', numeric: 2, gpo: 'Alaska' },
@@ -431,70 +528,6 @@ https://github.com/stevenrskelton/flag-icon
 				{ name: 'West Virginia', iso: 'US-WV', alpha2: 'WV', numeric: 54, gpo: 'W. Va.' },
 				{ name: 'Wisconsin', iso: 'US-WI', alpha2: 'WI', numeric: 55, gpo: 'Wis.' },
 				{ name: 'Wyoming', iso: 'US-WY', alpha2: 'WY', numeric: 56, gpo: 'Wyo.' }
-			];
-			var ca_provinces = [
-				{ name: 'Alberta', alpha2: 'AB' },
-				{ name: 'British Columbia', alpha2: 'BC' },
-				{ name: 'Manitoba', alpha2: 'MB' },
-				{ name: 'New Brunswick', alpha2: 'NB' },
-				{ name: 'Newfoundland and Labrador', alpha2: 'NL' },
-				{ name: 'Northwest Territories', alpha2: 'NT' },
-				{ name: 'Nova Scotia', alpha2: 'NS' },
-				{ name: 'Nunavut', alpha2: 'NU' },
-				{ name: 'Ontario', alpha2: 'ON' },
-				{ name: 'Prince Edward Island', alpha2: 'PE' },
-				{ name: ['Qu\u00E9bec','Quebec'], alpha2: 'QC' },
-				{ name: 'Saskatchewan', alpha2: 'SK' },
-				{ name: 'Yukon', alpha2: 'YT' }
-			];
-			var de_states = [
-				{ name: ['Baden-W\u00FCrttemberg','Baden-Wurttemberg'], nuts: 'DE1' },
-				{ name: ['Bavaria','Free State of Bavaria'], endonym: ['Freistaat Bayern'], nuts: 'DE2' },
-				{ name: 'Berlin', nuts: 'DE3' },
-				{ name: 'Brandenburg', endonym: ['Brannenborg'], nuts: 'DE4' },
-				{ name: ['Bremen','Free Hanseatic City of Bremen'], endonym: ['Freie Hansestadt Bremen'], nuts: 'DE5' },
-				{ name: ['Hamburg','Free and Hanseatic City of Hamburg'], endonym: ['Freie und Hansestadt Hamburg'], nuts: 'DE6' },
-				{ name: 'Hessen', endonym: ['Hessia'], nuts: 'DE7' },
-				{ name: ['Mecklenburg-Western Pomerania','MeckPomm'], endonym: ['Mecklenburg-Vorpommern'], nuts: 'DE8' },
-				{ name: 'Lower Saxony', endonym: ['Land Niedersachsen'], nuts: 'DE9' },
-				{ name: 'North Rhine-Westphalia', endonym: ['Nordrhein-Westfalen'], nuts: 'DEA' },
-				{ name: 'Rhineland-Palatinate', endonym: ['Rheinland-Pfalz'], nuts: 'DEB' },
-				{ name: 'Saarland', endonym: ['das Saarland'], nuts: 'DEC' },
-				{ name: ['Saxony','Free State of Saxony'], endonym: ['Freistaat Sachsen'], nuts: 'DED' },
-				{ name: 'Saxony-Anhalt', endonym: ['Sachsen-Anhalt'], nuts: 'DEE' },
-				{ name: 'Schleswig-Holstein', nuts: 'DEF' },
-				{ name: ['Thuringia','Free State of Thuringia'], endonym: ['Freistaat Th\u00FCringen'], nuts: 'DEG' }
-			];
-			var au_states = [
-				{ name: 'Australian Capital Territory', postal: 'ACT', iso: 'AU-ACT' },
-				{ name: 'New South Wales', postal: 'NSW', iso: 'AU-NSW' },
-				{ name: 'Northern Territory', postal: 'NT', iso: 'AU-NT' },
-				{ name: 'Queensland', postal: 'QLD', iso: 'AU-QLD' },
-				{ name: 'South Australia', postal: 'SA', iso: 'AU-SA' },
-				{ name: 'Tasmania', postal: 'TAS', iso: 'AU-TAS' },
-				{ name: 'Victoria', postal: 'VIC', iso: 'AU-VIC' },
-				{ name: 'Western Australia', postal: 'WA', iso: 'AU-WA' }
-			];
-			var es_autonomy = [
-				{ name: ['Andaluc\u00EDa','Andalucia'], iso: 'ES-AN' },
-				{ name: ['Arag\u00F3n','Aragon'], iso: 'ES-AR' },
-				{ name: 'Asturias', iso: 'ES-AS', endonym: ['Principado de Asturias'] },
-				{ name: 'Canary Islands', iso: 'ES-CN', endonym: ['Canarias'] },
-				{ name: 'Cantabria', iso: 'ES-CB' },
-				{ name: 'Castilla-La Mancha', iso: 'ES-CM' },
-				{ name: ['Castile and Le\u00F3n','Castile and Leon'], iso: 'ES-CL', endonym: ['Castilla y Le\u00F3n'] },
-				{ name: 'Catalonia', iso: 'ES-CT', endonym: ['Catalu\u00F1a','Catalunya'] },
-				{ name: 'Extremadura', iso: 'ES-EX' },
-				{ name: 'Galicia', iso: 'ES-GA' },
-				{ name: 'Balearic Islands', iso: 'ES-IB', endonym: ['Islas Baleares','Illes Balears'] },
-				{ name: 'La Rioja', iso: 'ES-RI' },
-				{ name: ['Community of Madrid','Madrid'], iso: 'ES-MD', endonym: ['Comunidad de Madrid'] },
-				{ name: 'Region of Murcia', iso: 'ES-MC', endonym: ['Regi\u00F3n de Murcia'] },
-				{ name: 'Navarra', iso: 'ES-NC', endonym: ['Comunidad Foral de Navarra','Nafarroako Foru Komunitatea'] },
-				{ name: 'Basque Country', iso: 'ES-PV', endonym: ['Pa\u00EDs Vasco','Euskadi'] },
-				{ name: ['Valencia Community','Valencia'], iso: 'ES-VC', endonym: ['Comunitat Valenciana','Comunidad Valenciana'] },
-				{ name: 'Ceuta', iso: 'ES-CE' },
-				{ name: 'Melilla', iso: 'ES-ML' }
 			];
 			var maritimeFlags = [
 				{ name: 'zero', key: 0 },
@@ -579,30 +612,40 @@ https://github.com/stevenrskelton/flag-icon
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; }));
 			}
-			this.us_states = us_states;
-			this.findUSState = function(id){
+			this.au_states = au_states;
+			this.findAustralianState = function(id){
 				var data;
-				if(typeof id === 'number' || +id == id){
-					var num = +id;
-					data = us_states.filter(function(element, index, array){
-						return element.numeric == num;
+				var upper = id.toUpperCase();
+				if(id.length<=3){
+					data = au_states.filter(function(element, index, array){
+						return element.postal === upper;
+					});
+				}else if(id.length<=6){
+					data = au_states.filter(function(element, index, array){
+						return element.iso === upper;
 					});
 				}else{
-					var upper = id.toUpperCase();
-					if(upper.length === 2){
-						data = us_states.filter(function(element, index, array){
-							return element.alpha2 === upper;
-						});
-					}else{
-						data = us_states.filter(function(element, index, array){
-							var t1 = element.iso === upper;
-							var t2 = element.gpo.toUpperCase() === upper;
-							var t3 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
-							return t1 || t2 || t3;
-						});
-					}
+					data = au_states.filter(function(element, index, array){
+						return element.name.toUpperCase() === upper;
+					});
 				}
-				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+				return head(data.map(function(element){ return { title: element.name, data: element, file: 'au/' + element.name.toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.br_states = br_states;
+			this.findBrazilianState = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if(id.length == 2){
+					data = br_states.filter(function(element, index, array){
+						return element.alpha2 === upper;
+					});
+				}else{
+					data = br_states.filter(function(element, index, array){
+						var name = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
+						return (element.iso === upper) || name;
+					});
+				}
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'br/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
 			this.ca_provinces = ca_provinces;
 			this.findCanadianProvince = function(id){
@@ -636,25 +679,6 @@ https://github.com/stevenrskelton/flag-icon
 				}
 				return head(data.map(function(element){ return { title: head(element.endonym) | head(element.name), data: element, file: 'de/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
-			this.au_states = au_states;
-			this.findAustralianState = function(id){
-				var data;
-				var upper = id.toUpperCase();
-				if(id.length<=3){
-					data = au_states.filter(function(element, index, array){
-						return element.postal === upper;
-					});
-				}else if(id.length<=6){
-					data = au_states.filter(function(element, index, array){
-						return element.iso === upper;
-					});
-				}else{
-					data = au_states.filter(function(element, index, array){
-						return element.name.toUpperCase() === upper;
-					});
-				}
-				return head(data.map(function(element){ return { title: element.name, data: element, file: 'au/' + element.name.toLowerCase().replace(/ /g,'_') }; }));
-			}
 			this.es_autonomy = es_autonomy;
 			this.findSpanishAutonomy = function(id){
 				var data;
@@ -670,6 +694,31 @@ https://github.com/stevenrskelton/flag-icon
 					});
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'es/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+			}
+			this.us_states = us_states;
+			this.findUSState = function(id){
+				var data;
+				if(typeof id === 'number' || +id == id){
+					var num = +id;
+					data = us_states.filter(function(element, index, array){
+						return element.numeric == num;
+					});
+				}else{
+					var upper = id.toUpperCase();
+					if(upper.length === 2){
+						data = us_states.filter(function(element, index, array){
+							return element.alpha2 === upper;
+						});
+					}else{
+						data = us_states.filter(function(element, index, array){
+							var t1 = element.iso === upper;
+							var t2 = element.gpo.toUpperCase() === upper;
+							var t3 = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
+							return t1 || t2 || t3;
+						});
+					}
+				}
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'us/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
 			this.maritimeFlags = maritimeFlags;
 			this.findMaritimeFlag = function(id){
