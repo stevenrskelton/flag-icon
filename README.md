@@ -98,7 +98,7 @@ _75 x 56 PNG_
 
 ### States and Provinces
 
-#### United States
+#### [United States](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 ![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/california.png "California")
 ![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/delaware.png "Delaware")
 ![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/florida.png "Florida")
@@ -109,7 +109,7 @@ _75 x 56 PNG_
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
-#### Australia
+#### [Australia](http://files.stevenskelton.ca/flag-icon/examples/canada-australia.html)
 ![Australian Capital Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/australian_capital_territory.png "Australian Capital Territory")
 ![New South Wales](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/new_south_wales.png "New South Wales")
 ![Northern Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/northern_territory.png "Northern Territory")
@@ -119,7 +119,7 @@ _75 x 56 PNG_
 ![Victoria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/victoria.png "Victoria")
 ![Western Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/western_australia.png "Western Australia")
 
-#### Brazil
+#### [Brazil](http://files.stevenskelton.ca/flag-icon/examples/brazil.html)
 ![Rio de Janeiro](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_de_janeiro.png "Rio de Janeiro")
 ![Rio Grande do Norte](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_norte.png "Rio Grande do Norte")
 ![Rio Grande do Sul](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_sul.png "Rio Grande do Sul")
@@ -130,7 +130,7 @@ _75 x 56 PNG_
 ![Sergipe](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/sergipe.png "Sergipe")
 ![tocantins](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/tocantins.png "Tocantins")
 
-#### Canada
+#### [Canada](http://files.stevenskelton.ca/flag-icon/examples/canada-australia.html)
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/british_columbia.png "British Columbia")
 ![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/manitoba.png "Manitoba")
@@ -141,7 +141,7 @@ _75 x 56 PNG_
 ![Nunavut](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/nunavut.png "Nunavut")
 ![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/québec.png "Québec")
 
-#### Germany
+#### [Germany](http://files.stevenskelton.ca/flag-icon/examples/germany.html)
 ![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
 ![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
 ![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
@@ -152,7 +152,7 @@ _75 x 56 PNG_
 ![Schleswig-Holstein](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/schleswig-holstein.png "Schleswig-Holstein")
 ![Thuringia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/thuringia.png "Thuringia")
 
-#### Spain
+#### [Spain](http://files.stevenskelton.ca/flag-icon/examples/spain.html)
 ![Andalucía](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/andalucía.png "Andalucía")
 ![Aragón](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/aragón.png "Aragón")
 ![Asturias](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/asturias.png "Asturias")
@@ -163,7 +163,7 @@ _75 x 56 PNG_
 ![Castile and León](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/castile_and_león.png "Castile and León")
 ![La Rioja](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/la_rioja.png "La Rioja")
 
-### NASCAR, IndyCar
+### [NASCAR, IndyCar](http://files.stevenskelton.ca/flag-icon/examples/racing.html)
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
 ![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
 ![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/black.png "Black")
@@ -174,7 +174,7 @@ _75 x 56 PNG_
 ![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/orangecircle.png "Orange Circle")
 ![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
 
-### Maritime
+### [Maritime and International Code of Signals](http://files.stevenskelton.ca/flag-icon/examples/maritime.html)
 ![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/c.png "Charlie")
 ![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/a.png "Alpha")
 ![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/r.png "Romeo")
@@ -196,18 +196,6 @@ _75 x 56 PNG_
 > [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/examples/index.html)
 
 > [Live Demo - Themes and Popover](http://files.stevenskelton.ca/flag-icon/examples/themes.html)
-
-> 
-
-> [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
-
-> [Live Demo - Canadian Province and Australian State Flags](http://files.stevenskelton.ca/flag-icon/examples/canada-australia.html)
-
-> [Live Demo - German State and Spanish Autonomy Flags](http://files.stevenskelton.ca/flag-icon/examples/germany-spain.html)
-
-> [Live Demo - Maritime and International Code of Signals (ICS) Flags](http://files.stevenskelton.ca/flag-icon/examples/maritime.html)
-
-> [Live Demo - NASCAR and IndyCar Racing Flags](http://files.stevenskelton.ca/flag-icon/examples/racing.html)
 
 ## Usage
 
@@ -302,10 +290,6 @@ Maritime		| 1:1
 
 - Loading notification, or default image.
 - Compact/minify SVG files
-- Themes
-- _maybe:_ create iconset single image to save multiple requests
-- _maybe:_ squared flags
-- _maybe:_ more state, provinces, and other types of flags
 
 ## History
 
