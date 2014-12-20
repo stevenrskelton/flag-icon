@@ -7,7 +7,7 @@ Polymer Web Component for flags.
 
 > **PNG** files: 16x11 < **1kb**, 36x27 < **2kb**, 75x56 < **5kb**, 225x168 < **20kb**
 
-### Countries <sup>[Demo](http://files.stevenskelton.ca/flag-icon/examples/countries.html)</sup>
+### <sup>[Demo](http://files.stevenskelton.ca/flag-icon/examples/countries.html)</sup> Countries
 
 _16 x 11 PNG_
 
