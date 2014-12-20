@@ -80,6 +80,8 @@ _16 x 11 PNG_
 ![Syria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/sy.png "Syria")
 ![Thailand](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/th.png "Thailand")
 ![Ukraine](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ua.png "Ukraine")
+![Bulgaria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/bg.png "Bulgaria")
+![Burkina Faso](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/bf.png "Burkina Faso")
 ![United Nations](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/unitednations.png "United Nations")
 
 _75 x 56 PNG_
