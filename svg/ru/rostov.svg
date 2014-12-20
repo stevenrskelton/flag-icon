@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="450"
+   height="300"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     id="layer1">
+    <g
+       id="g6297">
+      <g
+         transform="matrix(0.866667,0,0,1,60,0)"
+         id="g6292">
+        <rect
+           width="100.00005"
+           height="450"
+           x="-300"
+           y="0"
+           transform="matrix(0,-1,1,0,0,0)"
+           style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1"
+           id="rect1307" />
+        <rect
+           width="100.00005"
+           height="450"
+           x="-99.999939"
+           y="0"
+           transform="matrix(0,-1,1,0,0,0)"
+           style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1"
+           id="rect2182" />
+        <rect
+           width="100.00005"
+           height="450"
+           x="-199.99998"
+           y="0"
+           transform="matrix(0,-1,1,0,0,0)"
+           style="fill:#ffff00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-opacity:1"
+           id="rect3061" />
+      </g>
+      <rect
+         width="60"
+         height="300"
+         x="0"
+         y="0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.20000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect1912" />
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	 width="450px" height="300px"
+	 viewBox="0 0 450 300">
+<defs>
+<g id="shadow">
+<path d="M 100,100 L 115,85 V 125 L 100,140 Z" />
+<path d="M 100,100 L 115,85 H 48.3 L 33.3,100 Z" />
+</g>
+
+<g id="key" stroke="black">
+<path fill="gold"
+d="M -51,-308 
+C -100,-425 100,-425 51,-308 
+C 181,-312 135,-109 14,-196 
+C 20,-187 20,-177 14,-168 
+C 20,-159 20,-149 14,-140 
+V 374 H -15 V -140 
+C -20,-149 -20,-159 -14,-168 
+C -20,-177 -20,-187 -14,-196 
+C -135,-109 -181,-312 -51,-308 Z" />
+<rect fill="gold" x="-13" y="374" width="26" height="30" />
+<path fill="gold" d="M -15,344 H -30 V 374 H -95 V 352 H -62 V 330 H -95 V 308 H -62 V 286 H -95 V 264 H -30 V 294 H -15 Z" />
+<path fill="#0080FF"
+d="M 30,-292 
+C 181,-290 87,-122 8,-232 
+C 35,-248 27,-288 0,-288 
+C -27,-288, -35,-248 -8, -232
+C -87,-122 -181,-290 -30,-292
+C -84,-400 84,-400 30,-292 Z" />
+</g>
+
+<g id="anchor">
+<path fill="white" stroke="black"
+d="M 10,-206.1
+L 22,250 
+C 33,352 87,302 143,254 
+L 135,243 
+L 179,215 
+L 165,267 
+L 153,261 
+C 98,382 36,326 0,386 
+C -36,326 -98,382 -153,261 
+L -165,267 
+L -179,215 
+L -135,243 
+L -143,254 
+C -87,302 -33,352 -22,250 
+L -10,-206.1
+A 45,45,0,1,1,10,-206.1 Z" />
+<circle fill="#0080FF" stroke="black" cx="0" cy="-250" r="25" />
+<path fill="white" stroke="white" d="M 0,-240 A 70,70,0,0,0,0,-380 V -360 A 50,50,0,0,1,0,-260 Z" />
+<path fill="white" stroke="white" d="M 0,-240 A 70,70,0,0,1,0,-380 V -360 A 50,50,0,0,0,0,-260 Z" />
+<circle fill="none" stroke="black" cx="0" cy="-310" r="50" />
+<circle fill="none" stroke="black" cx="0" cy="-310" r="70" />
+<path fill="white" stroke="none" d="M 0,-275 A 25,25,0,0,0,0,-225 V -205 A 45,45,0,0,1,0,-295 Z" />
+<path fill="none" stroke="black" d="M 0,-275 A 25,25,0,0,0,0,-225" />
+<path fill="none" stroke="black" d="M -22,250 L -10,-206.1 A 45,45,0,1,1,10,-293.9" />
+<path fill="white" stroke="black" d="M 128,-159 L 137,-123 C 36,-100 -36,-100 -137,-123 L -128,-159 Z" />
+<line stroke="black" x1="91" y1="-150" x2="96" y2="-122" />
+<line stroke="black" x1="-91" y1="-150" x2="-96" y2="-122" />
+</g>
+
+<g id="coatofarms">
+<clipPath id="coarect"><rect x="0" y="0" width="800" height="900" /></clipPath>
+<rect fill="grey" stroke="black" x="0" y="125" width="800" height="15" />
+<rect fill="red" x="0" y="0" width="800" height="125" />
+
+<path fill="#0080FF" d="M 0,200 V 730 A 100,100,0,0,0,100,830 H 330 A 70,70,0,0,1,400,900 A 70,70,0,0,1,470,830 H 700 A 100,100,0,0,0,800,730 V 200 Z" />
+
+<g fill="grey" stroke="black">
+<use x="0" y="0" xlink:href="#shadow" />
+<use x="133.3" y="0" xlink:href="#shadow" />
+<use x="266.7" y="0" xlink:href="#shadow" />
+<use x="400" y="0" xlink:href="#shadow" />
+<use x="533.3" y="0" xlink:href="#shadow" />
+<use x="666.7" y="0" xlink:href="#shadow" />
+</g>
+
+<g fill="white" stroke="black">
+<rect x="0" y="180" width="133.3" height="40" />
+<rect x="133.3" y="180" width="133.3" height="40" />
+<rect x="266.7" y="180" width="133.3" height="40" />
+<rect x="400" y="180" width="133.3" height="40" />
+<rect x="533.3" y="180" width="133.3" height="40" />
+<rect x="666.7" y="180" width="133.3" height="40" />
+
+<rect clip-path="url(#coarect)" x="-66.7" y="140" width="133.3" height="40" />
+<rect x="66.7" y="140" width="133.3" height="40" />
+<rect x="200" y="140" width="133.3" height="40" />
+<rect x="333.3" y="140" width="133.3" height="40" />
+<rect x="466.7" y="140" width="133.3" height="40" />
+<rect x="600" y="140" width="133.3" height="40" />
+<rect clip-path="url(#coarect)" x="733.3" y="140" width="133.3" height="40" />
+
+<rect x="33.3" y="100" width="66.7" height="40" />
+<rect x="166.7" y="100" width="66.7" height="40" />
+<rect x="300" y="100" width="66.7" height="40" />
+<rect x="433.3" y="100" width="66.7" height="40" />
+<rect x="566.7" y="100" width="66.7" height="40" />
+<rect x="700" y="100" width="66.7" height="40" />
+</g>
+
+<use transform="translate(390,510) rotate(-52)" xlink:href="#anchor" />
+<use transform="translate(410,520) rotate(52)" xlink:href="#key" />
+</g>
+
+<path id="wave" d="M 0,200 
+C 30,215 60,215 90,200 
+C 120,215 150,215 180,200 
+C 210,215 240,215 270,200 
+C 300,215 330,215 360,200 
+C 390,215 420,215 450,200 
+V 300 H 0 Z" />
+
+</defs>
+
+<rect fill="white" x="0" y="0" width="450" height="300" />
+<use transform="translate(175,50) scale(0.125)" xlink:href="#coatofarms" />
+<use fill="#0039a6" xlink:href="#wave" />
+<use fill="white" y="45" xlink:href="#wave" />
+<use fill="#d52b1e" y="50" xlink:href="#wave" />
+
+</svg>

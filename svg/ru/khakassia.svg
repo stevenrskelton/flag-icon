@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200px" height="600px" viewBox="0 0 360 180">
+<rect fill="#d81e05" width="360" height="180"/>
+<rect fill="#fff" width="360" height="120"/>
+<rect fill="#0051ba" width="360" height="60"/>
+<rect fill="#009847" width="60" height="180"/>
+ <g fill="gold" transform="rotate(45, 30, 90)">
+<path d="M30,120 51,90 30,60 9,90z"/>
+<path d="M60,90 30,111 0,90 30,69z"/>
+<circle cx="30" cy="90" r="24"/>
+<circle fill="#009847" cx="30" cy="90" r="21"/>
+<circle cx="30" cy="90" r="18"/>
+<circle fill="#009847" cx="30" cy="90" r="12"/>
+<circle cx="30" cy="90" r="10"/>
+ </g>
+</svg>

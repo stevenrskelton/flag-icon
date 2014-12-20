@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	 width="450px" height="300px"
+	 viewBox="0 0 450 300">
+<defs>
+<g id="horns" fill="white" stroke="white" stroke-width="0.5">
+<rect x="20" y="0" width="10" height="30" />
+<rect x="30" y="10" width="10" height="10" />
+<rect x="30" y="30" width="30" height="10" />
+<rect x="40" y="20" width="10" height="10" />
+<rect x="0" y="20" width="10" height="10" />
+<rect x="30" y="50" width="10" height="10" />
+<path d="M 0,30 L 30,30 L 30,60 Z" />
+<rect x="50" y="50" width="10" height="10" />
+<path d="M 30,60 L 50,60 L 50,80 Z" />
+</g>
+</defs>
+
+<rect fill="#0080FF" width="450" height="300" x="0" y="0" />
+
+<g transform="translate(-29.5,222) rotate(-45)">
+<use x="0" y="0" xlink:href="#horns" />
+<use x="50" y="50" xlink:href="#horns" />
+<use x="100" y="100" xlink:href="#horns" />
+<use x="150" y="150" xlink:href="#horns" />
+<use x="200" y="200" xlink:href="#horns" />
+<use x="250" y="250" xlink:href="#horns" />
+<use x="300" y="300" xlink:href="#horns" />
+</g>
+
+<rect fill="red" width="450" height="7" x="0" y="250" />
+<rect fill="#0080FF" width="450" height="7" x="0" y="243" />
+
+</svg>

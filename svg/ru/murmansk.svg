@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+    "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+	 width="450px" height="300px"
+	 viewBox="0 0 450 300">
+<rect fill="#395c98" width="450" height="240" x="0" y="0" />
+<rect fill="#d5312b" width="450" height="60" x="0" y="240" />
+<path fill="#edbb32" stroke="black" stroke-width="0.5"
+d="M 108,180 
+C 120,160 140,162 158,162 
+C 180,130 206,127 225,127 
+C 244,127 270,130 292,162
+C 310,162 330,160 342,180
+
+L 375,128 
+L 340,169 
+L 363,117 
+L 328,163 
+L 352,111 
+L 319,158 
+L 338,105 
+L 308,156 
+L 322,104 
+L 296,154 
+L 311,99 
+L 291,145 
+L 302,91 
+L 283,139 
+L 292,83 
+L 276,134 
+L 281,75 
+L 266,127 
+L 268,69 
+L 256,123 
+L 253,65 
+L 245,122 
+L 241,62 
+L 233,120 
+
+L 225,60 
+L 217,120 
+L 209,62 
+L 205,122 
+L 197,65 
+L 194,123 
+L 182,69 
+L 184,127 
+L 169,75 
+L 174,134 
+L 158,83 
+L 167,139 
+L 148,91 
+L 159,145 
+L 139,99 
+L 154,154 
+L 128,104 
+L 142,156 
+L 112,105 
+L 131,158 
+L 98,111 
+L 122,163 
+L 87,117 
+L 110,169 
+L 75,128 
+
+Z" />
+</svg>
