@@ -7,7 +7,7 @@ Polymer Web Component for flags.
 
 > **PNG** files: 16x11 < **1kb**, 36x27 < **2kb**, 75x56 < **5kb**, 225x168 < **20kb**
 
-### Countries
+### Countries [Live Demo](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
 
 _16 x 11 PNG_
 
@@ -197,7 +197,7 @@ _75 x 56 PNG_
 
 > [Live Demo - Themes and Popover](http://files.stevenskelton.ca/flag-icon/examples/themes.html)
 
-> [Live Demo - World Country Flags](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
+> 
 
 > [Live Demo - US State Flags](http://files.stevenskelton.ca/flag-icon/examples/us-states.html)
 
@@ -273,6 +273,7 @@ Attribute	| Type			| Default	| Description
 `width`		| *integer*		| `16`		| Width of icon (aspect ratio maintained if `height` omitted).
 `height`	| *integer*		| _auto_	| Height of icon (aspect ratio maintained if `width` omitted).
 `au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
+`br`		| *boolean*		| `false`	| ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil") Brazilian State flags
 `ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
 `de`		| *boolean*		| `false`	| ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany") German State flags
 `es`		| *boolean*		| `false`	| ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spain") Spain Autonomous Community flags
@@ -289,8 +290,9 @@ Attribute		| Aspect
 ---				| ---
 Country			| 4:3
 Austrialia		| 2:1
-Canadian		| 2:1
-German			| 5:3
+Brazil			| 3:2
+Canada			| 2:1
+Germany			| 5:3
 Spain			| 3:2
 US				| 3:2
 NASCAR, IndyCar	| 4:3
