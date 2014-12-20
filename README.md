@@ -107,6 +107,27 @@ _75 x 56 PNG_
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
+#### Australia
+![Australian Capital Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/australian_capital_territory.png "Australian Capital Territory")
+![New South Wales](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/new_south_wales.png "New South Wales")
+![Northern Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/northern_territory.png "Northern Territory")
+![Queensland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/queensland.png "Queensland")
+![South Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/south_australia.png "South Australia")
+![Tasmania](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/tasmania.png "Tasmania")
+![Victoria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/victoria.png "Victoria")
+![Western Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/western_australia.png "Western Australia")
+
+#### Brazil
+![Rio de Janeiro](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_de_janeiro.png "Rio de Janeiro")
+![Rio Grande do Norte](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_norte.png "Rio Grande do Norte")
+![Rio Grande do Sul](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_sul.png "Rio Grande do Sul")
+![Rondônia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rondônia.png "Rondônia")
+![Roraima](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/roraima.png "Roraima")
+![Santa Catarina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/santa_catarina.png "Santa Catarina")
+![São Paulo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/são_paulo.png "São Paulo")
+![Sergipe](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/sergipe.png "Sergipe")
+![tocantins](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/tocantins.png "Tocantins")
+
 #### Canada
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/british_columbia.png "British Columbia")
@@ -118,16 +139,16 @@ _75 x 56 PNG_
 ![Nunavut](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/nunavut.png "Nunavut")
 ![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/québec.png "Québec")
 
-#### Germany, Australia
+#### Germany
 ![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
 ![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
 ![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
 ![Saarland](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/saarland.png "Saarland")
 ![Hamburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/hamburg.png "Hamburg")
-![Australian Capital Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/australian_capital_territory.png "Australian Capital Territory")
-![New South Wales](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/new_south_wales.png "New South Wales")
-![Victoria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/victoria.png "Victoria")
-![Northern Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/northern_territory.png "Northern Territory")
+![Lower Saxony](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/lower_saxony.png "Lower Saxony")
+![Saxony](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/saxony.png "Saxony")
+![Schleswig-Holstein](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/schleswig-holstein.png "Schleswig-Holstein")
+![Thuringia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/thuringia.png "Thuringia")
 
 #### Spain
 ![Andalucía](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/andalucía.png "Andalucía")
