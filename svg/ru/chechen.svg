@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="450" height="300">
+<path fill="#FFF" d="m0,0h450v300H0"/>
+<path fill="#DA251D" d="m42,204.2h409v96H42"/>
+<path fill="#2B7338" d="m42,0h409v177.2H42"/>
+<g stroke="#FC0" stroke-width="2">
+<g id="b">
+<path id="c" fill="#FC0" stroke-linecap="square" stroke-linejoin="round" d="m9,75 12-1 12,1-12,1z"/>
+<path id="a" fill="none" stroke-linecap="round" d="M21.7,11.3c-3.6,0.9-5.6,5.4-3,9.3c2.9,4.5 9.6,4.2 13-0.5c3.4-4.7 1.7-11.2-2.6-15.2c-5.3-4.9-14.2-4-18.4,2.9c-5.2,8.7-1,18.2 4.8,24.9l10.7,10.5C32,49.9 36.3,59.4 31,68.1C26.9,75 18,76 12.8,71.2C8.4,67.1 6.7,60.7 10.1,56s10.1-5 13-0.5c2.5,3.9 0.6,8.4-3,9.3"/>
+<use xlink:href="#a" transform="translate(0,150) scale(1,-1)"/></g>
+<use xlink:href="#b" y="150"/>
+<use xlink:href="#c" y="75"/></g>
+</svg>

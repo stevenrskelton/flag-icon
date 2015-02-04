@@ -163,6 +163,17 @@ _75 x 56 PNG_
 ![Castile and León](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/castile_and_león.png "Castile and León")
 ![La Rioja](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/la_rioja.png "La Rioja")
 
+#### [Russia](http://files.stevenskelton.ca/flag-icon/examples/russia.html)
+![Adygea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/adygea.png "Adygea")
+![Buryatia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/buryatia.png "Buryatia")
+![Chuvashia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/chuvashia.png "Chuvashia")
+![Ingushetia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/ingushetia.png "Ingushetia")
+![Tuva](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/tuva.png "Tuva")
+![Kamchatka](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/kamchatka.png "Kamchatka")
+![Stavropol](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/stavropol.png "Stavropol")
+![Belgorod](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/belgorod.png "Belgorod")
+![Novgorod](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/novgorod.png "Novgorod")
+
 ### [NASCAR, IndyCar](http://files.stevenskelton.ca/flag-icon/examples/racing.html)
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
 ![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
@@ -265,6 +276,7 @@ Attribute	| Type			| Default	| Description
 `ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
 `de`		| *boolean*		| `false`	| ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany") German State flags
 `es`		| *boolean*		| `false`	| ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spain") Spain Autonomous Community flags
+`ru`		| *boolean*		| `false`	| ![Russia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ru.png "Russia") Russian Republics, Krais, and Oblast flags
 `us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
 `maritime`	| *boolean*		| `false`	| Maritime and ICS flags
 `racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
@@ -283,6 +295,7 @@ Canada			| 2:1
 Germany			| 5:3
 Spain			| 3:2
 US				| 3:2
+Russia			| 3:2
 NASCAR, IndyCar	| 4:3
 Maritime		| 1:1
 

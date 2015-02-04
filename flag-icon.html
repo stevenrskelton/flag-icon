@@ -9,7 +9,7 @@ https://github.com/stevenrskelton/flag-icon
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data img width height aspect au br ca de es us maritime racing"
+	attributes="key data img width height aspect au br ca de es ru us maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
@@ -39,6 +39,7 @@ https://github.com/stevenrskelton/flag-icon
 		ca: false,
 		de: false,
 		es: false,
+		ru: false,
 		us: false,
 		maritime: false,
 		racing: false,
@@ -65,6 +66,9 @@ https://github.com/stevenrskelton/flag-icon
 				}else if(this.es){
 					aspect = 3/2;
 					d = this.findSpanishAutonomy(this.key);
+				}else if(this.ru){
+					aspect = 3/2;
+					d = this.findRussianRegion(this.key);
 				}else if(this.us){
 					aspect = 3/2;
 					d = this.findUSState(this.key);
@@ -476,6 +480,84 @@ https://github.com/stevenrskelton/flag-icon
 				{ name: 'Ceuta', iso: 'ES-CE' },
 				{ name: 'Melilla', iso: 'ES-ML' }
 			];
+			var ru_regions = [
+				{ name: ['Adygea','Republic of Adygea','Respublika Adygeya'], iso: 'RU-AD', type: 'Republic', endonym: ['Респу́блика Адыге́я'] },
+				{ name: ['Altai','Altai Republic','Respublika Altay'], iso: 'RU-AL', type: 'Republic', endonym: ['Респу́блика Алта́й'] },
+				{ name: ['Bashkortostan','Republic of Bashkortostan','Respublika Bashkortostan'], iso: 'RU-BA', type: 'Republic', endonym: ['Респу́блика Башкортоста́н'] },
+				{ name: ['Buryatia','Republic of Buryatia','Respublika Buryatiya'], iso: 'RU-BU', type: 'Republic', endonym: ['Респу́блика Буря́тия'] },
+				{ name: ['Chechen','Chechen Republic','Chechenskaya Respublika'], iso: 'RU-CE', type: 'Republic', endonym: ['Чече́нская Респу́блика'] },
+				{ name: ['Chuvashia','Chuvash Republic'], iso: 'RU-CU', type: 'Republic', endonym: ['Чува́шская Респу́блика — Чува́шия'] },
+				{ name: ['Crimea','Republic of Crimea','Respublika Krym'], iso: 'CRIMEA', type: 'Republic', endonym: ['Республика Крым'] },
+				{ name: ['Dagestan','Republic of Dagestan','Respublika Dagestan'], iso: 'RU-DA', type: 'Republic', endonym: ['Респу́блика Дагеста́н'] },
+				{ name: ['Ingushetia','Republic of Ingushetia','Respublika Ingushetiya'], iso: 'RU-IN', type: 'Republic', endonym: ['Респу́блика Ингуше́тия'] },
+				{ name: ['Kabardino-Balkar','Kabardino-Balkar Republic','Kabardino-Balkarskaya Respublika','Kabardino-Balkaria','Kabardino-Balkariya'], iso: 'RU-KB', type: 'Republic', endonym: ['Кабарди́но-Балка́рская Респу́блика','Кабарди́но-Балка́рия'] },
+				{ name: ['Kalmykia','Republic of Kalmykia','Respublika Kalmykiya'], iso: 'RU-KL', type: 'Republic', endonym: ['Респу́блика Калмы́кия'] },
+				{ name: ['Karachay-Cherkess','Karachay–Cherkess Republic','Karachayevo-Cherkesskaya Respublika','Karachay–Cherkessia','Karachay–Circassia','Karachayevo-Cherkessiya','Karachay–Circassian Republic'], iso: 'RU-KC', type: 'Republic', endonym: ['Карача́ево-Черке́сская Респу́блика','Карача́ево-Черке́ссия'] },
+				{ name: ['Karelia','Republic of Karelia','Respublika Kareliya'], iso: 'RU-KR', type: 'Republic', endonym: ['Респу́блика Каре́лия'] },
+				{ name: ['Komi','Komi Republic','Respublika Komi'], iso: 'RU-KO', type: 'Republic', endonym: ['Респу́блика Ко́ми'] },
+				{ name: ['Mari El','Mari El Republic','Respublika Mariy El'], iso: 'RU-ME', type: 'Republic', endonym: ['Респу́блика Мари́й Эл'] },
+				{ name: ['Mordovia','Republic of Mordovia','Respublika Mordoviya'], iso: 'RU-MO', type: 'Republic', endonym: ['Респу́блика Мордо́вия'] },
+				{ name: ['North Ossetia-Alania','Republic of North Ossetia–Alania','Respublika Severnaya Osetiya — Alaniya'], iso: 'RU-SE', type: 'Republic', endonym: ['Республика Северная Осетия — Алания'] },
+				{ name: ['Sakha','Sakha (Yakutia) Republic','Respublika Sakha (Yakutiya)'], iso: 'RU-SA', type: 'Republic', endonym: ['Республика Саха (Якутия)'] },
+				{ name: ['Tatarstan','Republic of Tatarstan','Respublika Tatarstan'], iso: 'RU-TA', type: 'Republic', endonym: ['Респу́блика Татарста́н'] },
+				{ name: ['Tuva','Tyva Republic','Respublika Tyva'], iso: 'RU-TY', type: 'Republic', endonym: ['Респу́блика Тыва́'] },
+				{ name: ['Udmurtia','Udmurt Republic','Udmurtskaya Respublika'], iso: 'RU-UD', type: 'Republic', endonym: ['Удму́ртия','Удму́ртская Pеспу́блика'] },
+				{ name: ['Khakasiya','Republic of Khakassia','Respublika Khakasiya'], iso: 'RU-KK', type: 'Republic', endonym: ['Респу́блика Хака́сия','Хака́сия'] },
+				{ name: ['Altai Krai','Altaysky kray'], iso: 'RU-ALT', type: 'Krais', endonym: ['Алта́йский край'] },
+				{ name: 'Kamchatka', iso: 'RU-KAM', type: 'Krais', endonym: ['Камча́тский край'] },
+				{ name: ['Khabarovsk','Khabarovsky kray'], iso: 'RU-KHA', type: 'Krais', endonym: ['Хаба́ровский край'] },
+				{ name: ['Krasnodar','Krasnodarsky kray'], iso: 'RU-KDA', type: 'Krais', endonym: ['Краснода́рский край'] },
+				{ name: ['Krasnoyarsk','Krasnoyarsky kray'], iso: 'RU-KYA', type: 'Krais', endonym: ['Красноя́рский край'] },
+				{ name: ['Perm','Permsky kray'], iso: 'RU-PER', type: 'Krais', endonym: ['Пе́рмский край'] },
+				{ name: 'Primorsky', iso: 'RU-PRI', type: 'Krais', endonym: ['Примо́рский край'] },
+				{ name: ['Stavropol','Stavropolsky kray'], iso: 'RU-STA', type: 'Krais', endonym: ['Ставропо́льский край'] },
+				{ name: ['Zabaykalsky','Transbaikal krai'], iso: 'RU-ZAB', type: 'Krais', endonym: ['Забайкальский край'] },
+				{ name: ['Amur','Amur Oblast','Amurskaya oblast','Priamurye','Amur Krai'], iso: 'RU-AMU', type: 'Oblast', endonym: ['Аму́рская о́бласть','Приаму́рье','Аму́рский край'] },
+				{ name: ['Arkhangelsk','Arkhangelsk Oblast','Arkhangelskaya oblast'], iso: 'RU-ARK', type: 'Oblast', endonym: ['Арха́нгельская о́бласть'] },
+				{ name: ['Astrakhan','Astrakhan Oblast','Astrakhanskaya oblast'], iso: 'RU-AST', type: 'Oblast', endonym: ['Астраха́нская о́бласть'] },
+				{ name: ['Belgorod','Belgorod Oblast','Belgorodskaya oblast'], iso: 'RU-BEL', type: 'Oblast', endonym: ['Белгоро́дская о́бласть'] },
+				{ name: ['Bryansk','Bryansk Oblast','Bryanskaya oblast'], iso: 'RU-BRY', type: 'Oblast', endonym: ['Бря́нская о́бласть'] },
+				{ name: ['Chelyabinsk','Chelyabinsk Oblast','Chelyabinskaya oblast'], iso: 'RU-CHE', type: 'Oblast', endonym: ['Челя́бинская о́бласть'] },
+				{ name: ['Irkutsk','Irkutsk Oblast','Irkutskaya oblast'], iso: 'RU-IRK', type: 'Oblast', endonym: ['Ирку́тская о́бласть'] },
+				{ name: ['Ivanovo','Ivanovo Oblast','Ivanovskaya oblast'], iso: 'RU-IVA', type: 'Oblast', endonym: ['Ива́новская о́бласть'] },
+				{ name: ['Kaliningrad','Kaliningrad Oblast','Kaliningradskaya oblast'], iso: 'RU-KGD', type: 'Oblast', endonym: ['Калинингра́дская о́бласть'] },
+				{ name: ['Kaluga','Kaluga Oblast','Kaluzhskaya oblast'], iso: 'RU-KLU', type: 'Oblast', endonym: ['Калу́жская о́бласть'] },
+				{ name: ['Kemerovo','Kemerovo Oblast','Kemerovskaya oblast','Kuzbass'], iso: 'RU-KEM', type: 'Oblast', endonym: ['Ке́меровская о́бласть','Кузба́сс'] },
+				{ name: ['Kirov','Kirov Oblast','Kirovskaya oblast'], iso: 'RU-KIR', type: 'Oblast', endonym: ['Ки́ровская о́бласть'] },
+				{ name: ['Kostroma','Kostroma Oblast','Kostromskaya oblast'], iso: 'RU-KOS', type: 'Oblast', endonym: ['Костромска́я о́бласть'] },
+				{ name: ['Kurgan','Kurgan Oblast','Kurganskaya oblast'], iso: 'RU-KGN', type: 'Oblast', endonym: ['Курга́нская о́бласть'] },
+				{ name: ['Kursk','Kursk Oblast','Kurskaya oblast'], iso: 'RU-KRS', type: 'Oblast', endonym: ['Курская область'] },
+				{ name: ['Leningrad','Leningrad Oblast','Leningradskaya oblast'], iso: 'RU-LEN', type: 'Oblast', endonym: ['Ленингра́дская о́бласть'] },
+				{ name: ['Lipetsk','Lipetsk Oblast','Lipetskaya oblast'], iso: 'RU-LIP', type: 'Oblast', endonym: ['Ли́пецкая о́бласть'] },
+				{ name: ['Magadan','Magadan Oblast','Magadanskaya oblast'], iso: 'RU-MAG', type: 'Oblast', endonym: ['Магаданская область'] },
+				{ name: ['Moscow','Moscow Oblast','Moskovskaya oblast','Podmoskovye'], iso: 'RU-MOS', type: 'Oblast', endonym: ['Моско́вская о́бласть','Подмоско́вье'] },
+				{ name: ['Murmansk','Murmansk Oblast','Murmanskaya oblast'], iso: 'RU-MUR', type: 'Oblast', endonym: ['Му́рманская о́бласть'] },
+				{ name: ['Nizhny Novgorod','Nizhny Novgorod Oblast','Nizhegorodskaya oblast','Nizhegorod Oblast','Gorky Oblast'], iso: 'RU-NIZ', type: 'Oblast', endonym: ['Нижегоро́дская о́бласть'] },
+				{ name: ['Novgorod','Novgorod Oblast','Novgorodskaya oblast'], iso: 'RU-NGR', type: 'Oblast', endonym: ['Новгоро́дская о́бласть'] },
+				{ name: ['Novosibirsk','Novosibirsk Oblast','Novosibirskaya oblast'], iso: 'RU-NVS', type: 'Oblast', endonym: ['Новосиби́рская о́бласть'] },
+				{ name: ['Omsk','Omsk Oblast','Omskaya oblast'], iso: 'RU-OMS', type: 'Oblast', endonym: ['О́мская о́бласть'] },
+				{ name: ['Orenburg','Orenburg Oblast','Orenburgskaya oblast'], iso: 'RU-ORE', type: 'Oblast', endonym: ['Оренбу́ргская о́бласть'] },
+				{ name: ['Oryol','Oryol Oblast','Orlovskaya oblast'], iso: 'RU-ORL', type: 'Oblast', endonym: ['Орло́вская о́бласть'] },
+				{ name: ['Penza','Penza Oblast','Penzenskaya oblast'], iso: 'RU-PNZ', type: 'Oblast', endonym: ['Пе́нзенская о́бласть'] },
+				{ name: ['Rostov','Rostov Oblast','Rostovskaya oblast'], iso: 'RU-ROS', type: 'Oblast', endonym: ['Росто́вская о́бласть'] },
+				{ name: ['Ryazan','Ryazan Oblast','Ryazanskaya oblast'], iso: 'RU-RYA', type: 'Oblast', endonym: ['Ряза́нская о́бласть'] },
+				{ name: ['Sakhalin','Sakhalin Oblast','Sakhalinskaya oblast'], iso: 'RU-SAK', type: 'Oblast', endonym: ['Сахали́нская о́бласть'] },
+				{ name: ['Samara','Samara Oblast','Samarskaya oblast','Kuybyshev Oblast','Kuybyshevskaya Oblast'], iso: 'RU-SAM', type: 'Oblast', endonym: ['Сама́рская о́бласть','Ку́йбышевская о́бласть'] },
+				{ name: ['Saratov','Saratov Oblast','Saratovskaya oblast'], iso: 'RU-SAR', type: 'Oblast', endonym: ['Сара́товская о́бласть'] },
+				{ name: ['Smolensk','Smolensk Oblast','Smolenskaya oblast'], iso: 'RU-SMO', type: 'Oblast', endonym: ['Смоле́нская о́бласть'] },
+				{ name: ['Sverdlovsk','Sverdlovsk Oblast','Sverdlovskaya oblast'], iso: 'RU-SVE', type: 'Oblast', endonym: ['Свердло́вская о́бласть'] },
+				{ name: ['Tambov','Tambov Oblast','Tambovskaya oblast'], iso: 'RU-TAM', type: 'Oblast', endonym: ['Тамбо́вская о́бласть'] },
+				{ name: ['Tomsk','Tomsk Oblast','Tomskaya oblast'], iso: 'RU-TOM', type: 'Oblast', endonym: ['То́мская о́бласть'] },
+				{ name: ['Tver','Tver Oblast','Tverskaya oblast','Kalinin Oblast'], iso: 'RU-TVE', type: 'Oblast', endonym: ['Тверска́я о́бласть','Кали́нинская о́бласть'] },
+				{ name: ['Tula','Tula Oblast','Tulskaya oblast'], iso: 'RU-TUL', type: 'Oblast', endonym: ['Ту́льская о́бласть'] },
+				{ name: ['Tyumen','Tyumen Oblast','Tyumenskaya oblast'], iso: 'RU-TYU', type: 'Oblast', endonym: ['Тюме́нская о́бласть'] },
+				{ name: ['Ulyanovsk','Ulyanovsk Oblast','Ulyanovskaya oblast'], iso: 'RU-ULY', type: 'Oblast', endonym: ['Улья́новская о́бласть'] },
+				{ name: ['Vladimir','Vladimir Oblast','Vladimirskaya oblast'], iso: 'RU-VLA', type: 'Oblast', endonym: ['Влади́мирская о́бласть'] },
+				{ name: ['Volgograd','Volgograd Oblast','Volgogradskaya oblast'], iso: 'RU-VGG', type: 'Oblast', endonym: ['Волгогра́дская о́бласть'] },
+				{ name: ['Vologda','Vologda Oblast','Vologodskaya oblast'], iso: 'RU-VLG', type: 'Oblast', endonym: ['Вологодская область'] },
+				{ name: ['Voronezh','Voronezh Oblast','Voronezhskaya oblast'], iso: 'RU-VOR', type: 'Oblast', endonym: ['Воро́нежская о́бласть'] },
+				{ name: ['Yaroslavl','Yaroslavl Oblast','Yaroslavskaya oblast'], iso: 'RU-YAR', type: 'Oblast', endonym: ['Яросла́вская о́бласть'] }
+			];
 			var us_states = [
 				{ name: 'Alabama', iso: 'US-AL', alpha2: 'AL', numeric: 1, gpo: 'Ala.' },
 				{ name: 'Alaska', iso: 'US-AK', alpha2: 'AK', numeric: 2, gpo: 'Alaska' },
@@ -695,6 +777,22 @@ https://github.com/stevenrskelton/flag-icon
 				}
 				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'es/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
 			}
+			this.ru_regions = ru_regions;
+			this.findRussianRegion = function(id){
+				var data;
+				var upper = id.toUpperCase();
+				if((id.length === 5 || id.length === 6) && id[2] === '-'){
+					data = ru_regions.filter(function(element, index, array){
+						return element.iso === upper;
+					});
+				}else{
+					data = ru_regions.filter(function(element, index, array){
+						var name = (typeof element.name === "object") ? element.name.some(function(e){ return e.toUpperCase() === upper; }) : element.name.toUpperCase() === upper;
+						return name || (element.endonym ? element.endonym.some(function(e){ return e.toUpperCase() === upper; }) : false);
+					});
+				}
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'ru/' + head(element.name).toLowerCase().replace(/ /g,'_') }; }));
+			},
 			this.us_states = us_states;
 			this.findUSState = function(id){
 				var data;

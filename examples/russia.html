@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+  <head>
+	<title>Country Flag Icons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="../../webcomponentsjs/webcomponents.min.js"></script>
+	<link rel="import" href="../flag-icon.html">
+	<link rel="import" href="index-links.html">
+	<link rel="import" href="flag-show.html">
+  </head>
+  <body unresolved>
+	<index-links page="russia.html"></index-links>
+
+	<h1>Russian Flags</h1>
+
+	<table style="width:700px;min-height:650px;display:block;">
+		<tr style="height:40px">
+			<th>Russian Republic</th>
+			<th>Endonym</th>
+			<th style="width:115px">ISO</th>
+			<th>SVG</th>
+		</tr>
+		<template id="republicflags" repeat="[[flags]]">
+			<tr onmouseover="changeShow('[[iso]]');">
+				<td><flag-icon key="[[name]]" ru img></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[endonym]]" ru img></flag-icon> [[endonym]]</td>
+				<td><flag-icon key="[[iso]]" ru img></flag-icon> [[iso]]</td>
+				<td><flag-icon key="[[iso]]" ru></flag-icon></td>
+			</tr>
+		</template>
+		<tr style="height:40px">
+			<th>Russian Krais</th>
+			<th>Endonym</th>
+			<th>ISO</th>
+			<th>SVG</th>
+		</tr>
+		<template id="kraisflags" repeat="[[flags]]">
+			<tr onmouseover="changeShow('[[iso]]');">
+				<td><flag-icon key="[[name]]" ru img></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[endonym]]" ru img></flag-icon> [[endonym]]</td>
+				<td><flag-icon key="[[iso]]" ru img></flag-icon> [[iso]]</td>
+				<td><flag-icon key="[[iso]]" ru></flag-icon></td>
+			</tr>
+		</template>
+		<tr style="height:40px">
+			<th>Russian Oblast</th>
+			<th>Endonym</th>
+			<th>ISO</th>
+			<th>SVG</th>
+		</tr>
+		<template id="oblastflags" repeat="[[flags]]">
+			<tr onmouseover="changeShow('[[iso]]');">
+				<td><flag-icon key="[[name]]" ru img></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[endonym]]" ru img></flag-icon> [[endonym]]</td>
+				<td><flag-icon key="[[iso]]" ru img></flag-icon> [[iso]]</td>
+				<td><flag-icon key="[[iso]]" ru></flag-icon></td>
+			</tr>
+		</template>
+	</table>
+
+	<flag-show id="show"></flag-show>
+
+	<script>
+	var flagicon;
+	function head(arr){
+		if(typeof arr == "object"){
+			if(arr.length>0) return arr[0];
+			else return null;
+		} else return arr;
+	};
+	function changeShow(key){
+		document.getElementById('show').key = key;
+		var data = flagicon.ru_regions.filter(function(row){ return row.iso === key; })[0];
+		document.getElementById('show').ru = true;
+		document.getElementById('show').name = head(data.name);
+		document.getElementById('show').endonym = head(data.endonym);
+		document.getElementById('show').data = data;
+	}
+	window.addEventListener('polymer-ready', function(){
+		flagicon = new FlagIcon();
+		document.getElementById('republicflags').model = {
+			flags: flagicon.ru_regions.filter(function(t){
+				return t.type === 'Republic';
+			}).map(function(t){ return { name: head(t.name), iso: t.iso, endonym: head(t.endonym) }; })
+		};
+		document.getElementById('kraisflags').model = {
+			flags: flagicon.ru_regions.filter(function(t){
+				return t.type === 'Krais';
+			}).map(function(t){ return { name: head(t.name), iso: t.iso, endonym: head(t.endonym) }; })
+		};
+		document.getElementById('oblastflags').model = {
+			flags: flagicon.ru_regions.filter(function(t){
+				return t.type === 'Oblast';
+			}).map(function(t){ return { name: head(t.name), iso: t.iso, endonym: head(t.endonym) }; })
+		};
+		changeShow('RU-LEN');
+	});
+	</script>
+  </body>
+</html>
