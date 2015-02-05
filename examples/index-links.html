@@ -1,15 +1,9 @@
-<polymer-element name="index-links" attributes="page examples" style="clear:both">
+<polymer-element name="index-links" attributes="page" style="clear:both;vertical-align:middle">
 	<template>
-		<template if="{{examples}}">
-			<ul>
-				<template repeat="{{link in example}}">
-					<li><a href="{{link.href}}" alt="{{link.name}}">{{link.name}}</a></li>
-				</template>
-			</ul>
-		</template>
 		<template if="{{!examples}}">
 			<div style="width:100%;background-color:#E8F2F8;border-bottom:1px solid #A7D7F9;text-align:center;position:fixed;top:0;left:0;">
-				<strong>Other Examples: </strong>
+				<a href="https://github.com/stevenrskelton/flag-icon" style="float:left;margin-left:10px;" title="View on GitHub"><img src="GitHub-Mark-64px.png" alt="GitHub Project" style="height:20px;vertical-align:middle;"></a>
+				<strong>Docs: </strong>
 				<template repeat="{{link in example}}">
 				| <a href="{{link.href}}" alt="{{link.name}}" style="{{page==link.href ? 'font-weight:bold':''}}">{{link.name}}</a>
 				</template>
