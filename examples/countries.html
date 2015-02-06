@@ -14,35 +14,44 @@
 
 	<h1>World Country Flags</h1>
 
-	<table style="width:700px">
-		<tr>
-			<th style="width:450px">Country</th>
-			<th style="width:450px"></th>
-			<th>Alpha2</th>
-			<th style="width:75px;">Alpha3</th>
-			<th>Numeric</th>
-			<th>SVG</th>
-		</tr>
-		<template id="otherTable" repeat="[[other]]">
-			<tr onmouseover="changeShow('[[alpha2]]',true);">
-				<td colspan="2"><flag-icon key="[[name]]" img></flag-icon>[[name]]</td>
-				<td colspan="3"><flag-icon key="[[alpha2]]" img></flag-icon> [[alpha2]]</td>
-				<td><flag-icon key="[[alpha2]]"></flag-icon></td>
-			</tr>
-		</template>
-		<tr><td colspan="6"><hr></td></tr>
-		<template id="countryTable" repeat="[[countries]]">
-			<tr onmouseover="changeShow('[[alpha2]]',false);">
-				<td><flag-icon key="[[name]]" img></flag-icon>[[name]]</td>
-				<td><flag-icon key="[[endonym]]" img></flag-icon>[[endonym]]</td>
-				<td><flag-icon key="[[alpha2]]" img></flag-icon> [[alpha2]]</td>
-				<td><flag-icon key="[[alpha3]]" img></flag-icon> [[alpha3]]</td>
-				<td><flag-icon key="[[numeric]]" img></flag-icon> [[numeric]]</td>
-				<td><flag-icon key="[[alpha2]]"></flag-icon></td>
-			</tr>
-		</template>
-	</table>
+	<template is="auto-binding" id="main">
+		<div style="border:1px solid #666;border-radius:5px;background-color:#DDD;display:inline;padding:4px;">
+			<strong>Aspect:</strong>
+			<input type="radio" name="aspect" value="{{!square}}" onchange="changeAspect(false)" checked id="squarefalse"><label for="squarefalse">4:3</label>
+			<input type="radio" name="aspect" value="{{square}}" onchange="changeAspect(true)" id="squaretrue"><label for="squaretrue">Square</label>
+		</div>
 
+		<br>
+
+		<table style="width:700px;margin-top:20px;">
+			<tr>
+				<th style="width:450px">Country</th>
+				<th style="width:450px"></th>
+				<th>Alpha2</th>
+				<th style="width:75px;">Alpha3</th>
+				<th>Numeric</th>
+				<th>SVG</th>
+			</tr>
+			<template repeat="[[country in other]]">
+				<tr onmouseover="changeShow('[[country.alpha2]]',true);">
+					<td colspan="2"><flag-icon key="[[country.name]]" img square="{{square}}"></flag-icon>[[country.name]]</td>
+					<td colspan="3"><flag-icon key="[[country.alpha2]]" img square="{{square}}"></flag-icon> [[country.alpha2]]</td>
+					<td><flag-icon key="[[country.alpha2]]" square="{{square}}"></flag-icon></td>
+				</tr>
+			</template>
+			<tr><td colspan="6"><hr></td></tr>
+			<template repeat="[[country in countries]]">
+				<tr onmouseover="changeShow('[[country.alpha2]]',false);">
+					<td><flag-icon key="[[country.name]]" img square="{{square}}"></flag-icon>[[country.name]]</td>
+					<td><flag-icon key="[[country.endonym]]" img square="{{square}}"></flag-icon>[[country.endonym]]</td>
+					<td><flag-icon key="[[country.alpha2]]" img square="{{square}}"></flag-icon> [[country.alpha2]]</td>
+					<td><flag-icon key="[[country.alpha3]]" img square="{{square}}"></flag-icon> [[country.alpha3]]</td>
+					<td><flag-icon key="[[country.numeric]]" img square="{{square}}"></flag-icon> [[country.numeric]]</td>
+					<td><flag-icon key="[[country.alpha2]]" square="{{square}}"></flag-icon></td>
+				</tr>
+			</template>
+		</table>
+	</template>
 	<flag-show id="show"></flag-show>
 
 	<script>
@@ -53,6 +62,10 @@
 		} else return arr;
 	};
 	var flagicon;
+	function changeAspect(square){
+		document.getElementById('show').square = square;
+		document.getElementById('main').square = square;
+	}
 	function changeShow(key,isOther){
 		document.getElementById('show').key = key;
 		var country = flagicon.findCountry(key);
@@ -62,12 +75,9 @@
 	}
 	window.addEventListener('polymer-ready', function(){
 		flagicon = new FlagIcon();
-		document.getElementById('otherTable').model = {
-			other: flagicon.countries.filter(function(t){ return !t.numeric; }).map(function(t){ return { name: head(t.name), alpha2: t.alpha2, alpha3: t.alpha3, numeric: t.numeric, endonym: head(t.endonym) }; })
-		};
-		document.getElementById('countryTable').model = {
-			countries: flagicon.countries.filter(function(t){ return t.numeric; }).map(function(t){ return { name: head(t.name), alpha2: t.alpha2, alpha3: t.alpha3, numeric: t.numeric, endonym: head(t.endonym) }; })
-		};
+		document.getElementById('main').square = false,		
+		document.getElementById('main').other = flagicon.countries.filter(function(t){ return !t.numeric; }).map(function(t){ return { name: head(t.name), alpha2: t.alpha2, alpha3: t.alpha3, numeric: t.numeric, endonym: head(t.endonym) }; }),
+		document.getElementById('main').countries = flagicon.countries.filter(function(t){ return t.numeric; }).map(function(t){ return { name: head(t.name), alpha2: t.alpha2, alpha3: t.alpha3, numeric: t.numeric, endonym: head(t.endonym) }; })
 		changeShow('ca');
 	});
 	</script>

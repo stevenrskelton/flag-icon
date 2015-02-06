@@ -50,28 +50,27 @@
 						</td>
 					</tr>
 					<tr>
-						<td><h4>Render:</h4></td>
+						<td><h4 style="margin-top:5px;margin-bottom:5px;">Render:</h4></td>
 						<td>
 							<input type="radio" name="render" value="svg" onchange="model.img = false" checked id="svg"><label for="svg">SVG</label>
 							<input type="radio" name="render" value="png" onchange="model.img = true" id="png"><label for="png">PNG</label>
 						</td>
 					</tr>
+					<tr>
+						<td><h4 style="margin-top:5px;margin-bottom:5px;">Aspect:</h4></td>
+						<td>
+							<input type="radio" name="aspect" value="auto" onchange="model.square = false" checked id="squarefalse"><label for="squarefalse">Auto</label>
+							<input type="radio" name="aspect" value="square" onchange="model.square = true" id="squaretrue"><label for="squaretrue">Square</label>
+						</td>
+					</tr>
 				</table>
 			</div>
 			<div style="padding: 0 15px 0 25px;display:inline-block;">
-				<flag-icon key="{{key}}" width="150" img="{{img}}" data="{{data}}" aspect="{{aspect}}"
+				<flag-icon key="{{key}}" width="150" img="{{img}}" data="{{data}}" aspect="{{aspect}}" square="{{square}}"
 					au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}" es="{{es}}" ru="{{ru}}" us="{{us}}" maritime="{{maritime}}" racing="{{racing}}"
 					style="margin-left:30px;"></flag-icon>
 				<br>
 				<json-stringify data="{{data}}"></json-stringify>
-			<!--
-				<tr>
-					<td>Correct Aspect:</td>
-					<td>
-						<input type="radio" name="aspect" value="png" onchange="model.aspect = false" id="aspectfalse"><label for="aspectfalse">False</label>
-						<input type="radio" name="aspect" value="svg" onchange="model.aspect = true" checked id="aspecttrue"><label for="aspecttrue">True</label>
-					</td>
-				</tr>-->
 			</div>
 		</div>
 	</template>
@@ -131,11 +130,16 @@
 			case 'racing': model.racing = true; break;
 		}
 		model.key = text;
+		var sf = document.getElementById('squarefalse');
+		sf.checked = true;
+		sf.disabled = t.value !== 'country';
+		document.getElementById('squaretrue').disabled = t.value !== 'country';
 	}
 	var model = {
 		key: 'Canada',
 		img: false,
-		aspect: false
+		aspect: false,
+		square: false
 	};
 	window.addEventListener('polymer-ready', function(){
 		document.getElementById('test').model = model;

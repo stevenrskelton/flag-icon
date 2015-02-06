@@ -9,7 +9,7 @@ https://github.com/stevenrskelton/flag-icon
 <polymer-element
 	name="flag-icon"
 	constructor="FlagIcon"
-	attributes="key data img width height aspect au br ca de es ru us maritime racing"
+	attributes="key data img width height aspect square au br ca de es ru us maritime racing"
 	style="
 		display: inline-block;
 		line-height: 0;
@@ -34,6 +34,7 @@ https://github.com/stevenrskelton/flag-icon
 		height: null,
 		computedWidth: 0,
 		computedHeight: 0,
+		square: false,
 		au: false,
 		br: false,
 		ca: false,
@@ -46,7 +47,15 @@ https://github.com/stevenrskelton/flag-icon
 		title: null,
 		src: null,
 		aspect: null,
-		refresh: function(){
+		observe: {
+			aspect: 'refresh',
+			width: 'refresh',
+			height: 'refresh',
+			img: 'refresh',
+			key: 'refresh',
+			square: 'refresh'
+		},
+		refresh: function(oldValue, newValue){
 			var d;
 			var dataTitle;
 			var aspect;
@@ -80,6 +89,7 @@ https://github.com/stevenrskelton/flag-icon
 					d = this.findRacing(this.key);
 				}else{
 					aspect = 4/3;
+					if(this.square) aspect = 1;
 					d = this.findCountry(this.key);
 				}
 			}
@@ -91,6 +101,19 @@ https://github.com/stevenrskelton/flag-icon
 					else if(this.aspect == +this.aspect) aspect = +this.aspect;
 				}
 			}
+
+			var userTitle = this.textContent.trim();
+			this.title = (userTitle.length>0) ? userTitle : dataTitle;
+
+			if(this.width) this.computedWidth = this.width;
+			else this.computedWidth = 0;
+
+			if(!this.width && !this.height) this.computedWidth = 16;
+
+			if(this.height) this.computedHeight = this.height;
+			else this.computedHeight = this.computedWidth / aspect;
+
+			if(!this.computedWidth) this.computedWidth = this.computedHeight * aspect;
 
 			if(d){
 				this.data = d.data;
@@ -108,24 +131,7 @@ https://github.com/stevenrskelton/flag-icon
 				dataTitle = null;
 				this.src = null;
 			}
-			var userTitle = this.textContent.trim();
-			this.title = (userTitle.length>0) ? userTitle : dataTitle;
-
-			if(this.width) this.computedWidth = this.width;
-			else this.computedWidth = 0;
-
-			if(!this.width && !this.height) this.computedWidth = 16;
-
-			if(this.height) this.computedHeight = this.height;
-			else this.computedHeight = this.computedWidth / aspect;
-
-			if(!this.computedWidth) this.computedWidth = this.computedHeight * aspect;
 		},
-		aspectChanged: function(){ this.refresh() },
-		widthChanged: function(){ this.refresh() },
-		heightChanged: function(){ this.refresh() },
-		imgChanged: function(){ this.refresh() },
-		keyChanged: function(){ this.refresh() },
 		created: function(){
 			var countries = [
 				{ name: 'Afghanistan', aspect: 1.5, alpha2: 'AF', alpha3: 'AFG', numeric: 4, endonym: ['Afghanestan','\u0627\u0641\u063A\u0627\u0646\u0633\u062A\u0627\u0646'] },
@@ -692,7 +698,9 @@ https://github.com/stevenrskelton/flag-icon
 						});
 					}
 				}
-				return head(data.map(function(element){ return { title: head(element.name), data: element, file: 'country-4x3/' + element.alpha2.toLowerCase() }; }));
+				var dir = 'country-4x3/'
+				if(this.square || this.aspect == '1') dir = 'country-squared/'
+				return head(data.map(function(element){ return { title: head(element.name), data: element, file: dir + element.alpha2.toLowerCase() }; }));
 			}
 			this.au_states = au_states;
 			this.findAustralianState = function(id){
