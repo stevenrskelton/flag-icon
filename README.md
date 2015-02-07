@@ -294,8 +294,8 @@ Attribute	| Type			| Default	| Description
 `us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
 `maritime`	| *boolean*		| `false`	| Maritime and ICS flags
 `racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
-`aspect`	| *float*		| 			| Override aspect ratio used to render the flag
 `square`	| *boolean*		| `false`	| Use square version instead of 4:3 aspect (only valid for country flags)
+`aspect`	| *float*		| 			| Override aspect ratio used to render the flag
 
 ## Aspect Ratios for Flags
 
