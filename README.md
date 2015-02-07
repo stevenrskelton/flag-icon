@@ -1,7 +1,9 @@
 &lt;flag-icon&gt;
 ===========
 
-Polymer Web Component for flags.
+A collection of SVG flags, conveniently usable as a Polymer Web Component.
+
+Typical file sizes:
 
 > **SVG** files: **2kb** to **75kb**
 
@@ -9,7 +11,7 @@ Polymer Web Component for flags.
 
 ### [Countries](http://files.stevenskelton.ca/flag-icon/examples/countries.html)
 
-_16 x 11 PNG_
+_Tiny 16 x 11 PNG icons_
 
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/kr.png "Korea")
@@ -84,7 +86,7 @@ _16 x 11 PNG_
 ![Burkina Faso](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/bf.png "Burkina Faso")
 ![United Nations](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/unitednations.png "United Nations")
 
-_75 x 56 PNG_
+_4:3 ratio SVG_
 
 ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ca.png "Canada")
 ![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/kr.png "Korea")
@@ -95,6 +97,18 @@ _75 x 56 PNG_
 ![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/no.png "Norway")
 ![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/ph.png "Philippines")
 ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/es.png "Spain")
+
+_Square ratio SVG_
+
+![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/ca.png "Canada")
+![Korea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/kr.png "Korea")
+![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/de.png "Germany")
+![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/au.png "Australia")
+![France](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/fr.png "France")
+![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/us.png "United States")
+![Norway](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/no.png "Norway")
+![Philippines](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/ph.png "Philippines")
+![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-squared/es.png "Spain")
 
 ### States and Provinces
 
