@@ -295,6 +295,7 @@ Attribute	| Type			| Default	| Description
 `maritime`	| *boolean*		| `false`	| Maritime and ICS flags
 `racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
 `aspect`	| *float*		| 			| Override aspect ratio used to render the flag
+`square`	| *boolean*		| `false`	| Use square version instead of 4:3 aspect (only valid for country flags)
 
 ## Aspect Ratios for Flags
 
