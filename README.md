@@ -2,7 +2,9 @@
 ===========
 
 A collection of SVG flags, conveniently usable as a Polymer Web Component.
-If you don't care about extra features, a simple CSS implementation of country flags can be found at [https://github.com/lipis/flag-icon-css]
+
+If you don't care about extra features, a simple CSS implementation of country flags can be found at https://github.com/lipis/flag-icon-css
+
 
 Typical file sizes:
 
