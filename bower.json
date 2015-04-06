@@ -40,6 +40,6 @@
     "united states"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.5"
+    "polymer": "Polymer/polymer#>=0.8.0"
   }
 }

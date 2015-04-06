@@ -6,13 +6,11 @@ https://github.com/stevenrskelton/flag-icon
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element
-    name="flag-icon"
+<dom-module
+    id="flag-icon"
     constructor="FlagIcon"
-    attributes="key data img width height aspect square au br ca de es ru us maritime racing"
     style="
-        display: inline-block;
-        line-height: 0;
+        
     ">
 <template>
     <div title="{{title}}" role="image" aria-label="{{title}}" style="
@@ -27,27 +25,34 @@ https://github.com/stevenrskelton/flag-icon
 </template>
 <script>
 "use strict";
-Polymer('flag-icon', {
-    key: null,
-    data: null,
-    img: false,
-    width: null,
-    height: null,
+Polymer({
+    is: 'flag-icon',
+    hostAttributes: {
+        style: 'display: inline-block;line-height: 0;',
+        key: null,
+        data: null,
+        img: false,
+        width: null,
+        height: null,
+        aspect: null,
+        square: false,
+        au: false,
+        br: false,
+        ca: false,
+        de: false,
+        es: false,
+        ru: false,
+        us: false,
+        maritime: false,
+        racing: false,
+        imgSrc: function(){
+            
+        }
+    },    
     computedWidth: 0,
     computedHeight: 0,
-    square: false,
-    au: false,
-    br: false,
-    ca: false,
-    de: false,
-    es: false,
-    ru: false,
-    us: false,
-    maritime: false,
-    racing: false,
     title: null,
     src: null,
-    aspect: null,
     observe: {
         aspect: 'refresh',
         width: 'refresh',
