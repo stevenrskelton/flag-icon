@@ -111,9 +111,6 @@ Polymer({
             }
         }
 
-        var userTitle = this.textContent.trim();
-        this.title = (userTitle.length > 0) ? userTitle : dataTitle;
-
         if (this.width) {
             this.computedWidth = this.width;
         } else {
@@ -146,6 +143,9 @@ Polymer({
             dataTitle = null;
             this.src = null;
         }
+
+        var userTitle = this.textContent.trim();
+        this.title = (userTitle.length > 0) ? userTitle : dataTitle;
     },
     created: function () {
         var countries = [
