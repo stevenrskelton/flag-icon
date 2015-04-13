@@ -6,36 +6,56 @@ https://github.com/stevenrskelton/flag-icon
 
 <link rel="import" href="../polymer/polymer.html">
 
-<dom-module
-    id="flag-icon"
-    constructor="FlagIcon"
-    style="
-        
-    ">
-<template>
-    <div title="{{title}}" role="image" aria-label="{{title}}" style="
-        {{src ? 'background: url(' + src + ');' : ''}}
-        background-size: 100% 100%;
-        background-position: center center;
-        width: {{computedWidth}}px;
-        height: {{computedHeight}}px;
-        background-repeat: no-repeat;
-        display: inline-block;
-    "></div>
-</template>
+<dom-module id="flag-icon">
+    <template>
+        <div title="{{title}}" role="image" aria-label="{{title}}" style="
+            {{src ? 'background: url(' + src + ');' : ''}}
+            background-size: 100% 100%;
+            background-position: center center;
+            width: {{computedWidth}}px;
+            height: {{computedHeight}}px;
+            background-repeat: no-repeat;
+            display: inline-block;
+        "></div>
+    </template>
 <script>
 "use strict";
 Polymer({
     is: 'flag-icon',
     hostAttributes: {
-        style: 'display: inline-block;line-height: 0;',
-        key: null,
-        data: null,
-        img: false,
-        width: null,
-        height: null,
-        aspect: null,
-        square: false,
+        style: 'display: inline-block;line-height: 0;'
+    },
+    properties: {
+        data: {
+            type: Object,
+            reflectToAttribute: true
+        },
+        key: {
+            type: String,
+            value: null,
+            observer: 'refresh'
+        },
+        img: {
+            type: String,
+            observer: 'refresh'
+        },
+        width: {
+            type: Number,
+            observer: 'refresh'
+        },
+        height: {
+            type: Number,
+            observer: 'refresh'
+        },
+        aspect: {
+            type: Number,
+            observer: 'refresh'
+        },
+        square: {
+            type: Boolean,
+            value: false,
+            observer: 'refresh'
+        },
         au: false,
         br: false,
         ca: false,
@@ -45,21 +65,11 @@ Polymer({
         us: false,
         maritime: false,
         racing: false,
-        imgSrc: function(){
-            
-        }
-    },    
-    computedWidth: 0,
-    computedHeight: 0,
-    title: null,
-    src: null,
-    observe: {
-        aspect: 'refresh',
-        width: 'refresh',
-        height: 'refresh',
-        img: 'refresh',
-        key: 'refresh',
-        square: 'refresh'
+        imgSrc: '',
+        computedWidth: 0,
+        computedHeight: 0,
+        title: '',
+        src: ''
     },
     refresh: function (oldValue, newValue) {
         var d, dataTitle, aspect;
