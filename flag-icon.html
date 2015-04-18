@@ -8,15 +8,7 @@ https://github.com/stevenrskelton/flag-icon
 
 <dom-module id="flag-icon">
     <template>
-        <div title="{{title}}" role="image" aria-label="{{title}}" style="
-            {{src ? 'background: url(' + src + ');' : ''}}
-            background-size: 100% 100%;
-            background-position: center center;
-            width: {{computedWidth}}px;
-            height: {{computedHeight}}px;
-            background-repeat: no-repeat;
-            display: inline-block;
-        "></div>
+        <div title$="{{title}}" role="image" aria-label$="{{title}}" style$="{{_computeSrc(data)}}"></div>
     </template>
 <script>
 "use strict";
@@ -26,8 +18,12 @@ Polymer({
         style: 'display: inline-block;line-height: 0;'
     },
     properties: {
+        observers: {
+            'key img width height aspect square': 'refresh'
+        },
         data: {
             type: Object,
+            observer: 'refresh',
             reflectToAttribute: true
         },
         key: {
@@ -35,43 +31,39 @@ Polymer({
             value: null,
             observer: 'refresh'
         },
-        img: {
-            type: String,
-            observer: 'refresh'
-        },
-        width: {
-            type: Number,
-            observer: 'refresh'
-        },
-        height: {
-            type: Number,
-            observer: 'refresh'
-        },
-        aspect: {
-            type: Number,
-            observer: 'refresh'
-        },
-        square: {
-            type: Boolean,
-            value: false,
-            observer: 'refresh'
-        },
-        au: false,
-        br: false,
-        ca: false,
-        de: false,
-        es: false,
-        ru: false,
-        us: false,
-        maritime: false,
-        racing: false,
-        imgSrc: '',
-        computedWidth: 0,
-        computedHeight: 0,
-        title: '',
-        src: ''
+        img: String,
+        width: Number,
+        height: Number,
+        aspect: Number,
+        square: Boolean,
+        au: Boolean,
+        br: Boolean,
+        ca: Boolean,
+        de: Boolean,
+        es: Boolean,
+        ru: Boolean,
+        us: Boolean,
+        maritime: Boolean,
+        racing: Boolean,
+        imgSrc: String,
+        computedWidth: Number,
+        computedHeight: Number,
+        title: String,
+        src: String
     },
-    refresh: function (oldValue, newValue) {
+    _computeSrc: function () {
+        var s = 'background-size: 100% 100%;';
+        s += 'background-position: center center;';
+        s += 'width:' + this.computedWidth + 'px;';
+        s += 'height: ' + this.computedHeight + 'px;';
+        s += 'background-repeat: no-repeat;';
+        s += 'display: inline-block;';
+        if (this.src) s += 'background-image: url(' + this.src + ');';
+        return s;
+    },
+    refresh: function () {
+    console.log('refresh');
+    console.log(this.key);
         var d, dataTitle, aspect;
         if (this.key !== null) {
             if (this.au) {
@@ -144,9 +136,9 @@ Polymer({
                 var w = +this.computedWidth;
                 if (w === null || w == 0) { w = +this.computedHeight * aspect; }
                 var size = (w > 75) ? 225 : (w > 36) ? '75' : (w > 20) ? '36' : '16';
-                this.src = this.resolvePath('png/' + size + '/' + d.file + '.png');
+                this.src = this.resolveUrl('png/' + size + '/' + d.file + '.png');
             } else {
-                this.src = this.resolvePath('svg/' + d.file + '.svg');
+                this.src = this.resolveUrl('svg/' + d.file + '.svg');
             }
         } else {
             this.data = null;

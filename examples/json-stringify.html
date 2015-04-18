@@ -1,11 +1,21 @@
 <link rel="import" href="../../polymer/polymer.html">
-<polymer-element name="json-stringify" attributes="data">
-	<template><pre style="text-align:left">{{json}}</pre></template>
-	<script>
-	Polymer('json-stringify', { 
-		dataChanged: function() {
-			this.json = JSON.stringify(this.data, null, 2);
-		}
-	});
-	</script>
-</polymer-element>
+
+<dom-module id="json-stringify">
+    <template><pre style="text-align:left">{{json}}</pre></template>
+    <script>
+        "use strict";
+        Polymer({
+            is: 'json-stringify',
+            properties: {
+                data: {
+                    type: Object,
+                    observer: 'dataChanged'
+                },
+                json: String
+            },
+            dataChanged: function(newValue) {
+                this.json = JSON.stringify(newValue, null, 2);
+            }
+        });
+    </script>
+</dom-module>

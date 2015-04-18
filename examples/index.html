@@ -15,12 +15,12 @@
         }
     </style>
 </head>
-<body unresolved>
+<body>
     <index-links page="index.html"></index-links>
 
     <h1>&lt;flag-icon&gt; Demos</h1>
 
-    <template id="test" bind>
+    <template is="x-autobind" id="test">
         <div style="border:1px solid #DFE8F6;background-color:#EEEEF0;display:inline-block;padding:10px;">
             <div style="border:1px solid #99BBE8;background-color:#DFE8F6;padding:15px;display:inline-block;vertical-align:top">
                 <table style="display:inline">
@@ -76,7 +76,7 @@
     </template>
 
     <h2>Many input formats are allowed</h2>
-
+<!--
     <div style="margin-left:10px;">
         <flag-icon key="Korea Republic"></flag-icon> <pre>&lt;flag-icon key="Korea Republic"&gt;&lt;/flag-icon&gt;</pre>
         <br>
@@ -106,30 +106,31 @@
         <br>
         <flag-icon key="Nam-josŏn"></flag-icon> <pre>&lt;flag-icon key="Nam-josŏn"&gt;&lt;/flag-icon&gt;</pre>
     </div>
-
+-->
     <script>
     function classbind(t,text){
-        model.au = false;
-        model.br = false;
-        model.ca = false;
-        model.de = false;
-        model.es = false;
-        model.ru = false;
-        model.us = false;
-        model.maritime = false;
-        model.racing = false;
+        var template = document.getElementById('test')._template;
+        template.setPathValue('au', false);
+        template.setPathValue('br', false);
+        template.setPathValue('ca', false);
+        template.setPathValue('de', false);
+        template.setPathValue('es', false);
+        template.setPathValue('ru', false);
+        template.setPathValue('us', false);
+        template.setPathValue('maritime', false);
+        template.setPathValue('racing', false);
         switch(t.value){
-            case 'au': model.au = true; break;
-            case 'br': model.br = true; break;
-            case 'ca': model.ca = true; break;
-            case 'de': model.de = true; break;
-            case 'es': model.es = true; break;
-            case 'ru': model.ru = true; break;
-            case 'us': model.us = true; break;
-            case 'maritime': model.maritime = true; break;
-            case 'racing': model.racing = true; break;
+            case 'au': template.setPathValue('au', true); break;
+            case 'br': template.setPathValue('br', true); break;
+            case 'ca': template.setPathValue('ca', true); break;
+            case 'de': template.setPathValue('de', true); break;
+            case 'es': template.setPathValue('es', true); break;
+            case 'ru': template.setPathValue('ru', true); break;
+            case 'us': template.setPathValue('us', true); break;
+            case 'maritime': template.setPathValue('maritime', true); break;
+            case 'racing': template.setPathValue('racing', true); break;
         }
-        model.key = text;
+        template.setPathValue('key', text);
         var sf = document.getElementById('squarefalse');
         sf.checked = true;
         sf.disabled = t.value !== 'country';
@@ -143,7 +144,7 @@
         square: false
     };
     window.addEventListener('polymer-ready', function(){
-        document.getElementById('test').model = model;
+        //document.getElementById('test').model = model;
     });
     </script>
 </body>
