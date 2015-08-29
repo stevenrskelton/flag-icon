@@ -8,7 +8,7 @@ https://github.com/stevenrskelton/flag-icon
 
 <dom-module id="flag-icon">
     <template>
-        <div title$="{{title}}" role="image" aria-label$="{{title}}" style$="{{_computeSrc(data)}}"></div>
+        <div title$="{{title}}" role="image" aria-label$="{{title}}" style$="{{_computeSrc(data, src)}}"></div>
     </template>
 <script>
 "use strict";
@@ -51,14 +51,14 @@ Polymer({
         title: String,
         src: String
     },
-    _computeSrc: function () {
+    _computeSrc: function (data, src) {
         var s = 'background-size: 100% 100%;';
         s += 'background-position: center center;';
         s += 'width:' + this.computedWidth + 'px;';
         s += 'height: ' + this.computedHeight + 'px;';
         s += 'background-repeat: no-repeat;';
         s += 'display: inline-block;';
-        if (this.src) s += 'background-image: url(' + this.src + ');';
+        if (src) s += 'background-image: url(' + src + ');';
         return s;
     },
     refresh: function () {
