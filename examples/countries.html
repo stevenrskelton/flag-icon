@@ -1,30 +1,29 @@
-<!DOCTYPE html>
-<head>
+<!DOCTYPE html><html><head>
 	<title>Country Flag Icons</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<script src="../../webcomponentsjs/webcomponents.min.js"></script>
+	<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="../flag-icon.html">
 	<link rel="import" href="index-links.html">
 	<link rel="import" href="flag-show.html">
 </head>
-<body unresolved>
+<body unresolved="">
 	<index-links page="countries.html"></index-links>
 
 	<h1>World Country Flags</h1>
 
-	<template is="auto-binding" id="main">
+	<template is="dom-bind" id="main">
 		<div style="border:1px solid #666;border-radius:5px;background-color:#DDD;display:inline;padding:4px;">
 			<strong>Aspect:</strong>
-			<input type="radio" name="aspect" value="{{!square}}" onchange="changeAspect(false)" checked id="squarefalse"><label for="squarefalse">4:3</label>
-			<input type="radio" name="aspect" value="{{square}}" onchange="changeAspect(true)" id="squaretrue"><label for="squaretrue">Square</label>
+			<input type="radio" name="aspect" value="{{!square::input}}" onchange="changeAspect(false)" checked="" id="squarefalse"><label for="squarefalse">4:3</label>
+			<input type="radio" name="aspect" value="{{square::input}}" onchange="changeAspect(true)" id="squaretrue"><label for="squaretrue">Square</label>
 		</div>
 
 		<br>
 
 		<table style="width:700px;margin-top:20px;">
-			<tr>
+			<tbody><tr>
 				<th style="width:450px">Country</th>
 				<th style="width:450px"></th>
 				<th>Alpha2</th>
@@ -32,25 +31,37 @@
 				<th>Numeric</th>
 				<th>SVG</th>
 			</tr>
-			<template repeat="[[country in other]]">
-				<tr onmouseover="changeShow('[[country.alpha2]]',true);">
-					<td colspan="2"><flag-icon key="[[country.name]]" img square="{{square}}"></flag-icon>[[country.name]]</td>
-					<td colspan="3"><flag-icon key="[[country.alpha2]]" img square="{{square}}"></flag-icon> [[country.alpha2]]</td>
+			<template is="dom-repeat">
+				<!--
+    The expression   'changeShow(\'' + country.alpha2 + '\',true);'   can't work in a
+    dom-bind template, as it should be an anonymous computed property.
+    If you convert it into a Polymer element then polyup should be able to
+    upgrade it.
+ -->
+<tr onmouseover="{{'changeShow(\'' + country.alpha2 + '\',true);'}}">
+					<td colspan="2"><flag-icon key="[[country.name]]" img="" square="{{square}}"></flag-icon>{{country.name}}</td>
+					<td colspan="3"><flag-icon key="[[country.alpha2]]" img="" square="{{square}}"></flag-icon> <span>{{country.alpha2}}</span></td>
 					<td><flag-icon key="[[country.alpha2]]" square="{{square}}"></flag-icon></td>
 				</tr>
 			</template>
 			<tr><td colspan="6"><hr></td></tr>
-			<template repeat="[[country in countries]]">
-				<tr onmouseover="changeShow('[[country.alpha2]]',false);">
-					<td><flag-icon key="[[country.name]]" img square="{{square}}"></flag-icon>[[country.name]]</td>
-					<td><flag-icon key="[[country.endonym]]" img square="{{square}}"></flag-icon>[[country.endonym]]</td>
-					<td><flag-icon key="[[country.alpha2]]" img square="{{square}}"></flag-icon> [[country.alpha2]]</td>
-					<td><flag-icon key="[[country.alpha3]]" img square="{{square}}"></flag-icon> [[country.alpha3]]</td>
-					<td><flag-icon key="[[country.numeric]]" img square="{{square}}"></flag-icon> [[country.numeric]]</td>
+			<template is="dom-repeat">
+				<!--
+    The expression   'changeShow(\'' + country.alpha2 + '\',false);'   can't work in a
+    dom-bind template, as it should be an anonymous computed property.
+    If you convert it into a Polymer element then polyup should be able to
+    upgrade it.
+ -->
+<tr onmouseover="{{'changeShow(\'' + country.alpha2 + '\',false);'}}">
+					<td><flag-icon key="[[country.name]]" img="" square="{{square}}"></flag-icon>{{country.name}}</td>
+					<td><flag-icon key="[[country.endonym]]" img="" square="{{square}}"></flag-icon>{{country.endonym}}</td>
+					<td><flag-icon key="[[country.alpha2]]" img="" square="{{square}}"></flag-icon> <span>{{country.alpha2}}</span></td>
+					<td><flag-icon key="[[country.alpha3]]" img="" square="{{square}}"></flag-icon> <span>{{country.alpha3}}</span></td>
+					<td><flag-icon key="[[country.numeric]]" img="" square="{{square}}"></flag-icon> <span>{{country.numeric}}</span></td>
 					<td><flag-icon key="[[country.alpha2]]" square="{{square}}"></flag-icon></td>
 				</tr>
 			</template>
-		</table>
+		</tbody></table>
 	</template>
 	<flag-show id="show"></flag-show>
 
@@ -81,5 +92,4 @@
 		changeShow('ca');
 	});
 	</script>
-</body>
-</html>
+

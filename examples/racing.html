@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-  <head>
+<!DOCTYPE html><html><head>
 	<title>Country Flag Icons</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<script src="../../webcomponentsjs/webcomponents.min.js"></script>
+	<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="../flag-icon.html">
 	<link rel="import" href="index-links.html">
 	<style>
@@ -17,7 +16,7 @@
 		}
 	</style>
   </head>
-  <body unresolved>
+  <body unresolved="">
 	<index-links page="racing.html"></index-links>
 
 	<h1>NASCAR and IndyCar Racing Flags</h1>
@@ -26,7 +25,7 @@
 
 	<template id="flags" repeat="[[flags]]">
 		<div class="icon">
-			<flag-icon key="[[key]]" racing width="75"></flag-icon>
+			<flag-icon key="[[key]]" racing="" width="75"></flag-icon>
 			<div style="display:inline-block;text-align:left;vertical-align:top;width:400px;">
 				[[key]]<br>
 				[[description]]
@@ -34,9 +33,8 @@
 		</div>
 	</template>
 
-	<polymer-element name="racing-icons" attributes="flag width" noscript style="display:inline">
-		<template>
-			<style>
+	<dom-module id="racing-icons">
+  <style>
 				.icon {
 					float:left;
 					text-align:center;
@@ -45,29 +43,49 @@
 					margin: 5px;
 				}
 			</style>
+  <template>
 			<div class="icon">
-				<flag-icon key="{{flag.key}}" racing img width="{{width}}"></flag-icon>
-				[[flag.name]]<br>
-				[[flag.key]]
+				<flag-icon key="{{flag.key}}" racing="" img="" width="{{width}}"></flag-icon>
+				<span>{{flag.name}}</span><br>
+				<span>{{flag.key}}</span>
 			</div>
 		</template>
-	</polymer-element>
+  <script>
+    Polymer({
+      is: 'racing-icons',
+      properties: {
+        flag: { notify: true },
+        width: { notify: true }
+      },
+      hostAttributes: { 'style': 'display:inline' }
+    });
+  </script>
+</dom-module>
 
-	<polymer-element name="racing-icons-section" attributes="flags width" noscript>
-		<template>
+	<dom-module id="racing-icons-section">
+  <template>
 			<h2 style="clear:left">PNG
-				<select value="{{width}}" on-change="change(this)">
+				<select value="{{width::input}}" on-change="change(this)">
 					<option value="16">16</option>
-					<option value="36" selected>36</option>
+					<option value="36" selected="">36</option>
 					<option value="75">75</option>
 					<option value="225">225</option>
 				</select>
 			</h2>
-			<template repeat="{{flag in flags}}">
+			<template is="dom-repeat" items="{{flags}}" as="flag">
 				<racing-icons flag="{{flag}}" width="{{width}}"></racing-icons>
 			</template>
 		</template>
-	</polymer-element>
+  <script>
+    Polymer({
+      is: 'racing-icons-section',
+      properties: {
+        flags: { notify: true },
+        width: { notify: true }
+      }
+    });
+  </script>
+</dom-module>
 
 	<racing-icons-section id="flags2"></racing-icons-section>
 
@@ -85,5 +103,4 @@
 		document.getElementById('flags2').width = +select.value;
 	}
 	</script>
-  </body>
-</html>
+  

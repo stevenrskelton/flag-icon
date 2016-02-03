@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-  <head>
+<!DOCTYPE html><html><head>
 	<title>Country Flag Icons</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<script src="../../webcomponentsjs/webcomponents.min.js"></script>
+	<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 	<link rel="import" href="../flag-icon.html">
 	<link rel="import" href="index-links.html">
 	<link rel="import" href="flag-show.html">
   </head>
-  <body unresolved>
+  <body unresolved="">
 	<index-links page="brazil.html"></index-links>
 
 	<h1>Brazilian Flags</h1>
 
 	<table style="width:700px;min-height:650px;display:block;">
-		<tr>
+		<tbody><tr>
 			<th style="width:250px">Brazilian State</th>
 			<th style="width:150px;">ISO</th>
 			<th style="width:100px;">Alpha2</th>
@@ -23,14 +22,14 @@
 		</tr>
 		<template id="flagsbr" repeat="[[flags]]">
 			<tr onmouseover="changeShow('[[iso]]');">
-				<td><flag-icon key="[[name]]" br img></flag-icon>[[name]]</td>
-				<td><flag-icon key="[[iso]]" br img></flag-icon> [[iso]]</td>
-				<td><flag-icon key="[[alpha2]]" br img></flag-icon> [[alpha2]]</td>
-				<td><flag-icon key="[[alpha2]]" br></flag-icon></td>
+				<td><flag-icon key="[[name]]" br="" img=""></flag-icon>[[name]]</td>
+				<td><flag-icon key="[[iso]]" br="" img=""></flag-icon> [[iso]]</td>
+				<td><flag-icon key="[[alpha2]]" br="" img=""></flag-icon> [[alpha2]]</td>
+				<td><flag-icon key="[[alpha2]]" br=""></flag-icon></td>
 			</tr>
 		</template>
 
-	</table>
+	</tbody></table>
 
 	<flag-show id="show"></flag-show>
 
@@ -57,5 +56,4 @@
 		changeShow('BR-RJ');
 	});
 	</script>
-  </body>
-</html>
+  
