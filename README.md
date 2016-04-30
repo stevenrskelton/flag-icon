@@ -1,4 +1,4 @@
-&lt;flag-icon&gt;
+flag-icon
 ===========
 
 A collection of SVG flags, conveniently usable as a Polymer Web Component.
@@ -14,11 +14,9 @@ Typical file sizes:
 * SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
 * [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
 
-## Demos
+## Component Page
 
-> [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/index.html)
-
-> [Live Demo - Themes and Popover](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/themes.html)
+[API Documentation and Demo](http://protoss78.github.io/battery-status-icon/components/battery-status-icon/)
 
 ## Usage
 
