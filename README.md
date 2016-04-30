@@ -16,7 +16,7 @@ Typical file sizes:
 
 ## Component Page
 
-[API Documentation and Demo](http://protoss78.github.io/battery-status-icon/components/battery-status-icon/)
+[API Documentation and Demo](http://protoss78.github.io/flag-icon/)
 
 ## Usage
 
