@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>flag-icon demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../../iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="../flag-icon.html">
+  <link rel="import" href="../../paper-input/paper-input.html">
+  <link rel="import" href="../../paper-card/paper-card.html">
+  <link rel="import" href="../../paper-styles/demo-pages.html">
+  <style is="custom-style">
+  /* When no size is specified for flag-icon it won't display */
+  
+  flag-icon {
+    min-width: 4em;
+    min-height: 4em;
+  }
+  
+  .bigFlag {
+    height: 50vh;
+    width: 50vw;
+  }
+  
+  paper-input {
+    width: 50%;
+  }
+  
+  .card-actions {
+    background-color: #dddddd;
+  }
+  </style>
+</head>
+
+<body unresolved>
+  <template id="t" is="dom-bind">
+    <paper-card heading="Flag Icon Search Demo" image="" elevation="1" animated-shadow="false">
+      <div class="card-content">
+        <paper-input id="searchBox" label="Search a country" value="{{searchValue}}"></paper-input>
+        <p>JSON Result:</p><p>[[result]]</p>
+      </div>
+      <div class="card-actions">
+        <flag-icon id="flagIcon" class="bigFlag" key="{{searchValue}}">Big Flag Sample</flag-icon>
+      </div>
+    </paper-card>
+  </template>
+</body>
+<script>
+var t = document.querySelector('#t');
+
+// The dom-change event signifies when the template has stamped its DOM.
+t.addEventListener('dom-change', function() {
+  t.result = "";
+  t.searchValue = "Austria";
+  var searchFunction = function() {
+    t.result = JSON.stringify(t.$.flagIcon.findCountry(t.searchValue));
+  };
+  searchFunction();
+  t.$.searchBox.addEventListener('change', searchFunction);
+  t.$.searchBox.addEventListener('keyup', searchFunction);
+});
+</script>
+
+</html>

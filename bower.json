@@ -4,7 +4,8 @@
   "description": "Polymer Web Component for SVG and PNG icons of country, state, province and other flags",
   "main": "flag-icon.html",
   "authors": [
-    "Steven Skelton"
+    "Steven Skelton",
+    "Roman Kaufmann"
   ],
   "license": "MIT",
   "ignore": [
@@ -43,5 +44,11 @@
     "polymer": "Polymer/polymer#^1.0.0",
     "iron-image": "PolymerElements/iron-image#^1.2.1",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.2.2"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "paper-input": "PolymerElements/paper-input#^1.1.11",
+    "paper-card": "PolymerElements/paper-card#^1.1.1"
   }
 }

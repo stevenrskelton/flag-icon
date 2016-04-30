@@ -6,23 +6,20 @@ https://github.com/stevenrskelton/flag-icon
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
-<dom-module id="flag-icon">
+<dom-module id="flag-icon" class="flex">
   <template>
     <style>
     :host {
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      @apply(--layout-flex);
+      display: inline-flex;
     }
-
+    
     iron-image {
-      height: 100%;
+      height: auto;
       width: 100%;
-      @apply(--layout-flex);
+      display: inline-flex;
     }
     </style>
-    <iron-image src="{{src}}" title$="[[title]]" aria-label$="[[title]]" sizing="contain"></iron-image>
+    <iron-image src="{{src}}" alt="[[title]]" title$="[[title]]" aria-label$="[[title]]" sizing="contain"></iron-image>
   </template>
   <script>
   'use strict';
@@ -49,14 +46,6 @@ https://github.com/stevenrskelton/flag-icon
         value: false,
         notify: true
       },
-      computedHeight: {
-        type: Number,
-        value: 0
-      },
-      computedWidth: {
-        type: Number,
-        value: 0
-      },
       data: {
         value: null,
         notify: true
@@ -71,17 +60,6 @@ https://github.com/stevenrskelton/flag-icon
         value: false,
         notify: true
       },
-      height: {
-        value: null,
-        notify: true,
-        observer: 'refresh'
-      },
-      /*img: {
-        type: Boolean,
-        value: false,
-        notify: true,
-        observer: 'refresh'
-      },*/
       key: {
         value: null,
         notify: true,
@@ -119,11 +97,6 @@ https://github.com/stevenrskelton/flag-icon
         type: Boolean,
         value: false,
         notify: true
-      },
-      width: {
-        value: null,
-        notify: true,
-        observer: 'refresh'
       },
       file: {
         type: String
@@ -184,35 +157,10 @@ https://github.com/stevenrskelton/flag-icon
           }
         }
       }
-      if (this.width) {
-        this.computedWidth = this.width;
-      } else {
-        this.computedWidth = 0;
-      }
-      if (!this.width && !this.height) {
-        this.computedWidth = 16;
-      }
-      if (this.height) {
-        this.computedHeight = this.height;
-      } else {
-        this.computedHeight = this.computedWidth / aspect;
-      }
-      if (!this.computedWidth) {
-        this.computedWidth = this.computedHeight * aspect;
-      }
       if (d) {
         this.data = d.data;
         dataTitle = d.title;
-        /*if (this.img) {
-          var w = +this.computedWidth;
-          if (w === null || w == 0) {
-            w = +this.computedHeight * aspect;
-          }
-          var size = w > 75 ? 225 : w > 36 ? '75' : w > 20 ? '36' : '16';
-          this.src = this.resolveUrl('png/' + size + '/' + d.file + '.png');
-        } else {*/
         this.set('src', this.resolveUrl('./svg/' + d.file + '.svg'));
-        //}
       } else {
         this.data = null;
         dataTitle = null;
@@ -4243,13 +4191,6 @@ https://github.com/stevenrskelton/flag-icon
           };
         }));
       };
-    },
-    /*hostAttributes: {
-      'constructor': 'FlagIcon',
-      'style': '\n        display: inline-block;\n        line-height: 0;\n    '
-    },*/
-    _computeStyle: function(computedHeight, computedWidth, src) {
-      return '\n        ' + src ? 'background: url(' + src + ');' : '' + '\n        background-size: 100% 100%;\n        background-position: center center;\n        width: ' + computedWidth + 'px;\n        height: ' + computedHeight + 'px;\n        background-repeat: no-repeat;\n        display: inline-block;\n    ';
     }
   });
   </script>
