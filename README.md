@@ -78,9 +78,6 @@ Typical file sizes:
 Attribute	| Type			| Default	| Description
 ---			| ---			| ---		| ---
 `key`		| *string*		| `null`	| Proper, common, ISO 3166-1 alpha-2, alpha-3, or country code
-`img`		| *attribute*	| `false`	| Use PNGs instead of larger filesize SVG
-`width`		| *integer*		| `16`		| Width of icon (aspect ratio maintained if `height` omitted).
-`height`	| *integer*		| _auto_	| Height of icon (aspect ratio maintained if `width` omitted).
 `au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
 `br`		| *boolean*		| `false`	| ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil") Brazilian State flags
 `ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
