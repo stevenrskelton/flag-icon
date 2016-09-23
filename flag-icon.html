@@ -23,6 +23,7 @@ https://github.com/stevenrskelton/flag-icon
         height: {{computedHeight}}px;
         background-repeat: no-repeat;
         display: inline-block;
+        -webkit-print-color-adjust: exact;
     "></div>
 </template>
 <script>
@@ -98,7 +99,7 @@ Polymer('flag-icon', {
             } else if (typeof this.aspect === "boolean") {
                 if (this.aspect && d && d.data.aspect) { aspect = d.data.aspect; }
             } else {
-                if (this.aspect === "") { 
+                if (this.aspect === "") {
                     if (d && d.data.aspect) { aspect = d.data.aspect; }
                 } else if (this.aspect == +this.aspect) {
                     aspect = +this.aspect;
