@@ -1,7 +1,8 @@
 {
   "name": "flag-icon",
+  "version": "1.0.0",
   "homepage": "https://github.com/stevenrskelton/flag-icon",
-  "description": "Polymer Web Component for SVG and PNG icons of country, state, province and other flags",
+  "description": "Polymer Web Component for SVG icons of country, state, province and other flags",
   "main": "flag-icon.html",
   "authors": [
     "Steven Skelton",
@@ -41,14 +42,39 @@
     "united states"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "iron-image": "PolymerElements/iron-image#^1.2.1",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.2.2"
+    "polymer": "Polymer/polymer#1.9 - 2",
+    "iron-image": "PolymerElements/iron-image#1 - 2",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#1 - 2"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "paper-input": "PolymerElements/paper-input#^1.1.11",
-    "paper-card": "PolymerElements/paper-card#^1.1.1"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "web-component-tester": "^6.0.0",
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "paper-input": "PolymerElements/paper-input#1 - 2",
+    "paper-card": "PolymerElements/paper-card#1 - 2"
+  },
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "Polymer/polymer#^1.9.0",
+        "iron-image": "PolymerElements/iron-image#^1.2.1",
+        "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.2.2"
+      },
+      "devDependencies": {
+        "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+        "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+        "web-component-tester": "^4.0.0",
+        "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+        "paper-input": "PolymerElements/paper-input#^1.0.0",
+        "paper-card": "PolymerElements/paper-card#^1.0.0"
+      },
+      "resolutions": {
+        "webcomponentsjs": "^0.7"
+      }
+    }
+  },
+  "resolutions": {
+    "webcomponentsjs": "^1.0.0"
   }
 }

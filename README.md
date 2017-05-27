@@ -1,120 +1,80 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Protoss78/flag-icon)
+
 flag-icon
 ===========
+A fork of the original [stevenrskelton/flag-icon](https://github.com/stevenrskelton/flag-icon) web component.
 
 A collection of SVG flags, conveniently usable as a Polymer Web Component.
-
 If you don't care about extra features, a simple CSS implementation of country flags can be found at https://github.com/lipis/flag-icon-css
 
-
-Typical file sizes:
-
-> **SVG** files: **2kb** to **75kb**
-
-* Images come from [famfamfam](http://www.famfamfam.com/lab/icons/flags/) icon library, or generated from SVG.
-* SVGs come from [Wikimedia Commons](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags).
-* [ISO 3166-1 Country Code](http://en.wikipedia.org/wiki/ISO_3166-1) list is available on Wikipedia.
-
-## Component Page
-
-[API Documentation and Demo](http://protoss78.github.io/flag-icon/)
-
 ## Usage
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../polymer/polymer.html">
+    <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../paper-card/paper-card.html">
+    <link rel="import" href="../paper-styles/demo-pages.html">
+    <link rel="import" href="../paper-input/paper-input.html">
+    <link rel="import" href="flag-icon.html">
+        
+    <custom-style>
+        <style is="custom-style" include="iron-flex">
+            /* When no size is specified for flag-icon it won't display */
 
-1. Add the library using the Javascript package manager [Bower](http://bower.io/):
+            flag-icon {
+                min-width: 4em;
+                min-height: 4em;
+            }
 
-	```bower install --save flag-icon```
+            .bigFlag {
+                height: 50vh;
+                width: 50vw;
+            }
 
-2. Import Web Components' polyfill:
+            paper-input {
+                width: 50%;
+            }
 
-	```html
-	<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
-	```
-
-3. Import Custom Element:
-
-	```html
-	<link rel="import" href="bower_components/flag-icon/flag-icon.html">
-	```
-
-4. Start using it!
-
-	```html
-	<flag-icon key="ca"></flag-icon>
-	<flag-icon key="canada"></flag-icon>
-	<flag-icon key="124"></flag-icon>
-	<!-- specify to use PNGs -->
-	<flag-icon key="ca" img></flag-icon>
-	<!-- specify a specific size -->
-	<flag-icon key="ca" width="100"></flag-icon>
-
-	<!-- Specify alt & title text,
-	     otherwise it defaults to the official country name -->
-	<flag-icon key="can">Flag of Canada</flag-icon>
-	```
-
-5. Or use it unrendered in scripts:
-
-	```javascript
-	var f = new FlagIcon();
-
-	//get country info
-	f.findCountry('canada')
-	//> { name: 'Canada', alpha2: 'CA', alpha3: 'CAN', numeric: 124 }
-
-	//convert between 2 -> 3 letter character codes
-	f.findCountry('ca').alpha3
-	//> 'CAN'
-
-	//get full names of states or provinces
-	f.findUSState('ca')
-	//> { name: 'California', iso: 'US-CA', alpha2: 'CA', numeric: 6, gpo: 'Calif.' }
-
-	f.findCanadianProvince('ON')
-	//> { name: 'Ontario', alpha2: 'ON' }
-	```
-
-## Options
-
-Attribute	| Type			| Default	| Description
----			| ---			| ---		| ---
-`key`		| *string*		| `null`	| Proper, common, ISO 3166-1 alpha-2, alpha-3, or country code
-`au`		| *boolean*		| `false`	| ![Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/au.png "Australia") Australian State flags
-`br`		| *boolean*		| `false`	| ![Brazil](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/br.png "Brazil") Brazilian State flags
-`ca`		| *boolean*		| `false`	| ![Canada](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ca.png "Canada") Canadian Province and Territory flags
-`de`		| *boolean*		| `false`	| ![Germany](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/de.png "Germany") German State flags
-`es`		| *boolean*		| `false`	| ![Spain](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/es.png "Spain") Spain Autonomous Community flags
-`ru`		| *boolean*		| `false`	| ![Russia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/ru.png "Russia") Russian Republics, Krais, and Oblast flags
-`us`		| *boolean*		| `false`	| ![United States](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/16/country-4x3/us.png "United States") US State flags
-`maritime`	| *boolean*		| `false`	| Maritime and ICS flags
-`racing`	| *boolean*		| `false`	| NASCAR and IndyCar racing flags
-`square`	| *boolean*		| `false`	| Use square version instead of 4:3 aspect (only valid for country flags)
-`aspect`	| *float*		| 			| Override aspect ratio used to render the flag
-
-## Aspect Ratios for Flags
-
-Flags come in all different shapes and sizes, attempts were made to standardize to the following aspect ratios (width:height)
-
-Attribute		| Aspect
----				| ---
-Country			| 4:3
-Austrialia		| 2:1
-Brazil			| 3:2
-Canada			| 2:1
-Germany			| 5:3
-Spain			| 3:2
-US				| 3:2
-Russia			| 3:2
-NASCAR, IndyCar	| 4:3
-Maritime		| 1:1
-
-## Todo
-
-- Loading notification, or default image.
-- Compact/minify SVG files
-
-## History
-
-For detailed changelog, check [Releases](https://github.com/stevenrskelton/flag-icon/releases).
+            .card-actions {
+                background-color: #dddddd;
+            }
+        </style>
+    </custom-style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<dom-bind id="app">
+    <template id="t">
+        <paper-card heading="Flag Icon Search Demo">
+            <div class="card-content">
+                <paper-input id="searchBox" label="Search a country" value="{{searchValue}}"></paper-input>
+                <p>JSON Result:</p>
+                <p id="output"></p>
+            </div>
+            <div class="card-actions">
+                <flag-icon id="flagIcon" class="bigFlag" key="{{searchValue}}">Big Flag Sample</flag-icon>
+            </div>
+        </paper-card>
+    </template>
+</dom-bind>
+<script>
+    var t = document.querySelector('#t');
+    var flag = document.querySelector('#flagIcon');
+    var searchBox = document.querySelector('#searchBox');
+    var output = document.querySelector('#output');
+    var searchFunction = function () {
+        output.innerText = JSON.stringify(flag.findCountry(searchBox.value));
+    };
+    searchBox.addEventListener('change', searchFunction);
+    searchBox.addEventListener('keyup', searchFunction);
+</script>
+```
 
 ## License
 
