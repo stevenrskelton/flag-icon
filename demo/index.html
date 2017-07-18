@@ -1,25 +1,20 @@
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/Protoss78/flag-icon)
+<!doctype html>
+<html>
 
-flag-icon
-===========
-A fork of the original [stevenrskelton/flag-icon](https://github.com/stevenrskelton/flag-icon) web component.
+<head>
+    <title>flag-icon demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../../iron-flex-layout/iron-flex-layout-classes.html">
+    <link rel="import" href="../../paper-card/paper-card.html">
+    <link rel="import" href="../../paper-styles/demo-pages.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
 
-A collection of SVG flags, conveniently usable as a Polymer Web Component.
-If you don't care about extra features, a simple CSS implementation of country flags can be found at https://github.com/lipis/flag-icon-css
+    <link rel="import" href="../flag-icon.html">
 
-## Usage
-<!---
-```
-<custom-element-demo>
-  <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../polymer/polymer.html">
-    <link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
-    <link rel="import" href="../paper-card/paper-card.html">
-    <link rel="import" href="../paper-styles/demo-pages.html">
-    <link rel="import" href="../paper-input/paper-input.html">
-    <link rel="import" href="flag-icon.html">
-        
     <custom-style>
         <style is="custom-style" include="iron-flex">
             /* When no size is specified for flag-icon it won't display */
@@ -43,12 +38,10 @@ If you don't care about extra features, a simple CSS implementation of country f
             }
         </style>
     </custom-style>
-    <next-code-block></next-code-block>
-  </template>
-</custom-element-demo>
-```
--->
-```html
+</head>
+
+<body unresolved>
+
 <dom-bind id="app">
     <template id="t">
         <paper-card heading="Flag Icon Search Demo">
@@ -74,8 +67,7 @@ If you don't care about extra features, a simple CSS implementation of country f
     searchBox.addEventListener('change', searchFunction);
     searchBox.addEventListener('keyup', searchFunction);
 </script>
-```
 
-## License
+</body>
 
-[MIT License](http://opensource.org/licenses/MIT) © Steven Skelton
+</html>
