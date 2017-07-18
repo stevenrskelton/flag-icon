@@ -26,7 +26,9 @@ A web component that can be used to display flags by passing country name or one
       display: inline-flex;
     }
     </style>
-    <iron-image src="{{src}}" alt="[[title]]" title$="[[title]]" aria-label$="[[title]]" sizing="contain"></iron-image>
+    <template is="dom-if" if="[[src]]" restamp="true">
+      <iron-image src="{{src}}" alt="[[title]]" title$="[[title]]" aria-label$="[[title]]" sizing="contain"></iron-image>
+    </template>
   </template>
   <script>
   'use strict';
