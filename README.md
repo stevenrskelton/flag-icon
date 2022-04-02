@@ -12,7 +12,7 @@ Typical file sizes:
 
 > **PNG** files: 16x11 < **1kb**, 36x27 < **2kb**, 75x56 < **5kb**, 225x168 < **20kb**
 
-### [Countries](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/countries.html)
+### [Countries](http://stevenrskelton.github.io/flag-icon/examples/countries.html)
 
 _Tiny 16 x 11 PNG icons_
 
@@ -115,7 +115,7 @@ _Square ratio SVG_
 
 ### States and Provinces
 
-#### [United States](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/us-states.html)
+#### [United States](http://stevenrskelton.github.io/flag-icon/examples/us-states.html)
 ![California](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/california.png "California")
 ![Delaware](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/delaware.png "Delaware")
 ![Florida](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/florida.png "Florida")
@@ -126,7 +126,7 @@ _Square ratio SVG_
 ![North Carolina](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/north_carolina.png "North Carolina")
 ![Texas](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/us/texas.png "Texas")
 
-#### [Australia](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/canada-australia.html)
+#### [Australia](http://stevenrskelton.github.io/flag-icon/examples/canada-australia.html)
 ![Australian Capital Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/australian_capital_territory.png "Australian Capital Territory")
 ![New South Wales](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/new_south_wales.png "New South Wales")
 ![Northern Territory](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/northern_territory.png "Northern Territory")
@@ -136,7 +136,7 @@ _Square ratio SVG_
 ![Victoria](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/victoria.png "Victoria")
 ![Western Australia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/au/western_australia.png "Western Australia")
 
-#### [Brazil](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/brazil.html)
+#### [Brazil](http://stevenrskelton.github.io/flag-icon/examples/brazil.html)
 ![Rio de Janeiro](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_de_janeiro.png "Rio de Janeiro")
 ![Rio Grande do Norte](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_norte.png "Rio Grande do Norte")
 ![Rio Grande do Sul](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/rio_grande_do_sul.png "Rio Grande do Sul")
@@ -147,7 +147,7 @@ _Square ratio SVG_
 ![Sergipe](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/sergipe.png "Sergipe")
 ![tocantins](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/br/tocantins.png "Tocantins")
 
-#### [Canada](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/canada-australia.html)
+#### [Canada](http://stevenrskelton.github.io/flag-icon/examples/canada-australia.html)
 ![Alberta](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/alberta.png "Alberta")
 ![British Columbia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/british_columbia.png "British Columbia")
 ![Manitoba](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/manitoba.png "Manitoba")
@@ -158,7 +158,7 @@ _Square ratio SVG_
 ![Nunavut](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/nunavut.png "Nunavut")
 ![Québec'](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ca/québec.png "Québec")
 
-#### [Germany](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/germany.html)
+#### [Germany](http://stevenrskelton.github.io/flag-icon/examples/germany.html)
 ![Brandenburg](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/brandenburg.png "Brandenburg")
 ![Berlin](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/berlin.png "Berlin")
 ![Rhineland-Palatinate](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/rhineland-palatinate.png "Rhineland-Palatinate")
@@ -169,7 +169,7 @@ _Square ratio SVG_
 ![Schleswig-Holstein](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/schleswig-holstein.png "Schleswig-Holstein")
 ![Thuringia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/de/thuringia.png "Thuringia")
 
-#### [Spain](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/spain.html)
+#### [Spain](http://stevenrskelton.github.io/flag-icon/examples/spain.html)
 ![Andalucía](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/andalucía.png "Andalucía")
 ![Aragón](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/aragón.png "Aragón")
 ![Asturias](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/asturias.png "Asturias")
@@ -180,7 +180,7 @@ _Square ratio SVG_
 ![Castile and León](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/castile_and_león.png "Castile and León")
 ![La Rioja](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/es/la_rioja.png "La Rioja")
 
-#### [Russia](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/russia.html)
+#### [Russia](http://stevenrskelton.github.io/flag-icon/examples/russia.html)
 ![Adygea](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/adygea.png "Adygea")
 ![Buryatia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/buryatia.png "Buryatia")
 ![Chuvashia](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/chuvashia.png "Chuvashia")
@@ -191,7 +191,7 @@ _Square ratio SVG_
 ![Belgorod](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/belgorod.png "Belgorod")
 ![Novgorod](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/ru/novgorod.png "Novgorod")
 
-### [NASCAR, IndyCar](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/racing.html)
+### [NASCAR, IndyCar](http://stevenrskelton.github.io/flag-icon/examples/racing.html)
 ![Green](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/green.png "Green")
 ![Yellow](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/yellow.png "Yellow")
 ![Black](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/black.png "Black")
@@ -202,7 +202,7 @@ _Square ratio SVG_
 ![Orange Circle](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/orangecircle.png "Orange Circle")
 ![Checkered](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/racing/checkered.png "Checkered")
 
-### [Maritime and International Code of Signals](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/maritime.html)
+### [Maritime and International Code of Signals](http://stevenrskelton.github.io/flag-icon/examples/maritime.html)
 ![Charlie](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/c.png "Charlie")
 ![Alpha](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/a.png "Alpha")
 ![Romeo](https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/maritime/r.png "Romeo")
@@ -221,9 +221,9 @@ _Square ratio SVG_
 
 ## Demos
 
-> [Live Demo - General Use](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/index.html)
+> [Live Demo - General Use](http://stevenrskelton.github.io/flag-icon/examples/index.html)
 
-> [Live Demo - Themes and Popover](http://files.stevenskelton.ca/flag-icon/flag-icon/examples/themes.html)
+> [Live Demo - Themes and Popover](http://stevenrskelton.github.io/flag-icon/examples/themes.html)
 
 ## Usage
 
