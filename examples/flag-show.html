@@ -1,0 +1,57 @@
+<link rel="import" href="../flag-icon.html">
+<link rel="import" href="json-stringify.html">
+<polymer-element name="flag-show" attributes="name key endonym au br ca de es ru us data square" noscript>
+	<template>
+		<style>
+			.show {
+				position: fixed;
+				left: 725px;
+				top: 45px;
+				text-align: center;
+				border:1px solid #666;
+				background-color:#ddd;
+				padding:15px;
+				overflow-x: hidden;
+				width: 380px;
+			}
+			.show flag-icon {
+				display: block;
+			}
+		</style>
+		<div class="show">
+			<h2 style="margin-bottom:0px">{{name}}</h2>
+			<template if="{{endonym}}">{{endonym}}</template><br><br>
+			<table>
+				<tr>
+					<td>
+						<flag-icon key="{{key}}" au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}"  es="{{es}}" ru="{{ru}}" us="{{us}}" img square="{{square}}"></flag-icon><br>
+						16px
+					</td>
+					<td rowspan="3">
+						<flag-icon key="{{key}}" au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}"  es="{{es}}" ru="{{ru}}" us="{{us}}" img square="{{square}}" width="225"></flag-icon><br>
+						225px
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<flag-icon key="{{key}}" au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}"  es="{{es}}" ru="{{ru}}" us="{{us}}" img square="{{square}}" width="36"></flag-icon><br>
+						36px
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<flag-icon key="{{key}}" au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}"  es="{{es}}" ru="{{ru}}" us="{{us}}" img square="{{square}}" width="75"></flag-icon><br>
+						75px
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<flag-icon key="{{key}}" au="{{au}}" br="{{br}}" ca="{{ca}}" de="{{de}}"  es="{{es}}" ru="{{ru}}" us="{{us}}" square="{{square}}" width="375"></flag-icon><br>
+						375px SVG
+					</td>
+				</tr>
+			</table>
+			<json-stringify data="{{data}}"></json-stringify>
+		</div>
+	</template>
+</polymer-element>

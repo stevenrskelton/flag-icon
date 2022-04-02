@@ -1,0 +1,44 @@
+<polymer-element name="index-links" attributes="page" style="clear:both;vertical-align:middle">
+	<template>
+		<template if="{{!examples}}">
+			<div style="width:100%;background-color:#E8F2F8;border-bottom:1px solid #A7D7F9;text-align:center;position:fixed;top:0;left:0;">
+				<a href="https://github.com/stevenrskelton/flag-icon" style="float:left;margin-left:10px;" title="View on GitHub"><img src="GitHub-Mark-64px.png" alt="GitHub Project" style="height:20px;vertical-align:middle;"></a>
+				<strong>Docs: </strong>
+				<template repeat="{{link in example}}">
+				| <a href="{{link.href}}" alt="{{link.name}}" style="{{page==link.href ? 'font-weight:bold':''}}">{{link.name}}</a>
+				</template>
+			</div>
+		</template>
+	</template>
+	<script>
+	Polymer('index-links', {
+		examples: false,
+		example: [
+			{ href:"index.html", name:"General Use" },
+			{ href:"themes.html", name:"Themes" },
+			{ href:"countries.html", name:"World Countries" },
+			{ href:"us-states.html", name: "USA" },
+			{ href:"canada-australia.html", name: "Canada and Australia" },
+			{ href:"brazil.html", name: "Brazil" },
+			{ href:"germany.html", name: "Germany" },
+			{ href:"spain.html", name: "Spain" },
+			{ href:"russia.html", name: "Russia" },
+			{ href:"maritime.html", name: "Maritime and ICS" },
+			{ href:"racing.html", name: "NASCAR and IndyCar Racing" }
+		]
+	});
+	function insertCss( code ) {
+		var style = document.createElement('style');
+		style.type = 'text/css';
+		if (style.styleSheet) {
+			// IE
+			style.styleSheet.cssText = code;
+		} else {
+			// Other browsers
+			style.innerHTML = code;
+		}
+		document.getElementsByTagName("head")[0].appendChild( style );
+	}
+	insertCss("h1 { margin-top: 40px; }");
+	</script>
+</polymer-element>
