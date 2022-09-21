@@ -1,11 +1,9 @@
 You are probably looking for the
-### https://github.com/lipis/flag-icons SVG flag library.
-
-
-#### This is an undated Polymer 0.5.5 Web Component
+## https://github.com/lipis/flag-icons SVG flag library.
 
 &lt;flag-icon&gt;
 ===========
+This is an undated Polymer 0.5.5 Web Component
 
 A collection of SVG flags, conveniently usable as a Polymer Web Component.
 
