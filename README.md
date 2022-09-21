@@ -1,3 +1,5 @@
+# You are probably looking for the https://github.com/lipis/flag-icons SVG flag library.
+
 &lt;flag-icon&gt;
 ===========
 
