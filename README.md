@@ -1,6 +1,9 @@
 You are probably looking for the
 # https://github.com/lipis/flag-icons SVG flag library.
 
+
+This is a Polymer Web Component:
+
 &lt;flag-icon&gt;
 ===========
 
